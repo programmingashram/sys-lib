@@ -1,0 +1,392 @@
+.sys-button{
+  padding: 0.8rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0px 6px;
+  height:30px;
+  line-height: 0;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.12);
+  background-color: #FFFFFF;
+
+  span{
+    font-size: 0.9rem;
+    margin-top: 1px;
+  }
+  .mat-icon{
+    font-size: 1rem;
+    height: auto;
+    width: auto;
+  }
+
+  &:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+
+  }
+
+  &[color=accent]{
+    background-color: #2E2EFF;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+    /* Ripple effect */
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #2E2EFF radial-gradient(circle, transparent 1%, #2E2EFF 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #FFFFFF;
+      background-size: 100%;
+      transition: background 0.03s;
+    }
+
+  }
+
+  &[color=olive]{
+    background-color: #5FD855;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+    /* Ripple effect */
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #5FD855 radial-gradient(circle, transparent 1%, #5FD855 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #FFFFFF;
+      background-size: 100%;
+      transition: background 0.03s;
+    }
+
+  }
+
+  &[color=alert]{
+    background-color: #FFB800;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+    /* Ripple effect */
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #FFB800 radial-gradient(circle, transparent 1%, #FFB800 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #FFFFFF;
+      background-size: 100%;
+      transition: background 0.03s;
+    }
+
+  }
+
+  &[color=error]{
+    background-color: #C73E1D;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+    /* Ripple effect */
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #C73E1D radial-gradient(circle, transparent 1%, #C73E1D 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #FFFFFF;
+      background-size: 100%;
+      transition: background 0.03s;
+    }
+
+  }
+  &[color=secondary]{
+    background-color: #6C757D;
+    color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+    /* Ripple effect */
+    &.ripple {
+      background-position: center;
+      transition: background 0.8s;
+    }
+    &.ripple:hover {
+      background: #6C757D radial-gradient(circle, transparent 1%,#6C757D 1%) center/15000%;
+    }
+    &.ripple:active {
+      background-color: #FFFFFF;
+      background-size: 100%;
+      transition: background 0.03s;
+    }
+  }
+  &.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  &.ripple:hover {
+    background: #FFFFFF radial-gradient(circle, transparent 1%, #FFFFFF 1%) center/15000%;
+  }
+  &.ripple:active {
+    background-color: #868383;
+    background-size: 100%;
+    transition: background 0.03s;
+  }
+}
+
+::ng-deep{
+  .outline{
+    .sys-button{
+      border: 1.3px solid gray;
+      background-color: transparent !important;
+
+      &.ripple {
+        background-position: center;
+        transition: background 0.8s;
+      }
+      &.ripple:hover {
+        background: #FFFFFF radial-gradient(circle, #86838337 1%, transparent 1%) center/15000%;
+      }
+      &.ripple:active {
+        background-color: #868383;
+        background-size: 100%;
+        transition: background 0.03s;
+      }
+
+      &[color=accent]{
+        background-color: transparent !important;
+        border:1.3px solid #2E2EFF;
+        color: #2E2EFF;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #2e2eff29 radial-gradient(circle, #2e2eff37 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #2E2EFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+
+      &[color=olive]{
+        border:1.3px solid #5FD855;
+        color: #5FD855;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #5FD855 radial-gradient(circle, #5fd85537 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+
+      &[color=alert]{
+        border:1.3px solid #FFB800;
+        color: #FFB800;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #FFB800 radial-gradient(circle, #ffb80037 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+
+      &[color=error]{
+        border:1.3px solid #C73E1D;
+        color: #C73E1D;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #C73E1D radial-gradient(circle, #c73e1d37  1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+      &[color=secondary]{
+        border:1.3px solid #6C757D;
+        color: #6C757D;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #6C757D radial-gradient(circle, #6c757d37 1%,transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+      }
+    }
+  }
+
+  .textBtn{
+    .sys-button{
+      background-color: transparent !important;
+      box-shadow: none ;
+      &.ripple {
+        background-position: center;
+        transition: background 0.8s;
+      }
+      &.ripple:hover {
+        background: #FFFFFF radial-gradient(circle, #86838337 1%, transparent 1%) center/15000%;
+      }
+      &.ripple:active {
+        background-color: #868383;
+        background-size: 100%;
+        transition: background 0.03s;
+      }
+
+      &[color=accent]{
+        background-color: transparent !important;
+        color: #2E2EFF;
+        box-shadow: none ;
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #2e2eff29 radial-gradient(circle, #2e2eff37 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #2E2EFF;
+          background-size: 100%;
+          transition: background 0.03s;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);
+        }
+
+      }
+
+      &[color=olive]{
+        color: #5FD855;
+        box-shadow: none !important;
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #5FD855 radial-gradient(circle, #5fd85537 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+
+      &[color=alert]{
+        color: #FFB800;
+        box-shadow: none ;
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #FFB800 radial-gradient(circle, #ffb80037 1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+
+      &[color=error]{
+        color: #C73E1D;
+        box-shadow: none ;
+
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #C73E1D radial-gradient(circle, #c73e1d37  1%, transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+
+      }
+      &[color=secondary]{
+        color: #6C757D;
+        box-shadow: none ;
+
+
+        /* Ripple effect */
+        &.ripple {
+          background-position: center;
+          transition: background 0.8s;
+        }
+        &.ripple:hover {
+          background: #6C757D radial-gradient(circle, #6c757d37 1%,transparent 1%) center/15000%;
+        }
+        &.ripple:active {
+          background-color: #FFFFFF;
+          background-size: 100%;
+          transition: background 0.03s;
+        }
+      }
+    }
+  }
+}

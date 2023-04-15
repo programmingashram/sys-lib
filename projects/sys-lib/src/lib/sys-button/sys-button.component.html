@@ -1,0 +1,8 @@
+<button class="sys-button ripple"  [attr.color]="color" [disabled]="disable" [type]="type" [attr.iconBtn]="iconBtn">
+    <mat-icon class="mat-18">{{icon}}</mat-icon>
+    <span *ngIf="!iconBtn">
+      <ng-content></ng-content>
+    </span>
+</button>
+
+
