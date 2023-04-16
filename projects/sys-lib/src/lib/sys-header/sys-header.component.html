@@ -1,14 +1,14 @@
-<!-- <div class="sys-header" color="accent">
+<div class="sys-header" color="accent">
     <div class="sys-row">
         <div class="col2">
-            {{logo}}
+            <h1 class="title">{{logo}}</h1>
+            <h5 class="subTitle">{{subTitle}}</h5>
         </div>
         <div class="col10">
-            <ul>
-                <li *ngIf="let menus of Menu">
-                    <a href="{{menus.name}}">{{menus}}</a>
-                </li>
-            </ul>
+            <div class="mobileMenubtn">
+              <sys-button icon="dehaze"  [iconBtn]="true" ></sys-button>
+            </div>
+            <ng-content></ng-content>
         </div>
     </div>
-</div> -->
+</div>

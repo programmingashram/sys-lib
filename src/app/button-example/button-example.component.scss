@@ -5,3 +5,10 @@
     width: 100%;
   }
 }
+
+
+@media(max-width: 767px){
+  .flex-box{
+    flex-wrap: wrap;
+  }
+}

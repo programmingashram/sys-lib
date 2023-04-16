@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class SysHeaderComponent {
   @Input() logo!: any;
+  @Input() subTitle!: string;
   @Input() Menu!: any[];
 }
