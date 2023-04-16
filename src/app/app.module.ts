@@ -7,12 +7,14 @@ import { SysLibModule } from 'projects/sys-lib/src/public-api';
 import { ButtonExampleComponent } from './button-example/button-example.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { HeaderExampleComponent } from './header-example/header-example.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonExampleComponent,
+    HeaderExampleComponent,
   ],
   imports: [
     BrowserModule,

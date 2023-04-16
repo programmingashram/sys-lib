@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-storybook": "build-storybook -o docs-build"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@storybook/blocks": "^7.0.4",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jasmine": "~4.3.0",
+    "gh-pages": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

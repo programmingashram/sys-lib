@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-example.component.scss']
 })
 export class ButtonExampleComponent {
-
+  alert(){
+    alert("hello");
+  }
 }

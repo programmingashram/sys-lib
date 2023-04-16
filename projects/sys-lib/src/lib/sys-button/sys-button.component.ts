@@ -15,4 +15,6 @@ export class SysButtonComponent {
   @Input() type!: string;
   @Input() iconBtn!: boolean;
 
+
+
 }
