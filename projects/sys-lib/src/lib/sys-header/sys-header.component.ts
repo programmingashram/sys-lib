@@ -12,4 +12,17 @@ export class SysHeaderComponent {
   menu: boolean = false;
   menuClose: boolean = false;
 
+  menuOpen(){
+    this.menu=!this.menu;
+  }
+  ngOnInit(){
+    if (window.innerWidth >= 768) {
+      this.menu=!this.menu;
+      this.menuClose = !this.menuClose;
+    }else{
+    }
+  
+    return true;
+  }
+
 }
