@@ -23,6 +23,9 @@
   .mobileMenubtn{
     display: none !important;
   }
+  .mobileMenu{
+    display: flex;
+  }
 }
 
 
@@ -32,6 +35,11 @@
     padding: 1.2rem 1.2rem;
     .mobileMenubtn{
       display: block !important;
+    }
+    .mobileMenuClosebtn{
+      z-index: 99999999;
+      position: fixed;
+      top: 21px;
     }
   }
 }

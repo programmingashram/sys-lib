@@ -9,4 +9,7 @@ export class SysHeaderComponent {
   @Input() logo!: any;
   @Input() subTitle!: string;
   @Input() Menu!: any[];
+  menu: boolean = false;
+  menuClose: boolean = false;
+
 }
