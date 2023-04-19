@@ -7,6 +7,7 @@ import { SysHeaderComponent } from './sys-header/sys-header.component';
 import { SysCardComponent } from './sys-card/sys-card.component';
 import { SysCardActionComponent } from './sys-card/sys-card-action/sys-card-action.component';
 import { SysCardContentComponent } from './sys-card/sys-card-content/sys-card-content.component';
+import { SysCardHeaderActionComponent } from './sys-card/sys-card-header-action/sys-card-header-action.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SysCardContentComponent } from './sys-card/sys-card-content/sys-card-co
     SysHeaderComponent,
     SysCardComponent,
     SysCardActionComponent,
-    SysCardContentComponent
+    SysCardContentComponent,
+    SysCardHeaderActionComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { SysCardContentComponent } from './sys-card/sys-card-content/sys-card-co
     SysHeaderComponent,
     SysCardComponent,
     SysCardActionComponent,
-    SysCardContentComponent
+    SysCardContentComponent,
+    SysCardHeaderActionComponent
   ]
 })
 export class SysLibModule { }

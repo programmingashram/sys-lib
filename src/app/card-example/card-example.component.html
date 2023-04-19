@@ -28,7 +28,10 @@
     </sys-card-action>
   </sys-card>
 
-  <sys-card title="Card Title" subTitle="Sub Title" icon="edit" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+  <sys-card title="Card Title" subTitle="Sub Title"  cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+    <sys-CardHeader-action>
+      <sys-button icon="favorite"  [iconBtn]="true" > </sys-button>
+    </sys-CardHeader-action>
     <sys-card-content>
       <p>
 
@@ -57,7 +60,10 @@
       </sys-button>
     </sys-card-action>
   </sys-card>
+
+
 </div>
+<!-- -------------------------------------- -->
 
 <sys-card title="Card Title" subTitle="Sub Title" [horigentalCard]="true" >
   <sys-card-content>

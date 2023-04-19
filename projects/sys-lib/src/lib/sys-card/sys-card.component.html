@@ -5,7 +5,9 @@
           <div class="title" *ngIf="title">{{title}}</div>
           <div class="subTitle" *ngIf="subTitle">{{subTitle}}</div>
         </div>
-        <mat-icon class="mat-18" *ngIf="icon">{{icon}}</mat-icon>
+        <mat-icon class="mat-18" *ngIf="icon" >{{icon}}</mat-icon>
+        <ng-content select="sys-CardHeader-action" *ngIf="sysCardHeaderAction"></ng-content>
+
     </div>
     <div class="cardImg" *ngIf="cardImg" [ngClass]="{'pad-10': !flatImage}">
       <img src="{{cardImg}}" alt="" >

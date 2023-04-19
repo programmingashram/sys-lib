@@ -1,6 +1,7 @@
 import { Component, ContentChild, Input } from '@angular/core';
 import { SysCardActionComponent } from './sys-card-action/sys-card-action.component';
 import { SysCardContentComponent } from './sys-card-content/sys-card-content.component';
+import { SysCardHeaderActionComponent } from './sys-card-header-action/sys-card-header-action.component';
 
 @Component({
   selector: 'sys-card',
@@ -15,7 +16,7 @@ export class SysCardComponent {
   @Input() cardImg?: string;
   @Input() flatImage:boolean;
   @Input() horigentalCard: boolean;
-  @ContentChild(SysCardContentComponent) sysContent: SysCardContentComponent;
-  @ContentChild(SysCardActionComponent) cardAction: SysCardActionComponent;
+  @ContentChild(SysCardHeaderActionComponent) sysCardHeaderAction: SysCardHeaderActionComponent;
+
 
 }
