@@ -1,0 +1,78 @@
+.sys-card{
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.04);
+  background-color: white;
+  border-radius: 2.5px;
+  width: 100%;
+  .sys-card-head{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sys-card-head{
+    .mat-icon{
+      font-size: 1.3rem;
+      height: auto;
+    }
+  }
+  .sys-card-body{
+    padding: 10px;
+  }
+
+  .cardImg{
+
+    img{
+      width: 100%;
+    }
+  }
+}
+.text-center{
+  text-align: center;
+}
+.pad-10{
+  padding: 10px;
+  img{
+    width: 100%;
+    max-height: fit-content;
+    border-radius: 2.5px;
+  }
+}
+
+.title{
+  color: rgba(0, 0, 0);
+  margin-bottom: 0.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.subTitle{
+  color: rgba(134, 131, 131, 1);
+  font-size: 0.6rem;
+}
+
+
+.sys-card-action{
+  display: flex;
+  gap: 0px 10px;
+  align-items: center;
+}
+.horigentalCard{
+  display: flex;
+  align-items: center;
+  .head{
+    width: 60px;
+    white-space: nowrap;
+  }
+  .cardImg{
+    img{
+      width: 100px;
+      padding: 0;
+    }
+  }
+  .sys-card-body{
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .sys-card-content{
+    width: 100%;
+  }
+}

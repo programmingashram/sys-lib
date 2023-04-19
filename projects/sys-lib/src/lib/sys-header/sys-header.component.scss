@@ -26,6 +26,9 @@
   .mobileMenu{
     display: flex !important;
   }
+  .mobileMenuClosebtn{
+    display: none !important;
+  }
 }
 
 
@@ -36,10 +39,12 @@
     .mobileMenubtn{
       display: block !important;
     }
+    
     .mobileMenuClosebtn{
+      display: block !important;
       z-index: 99999999;
       position: fixed;
-      top: 21px;
+      top: 10px;
     }
   }
 }

@@ -4,6 +4,7 @@
 .sys-menu{
   display: flex;
   align-items: center;
+  margin: 0;
   li{
     margin-right: 1rem;
     line-height: 0;
@@ -13,7 +14,7 @@
       color:#FFFFFF;
       display: flex;
       align-items: center;
-      gap: 0px 10px;
+      gap: 0px 5px;
     }
   }
 }

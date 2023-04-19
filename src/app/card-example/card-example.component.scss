@@ -1,0 +1,19 @@
+.d-flex{
+  align-items: center;
+  display: flex;
+  gap: 0px 10px;
+  margin-bottom: 1rem;
+}
+@media(max-width: 767px){
+    .d-flex{
+      flex-wrap: wrap;
+      gap: 10px 10px;
+    }
+}
+::ng-deep{
+  .sys-card-head{
+    .mat-icon{
+      color: #CC2A2A !important;
+    }
+  }
+}

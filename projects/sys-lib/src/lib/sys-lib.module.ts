@@ -4,7 +4,9 @@ import { SysButtonComponent } from './sys-button/sys-button.component';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { SysHeaderComponent } from './sys-header/sys-header.component';
-import { NestedMenuComponent } from './sys-header/nested-menu/nested-menu.component';
+import { SysCardComponent } from './sys-card/sys-card.component';
+import { SysCardActionComponent } from './sys-card/sys-card-action/sys-card-action.component';
+import { SysCardContentComponent } from './sys-card/sys-card-content/sys-card-content.component';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { NestedMenuComponent } from './sys-header/nested-menu/nested-menu.compon
     SysLibComponent,
     SysButtonComponent,
     SysHeaderComponent,
-    NestedMenuComponent
+    SysCardComponent,
+    SysCardActionComponent,
+    SysCardContentComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,10 @@ import { NestedMenuComponent } from './sys-header/nested-menu/nested-menu.compon
   exports: [
     SysLibComponent,
     SysButtonComponent,
-    SysHeaderComponent
+    SysHeaderComponent,
+    SysCardComponent,
+    SysCardActionComponent,
+    SysCardContentComponent
   ]
 })
 export class SysLibModule { }

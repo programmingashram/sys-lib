@@ -6,9 +6,9 @@
         </div>
         <div class="col10">
             <div class="mobileMenubtn">
-              <sys-button icon="dehaze" (click)="menu=!menu"  [iconBtn]="true" ></sys-button>
+              <sys-button icon="dehaze" (click)="menuOpen()"  [iconBtn]="true" ></sys-button>
             </div>
-
+        
             <div class="sys-row mobileMenu" *ngIf="menu">
               <div class="mobileMenuClosebtn">
                 <sys-button icon="close" color="accent" (click)="menu=!menu"  [iconBtn]="true" ></sys-button>

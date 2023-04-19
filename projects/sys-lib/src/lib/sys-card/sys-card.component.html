@@ -1,0 +1,18 @@
+<div class="sys-card" [ngClass]="{'horigentalCard': horigentalCard}">
+    <div class="sys-card-head" *ngIf="!horigentalCard || !cardImg" [ngClass]="{'text-center': preIcon}">
+        <mat-icon class="mat-18" *ngIf="preIcon">{{preIcon}}</mat-icon>
+        <div class="head" *ngIf="title || subTitle">
+          <div class="title" *ngIf="title">{{title}}</div>
+          <div class="subTitle" *ngIf="subTitle">{{subTitle}}</div>
+        </div>
+        <mat-icon class="mat-18" *ngIf="icon">{{icon}}</mat-icon>
+    </div>
+    <div class="cardImg" *ngIf="cardImg" [ngClass]="{'pad-10': !flatImage}">
+      <img src="{{cardImg}}" alt="" >
+    </div>
+    <div class="sys-card-body" [ngClass]="{'horigentalCard': horigentalCard}">
+        <ng-content ></ng-content>
+    </div>
+</div>
+
+

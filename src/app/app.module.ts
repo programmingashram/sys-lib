@@ -8,6 +8,7 @@ import { ButtonExampleComponent } from './button-example/button-example.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderExampleComponent } from './header-example/header-example.component';
+import { CardExampleComponent } from './card-example/card-example.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HeaderExampleComponent } from './header-example/header-example.componen
     AppComponent,
     ButtonExampleComponent,
     HeaderExampleComponent,
+    CardExampleComponent,
   ],
   imports: [
     BrowserModule,
