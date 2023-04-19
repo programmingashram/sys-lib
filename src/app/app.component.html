@@ -18,6 +18,14 @@
     </ul>
     <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
 </sys-header>
-<div class="temp">
+
+
+<div class="sidebar-container">
+  <sys-sidebar>
+    <sys-sidebar-item icon="home" label="Home" route="/button"></sys-sidebar-item>
+    <sys-sidebar-item icon="fa fa-info-circle" label="About" route="/about"></sys-sidebar-item>
+    <sys-sidebar-item icon="fa fa-envelope" label="Contact" route="/contact"></sys-sidebar-item>
+  </sys-sidebar>
+
   <router-outlet></router-outlet>
 </div>
