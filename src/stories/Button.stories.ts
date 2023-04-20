@@ -36,8 +36,9 @@ export default {
   ]
 } as Meta;
 
+
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<SysButtonComponent> = (args) => ({
+export const Default: Story<SysButtonComponent> = (args) => ({
   props: args,
   template: `
     <div style="display: block; gap: 0px 10px;">
@@ -64,7 +65,7 @@ const Template: Story<SysButtonComponent> = (args) => ({
 
    `,
 });
-const Template2: Story<SysButtonComponent> = (args) => ({
+export const TextButton: Story<SysButtonComponent> = (args) => ({
   props: args,
   template: `
     <div style="display: block; gap: 0px 10px;">
@@ -94,16 +95,10 @@ const Template2: Story<SysButtonComponent> = (args) => ({
     </div>`,
 });
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-export const Default = Template.bind({});
-Default.args = {
 
-};
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-export const Icon = Template2.bind({});
-Icon.args = {
 
-};
