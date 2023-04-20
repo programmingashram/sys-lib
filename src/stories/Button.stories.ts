@@ -1,36 +1,91 @@
-import { MatIconModule } from '@angular/material/icon';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Story, moduleMetadata } from '@storybook/angular';
-import { SysButtonComponent } from 'projects/sys-lib/src/public-api';
+// also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 
+import {Meta, Story, moduleMetadata} from "@storybook/angular";
+import {MatIconModule} from '@angular/material/icon'
+import { SysButtonComponent, sysModule } from 'projects/sys-lib/src/public-api';
 
+// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-
-  title: 'Components/Button',
-
+  title: 'sys-design/SysButton',
   component: SysButtonComponent,
+  parameters: { controls: { sort: 'requiredFirst' } },
+  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
+  options: {
+  },
+  argTypes: {
+  },
   decorators: [
-
     moduleMetadata({
-      declarations: [SysButtonComponent],
-      imports: [BrowserModule, MatIconModule, BrowserAnimationsModule],
+      declarations: [],
+      imports: [sysModule, MatIconModule],
     }),
-  ],
+  ]
+} as Meta;
+
+// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
+const Template: Story<SysButtonComponent> = (args) => ({
+  props: args,
+  template: `
+    <div style="display: flex; gap: 0px 10px;">
+    <sys-button  color="accent">
+    sys button
+  </sys-button>
+  <sys-button  color="olive">
+    sys button
+  </sys-button>
+  <sys-button  color="alert">
+    sys button
+  </sys-button>
+  <sys-button  color="error">
+    sys button
+  </sys-button>
+  <sys-button  color="secondary">
+    sys button
+  </sys-button>
+    </div>
+
+   `,
+});
+const Template2: Story<SysButtonComponent> = (args) => ({
+  props: args,
+  template: `
+    <div style="display: flex; gap: 0px 10px;">
+      <sys-button  class="textBtn">
+        SYS Button
+      </sys-button>
+
+      <sys-button  class="textBtn"  color="accent">
+        sys button
+      </sys-button>
+
+      <sys-button class="textBtn" color="olive">
+          sys button
+      </sys-button>
+
+      <sys-button  class="textBtn" color="alert">
+          sys button
+      </sys-button>
+
+      <sys-button class="textBtn" color="error">
+          sys button
+      </sys-button>
+
+      <sys-button  class="textBtn" color="secondary">
+          sys button
+      </sys-button>
+    </div>`,
+});
+// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
+export const Default = Template.bind({});
+Default.args = {
+
 };
-const Template: Story<SysButtonComponent> = () => ({
-  component: SysButtonComponent,
-  template: `
-    <sys-button> SYS Button </sys-button>
-`,
-});
-const Template2: Story<SysButtonComponent> = () => ({
-  component: SysButtonComponent,
-  template: `
-    <sys-button color='accent' icon="home"> SYS Button </sys-button>
-`,
-});
+
+// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 
 
-export const DefaultButton = Template.bind({});
-export const IconButton = Template2.bind({});
+// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
+export const Icon = Template2.bind({});
+Icon.args = {
+
+};

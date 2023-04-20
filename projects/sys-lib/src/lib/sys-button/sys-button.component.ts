@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+
 
 
 @Component({
