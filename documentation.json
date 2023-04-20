@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-3ff64bc62b0c648650c211354dfc3696bcf742e5547647c3e79842c39ede9739e739f6fbd85cee2b1006b4cea268bd1a662f9b5b8b379a272c873086f27a9452",
+            "id": "component-AppComponent-bfa4bf6f9db62e45678e7f88be043bf4657d9815497e74997ccc34685ffdf664d72ded8eb84c856af55813cc011598e88becd7dc1c6e2133e65debf599f70ed9",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -47,20 +47,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'sys-design';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'sys-design';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".temp{\r\n  padding: 20px;\r\n}\r\n",
+                    "data": ".temp{\r\n  padding: 20px;\r\n}\r\n.sys-menu{\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 0;\r\n  li{\r\n    margin-right: 1rem;\r\n    line-height: 0;\r\n    list-style: none;\r\n    a{\r\n      text-decoration: none;\r\n      color:#FFFFFF;\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 0px 5px;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n\r\n@media(max-width: 767px){\r\n    .sys-menu{\r\n        display: block;\r\n        position: fixed;\r\n        left: 0;\r\n        width: 100%;\r\n        background: #FFFFFF;\r\n        line-height: 20px;\r\n        top: -15px;\r\n        height: 100%;\r\n        z-index: 999;\r\n        padding: 1rem;\r\n        li{\r\n          margin-right: 1rem;\r\n          line-height: 50px;\r\n          list-style: none;\r\n          a{\r\n            text-decoration: none;\r\n            color:#000000;\r\n            display: flex;\r\n            align-items: center;\r\n            gap: 0px 18px;\r\n          }\r\n        }\r\n        li:after{\r\n          content: \"\";\r\n          width: 100%;\r\n          height: 1px;\r\n          background-color: #80808033;\r\n          position: absolute;\r\n          left: 0;\r\n        }\r\n    }\r\n}\r\n\r\n.sidebar-container{\r\n    display: flex;\r\n    gap: 0px 20px;\r\n}\r\n",
                     "styleUrl": "./app.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"temp\">\n  <app-button-example></app-button-example>\n\n</div>\n"
+            "templateData": "<sys-header logo=\"Sys Design\" subTitle=\"Front end Library\">\r\n    <ul class=\"sys-menu\">\r\n        <li>\r\n            <a href=\"#\" routerLink=\"/button\"><mat-icon class=\"mat-18\">home</mat-icon> Button</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/card\"><mat-icon class=\"mat-18\">home</mat-icon>Card</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Theme</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Typography</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Support</a>\r\n        </li>\r\n    </ul>\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>\r\n\r\n\r\n<div class=\"sidebar-container\">\r\n  <sys-sidebar>\r\n    <sys-sidebar-item icon=\"home\" label=\"Home\" route=\"/button\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-info-circle\" label=\"About\" route=\"/about\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-envelope\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n  </sys-sidebar>\r\n\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
         },
         {
             "name": "ButtonExampleComponent",
-            "id": "component-ButtonExampleComponent-f0083dd357b402a2c17a6a1fd5f6a2bce7c1d23f0a444e81a32842c800548ab5fce6c869c4c5f4eabdb3232a9b4c99e6cd8cf24129cb139db085808871cc50ca",
+            "id": "component-ButtonExampleComponent-48b2cb8700a8a777164fe9e323c63d0874938416508ef97fc40b91842b717f01c04a537421cbe8bc1c4f9eb92cc9dbae8e06c950975351070adf8dfde40a8299",
             "file": "src/app/button-example/button-example.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -79,6 +79,57 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "alert",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-example',\r\n  templateUrl: './button-example.component.html',\r\n  styleUrls: ['./button-example.component.scss']\r\n})\r\nexport class ButtonExampleComponent {\r\n  alert(){\r\n    alert(\"hello\");\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".flex-box{\r\n  display: flex;\r\n gap: 0px 20px;\r\n\r\n}\r\n\r\n\r\n@media(max-width: 767px){\r\n  .flex-box{\r\n    flex-wrap: wrap;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./button-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"flex-box\">\r\n  <div class=\"default\">\r\n    <h6>Default Button</h6>\r\n    <sys-button icon=\"home\">\r\n      sys Button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" color=\"accent\" >\r\n      sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" color=\"olive\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" color=\"alert\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" color=\"error\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" color=\"secondary\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" color=\"accent\" [disable]=\"true\">\r\n      sys button\r\n    </sys-button>\r\n  </div>\r\n\r\n  <div>\r\n    <h6>Outline Button</h6>\r\n    <sys-button icon=\"home\" class=\"outline\">\r\n      SYS Button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\" color=\"accent\">\r\n      sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\"   color=\"olive\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\"   color=\"alert\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\" color=\"error\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\" color=\"secondary\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" class=\"outline\"  color=\"accent\" [disable]=\"true\">\r\n      sys button\r\n    </sys-button>\r\n  </div>\r\n\r\n  <div>\r\n    <h6>Text Button</h6>\r\n    <sys-button icon=\"home\"  class=\"textBtn\">\r\n      SYS Button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\"  color=\"accent\">\r\n      sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\" color=\"olive\">\r\n        sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\" color=\"alert\">\r\n        sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\" color=\"error\">\r\n        sys button\r\n    </sys-button>\r\n    <br>\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\" color=\"secondary\">\r\n        sys button\r\n    </sys-button>\r\n\r\n    <br>\r\n\r\n    <sys-button icon=\"power_settings_new\" class=\"textBtn\" color=\"accent\" [disable]=\"true\">\r\n      sys button\r\n    </sys-button>\r\n  </div>\r\n\r\n\r\n  <div>\r\n    <h6>Icon Button</h6>\r\n      <sys-button icon=\"attachment\"  [iconBtn]=\"true\" ></sys-button>\r\n    <br>\r\n      <sys-button icon=\"search\"  [iconBtn]=\"true\" color=\"accent\"> </sys-button>\r\n    <br>\r\n      <sys-button icon=\"lock\"  [iconBtn]=\"true\" color=\"olive\"></sys-button>\r\n    <br>\r\n      <sys-button icon=\"favorite\"  [iconBtn]=\"true\" color=\"alert\"> </sys-button>\r\n    <br>\r\n      <sys-button icon=\"delete\"  [iconBtn]=\"true\" color=\"error\"></sys-button>\r\n    <br>\r\n      <sys-button icon=\"send\"  [iconBtn]=\"true\" color=\"secondary\"></sys-button>\r\n    <br>\r\n      <sys-button icon=\"home\"  [iconBtn]=\"true\" color=\"accent\" [disable]=\"true\"></sys-button>\r\n  </div>\r\n\r\n\r\n\r\n<div>\r\n  <h6>Rounded Button</h6>\r\n  <sys-button icon=\"home\"  class=\"rounded\">\r\n    SYS Button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\"  color=\"accent\">\r\n    sys button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\" color=\"olive\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\" color=\"alert\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\" color=\"error\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\" color=\"secondary\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"rounded\" color=\"accent\" [disable]=\"true\">\r\n    sys button\r\n  </sys-button>\r\n</div>\r\n\r\n<div>\r\n  <h6>Rounded Icon Button</h6>\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n  <br>\r\n    <sys-button icon=\"search\" class=\"rounded\" [iconBtn]=\"true\" color=\"accent\" > </sys-button>\r\n  <br>\r\n    <sys-button icon=\"lock\" class=\"rounded\" [iconBtn]=\"true\" color=\"olive\"></sys-button>\r\n  <br>\r\n    <sys-button icon=\"favorite\" class=\"rounded\" [iconBtn]=\"true\" color=\"alert\"> </sys-button>\r\n  <br>\r\n    <sys-button icon=\"delete\" class=\"rounded\" [iconBtn]=\"true\" color=\"error\"></sys-button>\r\n  <br>\r\n    <sys-button icon=\"send\" class=\"rounded\" [iconBtn]=\"true\" color=\"secondary\"></sys-button>\r\n  <br>\r\n    <sys-button icon=\"home\" class=\"rounded\" [iconBtn]=\"true\" color=\"accent\" [disable]=\"true\"></sys-button>\r\n</div>\r\n\r\n\r\n<div>\r\n  <h6>Outline Rounded Button</h6>\r\n  <sys-button icon=\"home\" class=\"outline rounded\">\r\n    SYS Button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\" color=\"accent\">\r\n    sys button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\"   color=\"olive\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\"   color=\"alert\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\" color=\"error\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\" color=\"secondary\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"outline rounded\"  color=\"accent\" [disable]=\"true\">\r\n    sys button\r\n  </sys-button>\r\n</div>\r\n\r\n\r\n<div>\r\n  <h6>Text Button</h6>\r\n  <sys-button icon=\"home\"  class=\"textBtn rounded\">\r\n    SYS Button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\"  color=\"accent\">\r\n    sys button\r\n  </sys-button>\r\n  <br>\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\" color=\"olive\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\" color=\"alert\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\" color=\"error\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\" color=\"secondary\">\r\n      sys button\r\n  </sys-button>\r\n\r\n  <br>\r\n\r\n  <sys-button icon=\"power_settings_new\" class=\"textBtn rounded\" color=\"accent\" [disable]=\"true\">\r\n    sys button\r\n  </sys-button>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n\r\n"
+        },
+        {
+            "name": "CardExampleComponent",
+            "id": "component-CardExampleComponent-b38be0839b38cc70408e2b80e62026e5d707398f25820bfbfbed63d3ecd62a549dcaf49b55b02966401927425d47d6514c567dba8a99b7554d0f38e5ffb1bf5c",
+            "file": "src/app/card-example/card-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card-example",
+            "styleUrls": [
+                "./card-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -87,28 +138,68 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-button-example',\n  templateUrl: './button-example.component.html',\n  styleUrls: ['./button-example.component.scss']\n})\nexport class ButtonExampleComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card-example',\r\n  templateUrl: './card-example.component.html',\r\n  styleUrls: ['./card-example.component.scss']\r\n})\r\nexport class CardExampleComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".d-flex{\r\n  align-items: center;\r\n  display: flex;\r\n  gap: 0px 10px;\r\n  margin-bottom: 1rem;\r\n}\r\n@media(max-width: 767px){\r\n    .d-flex{\r\n      flex-wrap: wrap;\r\n      gap: 10px 10px;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./card-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"d-flex\">\r\n\r\n\r\n  <sys-card title=\"Card Title\"  subTitle=\"Sub Title\">\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" icon=\"settings\">\r\n    <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n    </sys-card-content>\r\n\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>\r\n\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\"  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n    <sys-CardHeader-action>\r\n      <sys-button icon=\"favorite\"  [iconBtn]=\"true\" > </sys-button>\r\n    </sys-CardHeader-action>\r\n    <sys-card-content>\r\n      <p>\r\n\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n  </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n\r\n  <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n\r\n    <sys-card-content>\r\n      <p>\r\n\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n      </p>\r\n    </sys-card-content>\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>\r\n\r\n\r\n</div>\r\n<!-- -------------------------------------- -->\r\n\r\n<sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n\r\n</sys-card>\r\n<br>\r\n<sys-card preIcon=\"account_circle\"  [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n  <sys-card-action>\r\n    <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n      Accept\r\n    </sys-button>\r\n  </sys-card-action>\r\n</sys-card>\r\n<br>\r\n<sys-card preIcon=\"account_circle\"  [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n  <sys-card-action>\r\n    <mat-icon class=\"mat-18\">edit</mat-icon>\r\n  </sys-card-action>\r\n</sys-card>\r\n<br>\r\n<sys-card cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\"  [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n  <sys-card-action>\r\n    <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n      Accept\r\n    </sys-button>\r\n</sys-card-action>\r\n\r\n  <!-- <sys-card  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\" [flatImage]=\"true\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n    <sys-card-action>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>\r\n\r\n  <sys-card  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\" [flatImage]=\"true\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n    <sys-card-action>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card> -->\r\n\r\n"
+        },
+        {
+            "name": "HeaderExampleComponent",
+            "id": "component-HeaderExampleComponent-9f50887ea6a9ed467f582865641e2cbf6e23e69b9723ee1bd5d1e6d8d089bf78c00cea17a7f1ab563a9f5ff86abb444bb5b6e504da7a8b76ab5b3526a749d355",
+            "file": "src/app/header-example/header-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header-example",
+            "styleUrls": [
+                "./header-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-header-example',\r\n  templateUrl: './header-example.component.html',\r\n  styleUrls: ['./header-example.component.scss']\r\n})\r\nexport class HeaderExampleComponent {\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./button-example.component.scss"
+                    "styleUrl": "./header-example.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<sys-button icon=\"power_settings_new\" color=\"accent\">\n    SYS Button\n</sys-button>\n\n\n<sys-button icon=\"power_settings_new\">\n  SYS Button\n</sys-button>\n"
+            "templateData": "<sys-header></sys-header>\r\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-4cebb968b4342b86ed876c7bb9fea921499db502e1c45b4a252939f68bb6da441a42c1af2abcf38c10038e227c30625d07bd87e41074c7c1b9af83ae73b407cf",
+            "id": "module-AppModule-f62b35d7642273508bddbc8310abf1901f0a23b478e9d7189debdce5d50fb5c95fa671f0695d6b31b508378ff606eef37cba4614a04a9f0bbdee14296768fd27",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { SysLibModule } from 'projects/sys-lib/src/public-api';\nimport { ButtonExampleComponent } from './button-example/button-example.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { MatIconModule } from '@angular/material/icon';\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    ButtonExampleComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    SysLibModule,\n    MatIconModule,\n    BrowserAnimationsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n//  ng run sys-lib:storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -122,6 +213,12 @@
                         },
                         {
                             "name": "ButtonExampleComponent"
+                        },
+                        {
+                            "name": "CardExampleComponent"
+                        },
+                        {
+                            "name": "HeaderExampleComponent"
                         }
                     ]
                 },
@@ -153,13 +250,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "id": "module-AppRoutingModule-6b403ffd33222dbf308f00c3242dedb2aa6cb876f813048140429a7ed12ec301b772034f8628ae5b50759eea6f9f557920383680d76229e7b6e2dca8da94f0cb",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -191,7 +288,7 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "DefaultButton",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
@@ -201,7 +298,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "IconButton",
+                "name": "Icon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
@@ -228,7 +325,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "() => ({\n  component: SysButtonComponent,\n  template: `\n    <sys-button color='accent'> SYS Button </sys-button>\n`,\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: flex; gap: 0px 10px;\">\n    <sys-button  color=\"accent\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"olive\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"alert\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"error\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"secondary\">\n    sys button\n  </sys-button>\n    </div>\n\n   `,\n})"
             },
             {
                 "name": "Template2",
@@ -238,7 +335,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "() => ({\n  component: SysButtonComponent,\n  template: `\n    <sys-button color='accent' icon=\"home\"> SYS Button </sys-button>\n`,\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: flex; gap: 0px 10px;\">\n      <sys-button  class=\"textBtn\">\n        SYS Button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\"  color=\"accent\">\n        sys button\n      </sys-button>\n\n      <sys-button class=\"textBtn\" color=\"olive\">\n          sys button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\" color=\"alert\">\n          sys button\n      </sys-button>\n\n      <sys-button class=\"textBtn\" color=\"error\">\n          sys button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\" color=\"secondary\">\n          sys button\n      </sys-button>\n    </div>`,\n})"
             }
         ],
         "functions": [],
@@ -247,7 +344,7 @@
         "groupedVariables": {
             "src/stories/Button.stories.ts": [
                 {
-                    "name": "DefaultButton",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
@@ -257,7 +354,7 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "IconButton",
+                    "name": "Icon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
@@ -274,7 +371,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "() => ({\n  component: SysButtonComponent,\n  template: `\n    <sys-button color='accent'> SYS Button </sys-button>\n`,\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: flex; gap: 0px 10px;\">\n    <sys-button  color=\"accent\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"olive\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"alert\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"error\">\n    sys button\n  </sys-button>\n  <sys-button  color=\"secondary\">\n    sys button\n  </sys-button>\n    </div>\n\n   `,\n})"
                 },
                 {
                     "name": "Template2",
@@ -284,7 +381,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "() => ({\n  component: SysButtonComponent,\n  template: `\n    <sys-button color='accent' icon=\"home\"> SYS Button </sys-button>\n`,\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: flex; gap: 0px 10px;\">\n      <sys-button  class=\"textBtn\">\n        SYS Button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\"  color=\"accent\">\n        sys button\n      </sys-button>\n\n      <sys-button class=\"textBtn\" color=\"olive\">\n          sys button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\" color=\"alert\">\n          sys button\n      </sys-button>\n\n      <sys-button class=\"textBtn\" color=\"error\">\n          sys button\n      </sys-button>\n\n      <sys-button  class=\"textBtn\" color=\"secondary\">\n          sys button\n      </sys-button>\n    </div>`,\n})"
                 }
             ],
             ".storybook/preview.ts": [
@@ -313,7 +410,16 @@
                 "name": "routes",
                 "filename": "src/app/app-routing.module.ts",
                 "module": "AppRoutingModule",
-                "children": [],
+                "children": [
+                    {
+                        "path": "button",
+                        "component": "ButtonExampleComponent"
+                    },
+                    {
+                        "path": "card",
+                        "component": "CardExampleComponent"
+                    }
+                ],
                 "kind": "module"
             }
         ]
@@ -347,15 +453,23 @@
                 "linktype": "component",
                 "name": "ButtonExampleComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/card-example/card-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardExampleComponent",
+                "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "DefaultButton",
+                "filePath": "src/app/header-example/header-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderExampleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -365,7 +479,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "IconButton",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
