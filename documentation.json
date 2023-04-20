@@ -288,7 +288,17 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "CardWithIcon",
+                "name": "CardWithActions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysCardComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card> \r\n    </div>\r\n  `,\r\n})"
+            },
+            {
+                "name": "CardWithCTA",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Card.stories.ts",
@@ -305,7 +315,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: block; gap: 0px 10px;\">\n    <sys-button  color=\"accent\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"olive\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"alert\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"error\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"secondary\">\n    sys button\n  </sys-button>\n    </div>\n\n   `,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `    \r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      sys Button\r\n    </sys-button>\r\n   `,\r\n})"
             },
             {
                 "name": "DefaultCard",
@@ -328,6 +338,26 @@
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>`,\r\n})"
             },
             {
+                "name": "IconButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysButtonComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"favorite\"  [iconBtn]=\"true\" color=\"alert\"> </sys-button>\r\n   `,\r\n})"
+            },
+            {
+                "name": "OutlineButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysButtonComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"outline\">\r\n      SYS Button\r\n    </sys-button>\r\n\r\n   `,\r\n})"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -335,7 +365,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "TextButton",
@@ -345,7 +375,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: block; gap: 0px 10px;\">\n      <sys-button  class=\"textBtn\">\n        SYS Button\n      </sys-button>\n    <br>\n      <sys-button  class=\"textBtn\"  color=\"accent\">\n        sys button\n      </sys-button>\n      <br>\n      <sys-button class=\"textBtn\" color=\"olive\">\n          sys button\n      </sys-button>\n <br>\n      <sys-button  class=\"textBtn\" color=\"alert\">\n          sys button\n      </sys-button>\n      <br>\n      <sys-button class=\"textBtn\" color=\"error\">\n          sys button\n      </sys-button>\n      <br>\n      <sys-button  class=\"textBtn\" color=\"secondary\">\n          sys button\n      </sys-button>\n    </div>`,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"settings\" color=\"accent\"  class=\"textBtn\">\r\n        SYS Button\r\n      </sys-button>\r\n   `,\r\n})"
             }
         ],
         "functions": [],
@@ -354,7 +384,17 @@
         "groupedVariables": {
             "src/stories/Card.stories.ts": [
                 {
-                    "name": "CardWithIcon",
+                    "name": "CardWithActions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysCardComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card> \r\n    </div>\r\n  `,\r\n})"
+                },
+                {
+                    "name": "CardWithCTA",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Card.stories.ts",
@@ -393,7 +433,27 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: block; gap: 0px 10px;\">\n    <sys-button  color=\"accent\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"olive\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"alert\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"error\">\n    sys button\n  </sys-button>\n  <br>\n  <sys-button  color=\"secondary\">\n    sys button\n  </sys-button>\n    </div>\n\n   `,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `    \r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      sys Button\r\n    </sys-button>\r\n   `,\r\n})"
+                },
+                {
+                    "name": "IconButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysButtonComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"favorite\"  [iconBtn]=\"true\" color=\"alert\"> </sys-button>\r\n   `,\r\n})"
+                },
+                {
+                    "name": "OutlineButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysButtonComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"outline\">\r\n      SYS Button\r\n    </sys-button>\r\n\r\n   `,\r\n})"
                 },
                 {
                     "name": "TextButton",
@@ -403,7 +463,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n    <div style=\"display: block; gap: 0px 10px;\">\n      <sys-button  class=\"textBtn\">\n        SYS Button\n      </sys-button>\n    <br>\n      <sys-button  class=\"textBtn\"  color=\"accent\">\n        sys button\n      </sys-button>\n      <br>\n      <sys-button class=\"textBtn\" color=\"olive\">\n          sys button\n      </sys-button>\n <br>\n      <sys-button  class=\"textBtn\" color=\"alert\">\n          sys button\n      </sys-button>\n      <br>\n      <sys-button class=\"textBtn\" color=\"error\">\n          sys button\n      </sys-button>\n      <br>\n      <sys-button  class=\"textBtn\" color=\"secondary\">\n          sys button\n      </sys-button>\n    </div>`,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"settings\" color=\"accent\"  class=\"textBtn\">\r\n        SYS Button\r\n      </sys-button>\r\n   `,\r\n})"
                 }
             ],
             ".storybook/preview.ts": [
@@ -415,7 +475,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -511,6 +571,26 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "IconButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OutlineButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "TextButton",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -521,7 +601,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "CardWithIcon",
+                "name": "CardWithActions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardWithCTA",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

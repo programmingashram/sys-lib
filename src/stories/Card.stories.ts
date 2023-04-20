@@ -1,7 +1,7 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 
 import {Meta, Story, moduleMetadata} from "@storybook/angular";
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
 import { SysButtonComponent, SysCardComponent, sysModule } from 'projects/sys-lib/src/public-api';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
@@ -40,7 +40,7 @@ export const DefaultCard: Story<SysCardComponent> = (args) => ({
 
    `,
 });
-export const CardWithIcon: Story<SysCardComponent> = (args) => ({
+export const CardWithCTA: Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
   <sys-card title="Card Title" subTitle="Sub Title" icon="settings">
@@ -61,6 +61,32 @@ export const CardWithIcon: Story<SysCardComponent> = (args) => ({
     </sys-card-action>
   </sys-card>`,
 });
+
+export const CardWithActions : Story<SysCardComponent> = (args) => ({
+  props: args,
+  template: `
+    <div style="width: 500px;">
+    <sys-card title="Card Title" preIcon="account_circle" [flatImage]="true" subTitle="Sub Title" icon="favorite_border" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+        <sys-card-content>
+          <p>
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,
+          </p>
+        </sys-card-content>
+        <sys-card-action>
+          <sys-button icon="cancel" class="textBtn" color="error">
+            Cancel
+          </sys-button>
+
+          <sys-button icon="check" class="textBtn" color="olive">
+            Accept
+          </sys-button>
+        </sys-card-action>
+      </sys-card> 
+    </div>
+  `,
+});
+
 export const HorizentalCard : Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
@@ -73,6 +99,7 @@ export const HorizentalCard : Story<SysCardComponent> = (args) => ({
 
   </sys-card>`,
 });
+
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 
 
