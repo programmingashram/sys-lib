@@ -59,6 +59,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ::ng-deep{
+    .sys-card-content{
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      line-height: 16px;
+    }
+  }
   .head{
     width: 60px;
     white-space: nowrap;
