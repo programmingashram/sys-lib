@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderExampleComponent } from './header-example/header-example.component';
 import { CardExampleComponent } from './card-example/card-example.component';
 //  ng run sys-design:storybook
+//  ng run sys-design:build-storybook
 
 @NgModule({
   declarations: [

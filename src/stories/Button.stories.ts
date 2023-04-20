@@ -13,6 +13,20 @@ export default {
   options: {
   },
   argTypes: {
+    'color':{
+      control:{
+        type: 'text',
+        labels:{
+            'accent': 'Accent',
+            'olive': 'Olive',
+            'alert':'Alert',
+            'error':'Error',
+            'secondary': 'Secondary'
+        }
+      },
+      defaultValue:'accent'
+    },
+
   },
   decorators: [
     moduleMetadata({
@@ -26,19 +40,23 @@ export default {
 const Template: Story<SysButtonComponent> = (args) => ({
   props: args,
   template: `
-    <div style="display: flex; gap: 0px 10px;">
+    <div style="display: block; gap: 0px 10px;">
     <sys-button  color="accent">
     sys button
   </sys-button>
+  <br>
   <sys-button  color="olive">
     sys button
   </sys-button>
+  <br>
   <sys-button  color="alert">
     sys button
   </sys-button>
+  <br>
   <sys-button  color="error">
     sys button
   </sys-button>
+  <br>
   <sys-button  color="secondary">
     sys button
   </sys-button>
@@ -49,27 +67,27 @@ const Template: Story<SysButtonComponent> = (args) => ({
 const Template2: Story<SysButtonComponent> = (args) => ({
   props: args,
   template: `
-    <div style="display: flex; gap: 0px 10px;">
+    <div style="display: block; gap: 0px 10px;">
       <sys-button  class="textBtn">
         SYS Button
       </sys-button>
-
+    <br>
       <sys-button  class="textBtn"  color="accent">
         sys button
       </sys-button>
-
+      <br>
       <sys-button class="textBtn" color="olive">
           sys button
       </sys-button>
-
+ <br>
       <sys-button  class="textBtn" color="alert">
           sys button
       </sys-button>
-
+      <br>
       <sys-button class="textBtn" color="error">
           sys button
       </sys-button>
-
+      <br>
       <sys-button  class="textBtn" color="secondary">
           sys button
       </sys-button>
