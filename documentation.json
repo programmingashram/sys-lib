@@ -193,13 +193,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f62b35d7642273508bddbc8310abf1901f0a23b478e9d7189debdce5d50fb5c95fa671f0695d6b31b508378ff606eef37cba4614a04a9f0bbdee14296768fd27",
+            "id": "module-AppModule-c0b1fe257ef816e98a334c2c797e2e919ca3db0fa7b3c759a0089c19b6d491a6fbcddd28009087e2559b91a64abbb8c75f120ae0222b12cf2871533446594640",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n//  ng run sys-lib:storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n//  ng run sys-design:storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
