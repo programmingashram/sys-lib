@@ -56,7 +56,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<sys-header logo=\"Sys Design\" subTitle=\"Front end Library\">\r\n    <ul class=\"sys-menu\">\r\n        <li>\r\n            <a href=\"#\" routerLink=\"/button\"><mat-icon class=\"mat-18\">home</mat-icon> Button</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/card\"><mat-icon class=\"mat-18\">home</mat-icon>Card</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Theme</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Typography</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Support</a>\r\n        </li>\r\n    </ul>\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>\r\n\r\n\r\n<div class=\"sidebar-container\">\r\n  <sys-sidebar>\r\n    <sys-sidebar-item icon=\"home\" label=\"Home\" route=\"/button\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-info-circle\" label=\"About\" route=\"/about\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-envelope\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n  </sys-sidebar>\r\n\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
+            "templateData": "<sys-header logo=\"Sys Design\" >\r\n    <ul class=\"sys-menu\">\r\n        <li>\r\n            <a href=\"#\" routerLink=\"/button\"><mat-icon class=\"mat-18\">home</mat-icon> Button</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\" routerLink=\"/card\"><mat-icon class=\"mat-18\">home</mat-icon>Card</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Theme</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Typography</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"#\"><mat-icon class=\"mat-18\">home</mat-icon> Support</a>\r\n        </li>\r\n    </ul>\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>\r\n\r\n\r\n<div class=\"sidebar-container\">\r\n  <sys-sidebar>\r\n    <sys-sidebar-item icon=\"home\" label=\"Home\" route=\"/button\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-info-circle\" label=\"About\" route=\"/about\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"fa fa-envelope\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n  </sys-sidebar>\r\n\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
         },
         {
             "name": "ButtonExampleComponent",
@@ -335,7 +335,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysHeaderComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" subTitle=\"Front-End Library\">\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>`,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" >\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n  </sys-header>`,\r\n})"
             },
             {
                 "name": "HorizentalCard",
@@ -485,7 +485,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysHeaderComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" subTitle=\"Front-End Library\">\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>`,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" >\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n  </sys-header>`,\r\n})"
                 }
             ],
             ".storybook/preview.ts": [
