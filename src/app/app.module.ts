@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderExampleComponent } from './header-example/header-example.component';
 import { CardExampleComponent } from './card-example/card-example.component';
+import { HomeComponent } from './home/home.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -18,6 +19,7 @@ import { CardExampleComponent } from './card-example/card-example.component';
     ButtonExampleComponent,
     HeaderExampleComponent,
     CardExampleComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { SysSidebarComponent } from './sys-sidebar/sys-sidebar.component';
 import { SysSidebarItemComponent } from './sys-sidebar/sys-sidebar-item/sys-sidebar-item.component';
 import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-container/sys-sidebar-container.component';
+import { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sys-sidebar-content.component';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-containe
     SysCardHeaderActionComponent,
     SysSidebarComponent,
     SysSidebarItemComponent,
-    SysSidebarContainerComponent
+    SysSidebarContainerComponent,
+    SysSidebarContentComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +45,8 @@ import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-containe
     SysCardContentComponent,
     SysCardHeaderActionComponent,
     SysSidebarComponent,
-    SysSidebarItemComponent
+    SysSidebarItemComponent,
+    SysSidebarContentComponent
   ]
 })
 export class sysDesignModule { }

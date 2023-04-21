@@ -65,7 +65,7 @@ export const CardWithCTA: Story<SysCardComponent> = (args) => ({
 export const CardWithActions : Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
-    <div style="width: 500px;">
+    <div style="width: 100%;">
     <sys-card title="Card Title" preIcon="account_circle" [flatImage]="true" subTitle="Sub Title" icon="favorite_border" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
         <sys-card-content>
           <p>

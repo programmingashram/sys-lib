@@ -1,31 +1,19 @@
-<sys-header logo="Sys Design" >
-    <ul class="sys-menu">
-        <li>
-            <a href="#" routerLink="/button"><mat-icon class="mat-18">home</mat-icon> Button</a>
-        </li>
-        <li>
-          <a href="#" routerLink="/card"><mat-icon class="mat-18">home</mat-icon>Card</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Theme</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Typography</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Support</a>
-        </li>
-    </ul>
-    <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
-</sys-header>
-
-
-<div class="sidebar-container">
-  <sys-sidebar>
-    <sys-sidebar-item icon="home" label="Home" route="/button"></sys-sidebar-item>
-    <sys-sidebar-item icon="fa fa-info-circle" label="About" route="/about"></sys-sidebar-item>
-    <sys-sidebar-item icon="fa fa-envelope" label="Contact" route="/contact"></sys-sidebar-item>
-  </sys-sidebar>
-
-  <router-outlet></router-outlet>
+<div class="sys-container">
+  <div class="sidebar-container">
+    <sys-sidebar>
+      <sys-sidebar-item sidebarLogo="Sys Design"></sys-sidebar-item>
+      <sys-sidebar-item icon="home" label="Button" route="/button"></sys-sidebar-item>
+      <sys-sidebar-item icon="settings" label="Cards" route="/card"></sys-sidebar-item>
+      <sys-sidebar-item icon="settings" label="Contact" route="/contact"></sys-sidebar-item>
+    </sys-sidebar>
+  </div>
+  <div class="right">
+    <sys-header >
+      <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
+    </sys-header>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+ 
 </div>

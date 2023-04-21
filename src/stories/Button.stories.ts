@@ -17,7 +17,6 @@ export default {
     type: { control: "select", options: ["Default","outline", "textBtn"] },
     class: { control: "select", options: ["Default","rounded"] },
     content: { control: "text"}
-    ,
   },
 
   decorators: [

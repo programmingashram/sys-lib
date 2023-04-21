@@ -1,6 +1,7 @@
-<li>
-  <a [routerLink]="route" routerLinkActive="active">
-    <mat-icon class="mat-18">{{icon}}</mat-icon>
+<li [routerLink]="route" [ngClass]="{'sidebar-header': sidebarLogo}">
+  <a  routerLinkActive="active" >
+    <mat-icon class="mat-18" *ngIf="icon">{{icon}}</mat-icon>
     <span>{{label}}</span>
+    <span>{{sidebarLogo}}</span>
   </a>
 </li>

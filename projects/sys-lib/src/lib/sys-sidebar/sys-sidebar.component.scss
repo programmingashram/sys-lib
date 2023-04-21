@@ -1,0 +1,66 @@
+.sys-container{
+    display: flex;
+}
+::ng-deep{
+    .sys-menu{
+        display: block;
+        margin: 0;
+        background-color: white;
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        top: 0;
+        overflow-y: scroll;
+        padding-left: 0px;
+        z-index: 99999;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+      li{
+        margin-right: 1rem;
+        line-height: 0;
+        list-style: none;
+        width: 100%;
+        padding: 1.2rem 0px;
+        height: 23px;
+        border-bottom: 1px solid #80808024;
+        &.sidebar-header{
+            display: flex;
+            align-items: unset;
+            background-color: #4343FF;
+            a{
+                color: white;
+                font-size: 1.4rem;
+            }
+        }
+        &:hover{
+            background-color: #4343ff96;
+            cursor: pointer;
+            a{
+                color: white;
+            }
+        }
+        &:focus{
+            background-color: #2E2EFFBF;
+            a{
+                color: white;
+            }
+        }
+        &:active{
+            background-color: #4343ff;
+            a{
+                color: white;
+            }
+        }
+        a{
+          text-decoration: none;
+          color:#000000;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          gap: 0px 15px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }

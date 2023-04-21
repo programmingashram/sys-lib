@@ -9,4 +9,5 @@ export class SysSidebarItemComponent {
  @Input() icon: string;
   @Input() label: string;
   @Input() route: string;
+  @Input() sidebarLogo: string;
 }

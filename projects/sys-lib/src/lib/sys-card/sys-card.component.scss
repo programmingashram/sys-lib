@@ -40,8 +40,8 @@
 
 .title{
   color: rgba(0, 0, 0);
-  margin-bottom: 0.1rem;
-  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
   font-size: 1rem;
 }
 .subTitle{
@@ -65,10 +65,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0px 10px;
   ::ng-deep{
     .sys-card-content{
       margin-top: 1rem;
-      font-size: 0.7rem;
+      font-size: 0.9rem;
       line-height: 16px;
     }
   }
