@@ -45,4 +45,4 @@ import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-containe
     SysSidebarItemComponent
   ]
 })
-export class sysModule { }
+export class sysDesignModule { }

@@ -1,14 +1,14 @@
 <div class="sys-header" color="accent">
     <div class="sys-row">
         <div class="col2">
-            <h1 class="title">{{logo}}</h1>
-            <h5 class="subTitle">{{subTitle}}</h5>
+            <h1 class="title" [ngClass]="{'mb-0': !subTitle}" *ngIf="logo">{{logo}}</h1>
+            <h5 class="subTitle" *ngIf="subTitle">{{subTitle}}</h5>
         </div>
         <div class="col10">
             <div class="mobileMenubtn">
               <sys-button icon="dehaze" (click)="menuOpen()"  [iconBtn]="true" ></sys-button>
             </div>
-        
+
             <div class="sys-row mobileMenu" *ngIf="menu">
               <div class="mobileMenuClosebtn">
                 <sys-button icon="close" color="accent" (click)="menu=!menu"  [iconBtn]="true" ></sys-button>

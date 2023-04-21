@@ -193,13 +193,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-dd15af925cdaa9bc46fec0d87a764670dddcb2d64e3b1d283e3cb800fd4ae9eed858ac5d95eaf80d8aca51c6bcb653042268821c7107805010189bc8c88167e3",
+            "id": "module-AppModule-02beb72149750e3281583707c34852724dc09de661b85ad968b2adcf10e1f39c96eb55025c0d6923848552241b118dfa70d08ab9982762e8b31d4e2d6211142f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -295,7 +295,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card> \r\n    </div>\r\n  `,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
             },
             {
                 "name": "CardWithCTA",
@@ -315,7 +315,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `    \r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      sys Button\r\n    </sys-button>\r\n   `,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
             },
             {
                 "name": "DefaultCard",
@@ -326,6 +326,16 @@
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\"  subTitle=\"Sub Title\">\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n   `,\r\n})"
+            },
+            {
+                "name": "HeaderDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysHeaderComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" subTitle=\"Front-End Library\">\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>`,\r\n})"
             },
             {
                 "name": "HorizentalCard",
@@ -391,7 +401,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card> \r\n    </div>\r\n  `,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 500px;\">\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
                 },
                 {
                     "name": "CardWithCTA",
@@ -433,7 +443,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `    \r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      sys Button\r\n    </sys-button>\r\n   `,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
                 },
                 {
                     "name": "IconButton",
@@ -464,6 +474,18 @@
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
                     "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"settings\" color=\"accent\"  class=\"textBtn\">\r\n        SYS Button\r\n      </sys-button>\r\n   `,\r\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "HeaderDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysHeaderComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-header logo=\"Sys Design\" subTitle=\"Front-End Library\">\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>`,\r\n})"
                 }
             ],
             ".storybook/preview.ts": [
@@ -632,6 +654,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "HorizentalCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeaderDefault",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,8 +1,8 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 
 import {Meta, Story, moduleMetadata} from "@storybook/angular";
-import {MatIconModule} from '@angular/material/icon';
-import { SysButtonComponent, SysCardComponent, sysModule } from 'projects/sys-lib/src/public-api';
+import {MatIconModule} from '@angular/material/icon'
+import { SysButtonComponent, SysCardComponent, sysDesignModule } from 'projects/sys-lib/src/public-api';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
@@ -19,7 +19,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [sysModule, MatIconModule],
+      imports: [sysDesignModule, MatIconModule],
     }),
   ]
 } as Meta;
@@ -82,7 +82,7 @@ export const CardWithActions : Story<SysCardComponent> = (args) => ({
             Accept
           </sys-button>
         </sys-card-action>
-      </sys-card> 
+      </sys-card>
     </div>
   `,
 });

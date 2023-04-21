@@ -1,6 +1,6 @@
 {
-  "name": "sysdesign",
-  "version": "0.0.4",
+  "name": "sysdesign2023",
+  "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
