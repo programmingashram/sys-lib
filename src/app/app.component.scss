@@ -1,11 +1,13 @@
 .temp{
   padding: 25px;
 }
-
+.content{
+    width: 100%;
+}
 .sys-container{
   display: flex;
   gap: 0px 138px;
- 
+
   .right{
     width: 80%;
     position: absolute;
@@ -54,5 +56,5 @@
 
 .sidebar-container{
     display: flex;
-    
+
 }

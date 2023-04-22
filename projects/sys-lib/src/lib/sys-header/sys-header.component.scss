@@ -6,7 +6,7 @@
     justify-content: space-between;
   }
   .title{
-    margin-bottom: 1.4rem !important;
+    margin-bottom: 1.2rem !important;
   }
   .mb-0{
     margin-bottom:0px !important;
@@ -34,7 +34,10 @@
   }
 }
 
+.router-content{
+  width: 100%;
 
+}
 
 @media(max-width: 767px){
   .sys-header{

@@ -1,19 +1,15 @@
-<div class="sys-container">
-  <div class="sidebar-container">
-    <sys-sidebar>
-      <sys-sidebar-item sidebarLogo="Sys Design"></sys-sidebar-item>
-      <sys-sidebar-item icon="home" label="Button" route="/button"></sys-sidebar-item>
-      <sys-sidebar-item icon="settings" label="Cards" route="/card"></sys-sidebar-item>
-      <sys-sidebar-item icon="settings" label="Contact" route="/contact"></sys-sidebar-item>
-    </sys-sidebar>
-  </div>
-  <div class="right">
+
+<div class="sidebar-container">
+  <sys-sidebar>
+    <sys-sidebar-item sidebarLogo="Sys Design"></sys-sidebar-item>
+    <sys-sidebar-item icon="home" label="Button" route="/button"></sys-sidebar-item>
+    <sys-sidebar-item icon="settings" label="Cards" route="/card"></sys-sidebar-item>
+    <sys-sidebar-item icon="settings" label="Contact" route="/contact"></sys-sidebar-item>
+  </sys-sidebar>
+  <div class="content">
     <sys-header >
       <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
     </sys-header>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
   </div>
- 
 </div>
+

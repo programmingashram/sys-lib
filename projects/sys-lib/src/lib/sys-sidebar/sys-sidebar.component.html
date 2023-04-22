@@ -1,5 +1,10 @@
-<nav>
-  <ul class="sys-menu">
-    <ng-content></ng-content>
-  </ul>
-</nav>
+<div class="sidenav-container">
+  <nav>
+    <ul class="sys-menu">
+      <ng-content></ng-content>
+    </ul>
+  </nav>
+  <div class="sys-sidebar-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

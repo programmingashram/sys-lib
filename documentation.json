@@ -191,7 +191,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-94bf0beaa81164475d718ede83b362e569f88b07694d6f21a5ae031a567e5d00b311545dadc08951a785d3c0787ee013e75417be51b67353cc30a368b0f42939",
+            "id": "component-HomeComponent-36dc01722bf1bcd1a4c9d2a1230756cb13434daac06a5f1f1a1216d80aedd54fae74284d27c2c0c4bec35a92b25ad320db9ce56fd330871d550ea5ba613b29ca",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -218,7 +218,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.scss']\r\n})\r\nexport class HomeComponent {\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -227,19 +227,19 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<sys-header logo=\"Sys Design\" >\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\n</sys-header>\n\n\n<div class=\"sidebar-container\">\n  <sys-sidebar>\n    <sys-sidebar-item icon=\"home\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\n    <sys-sidebar-item icon=\"settings\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\n    <sys-sidebar-item icon=\"settings\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\n  </sys-sidebar>\n</div>"
+            "templateData": "<sys-header logo=\"Sys Design\" >\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>\r\n\r\n\r\n<div class=\"sidebar-container\">\r\n  <sys-sidebar>\r\n    <sys-sidebar-item icon=\"home\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"settings\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"settings\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n  </sys-sidebar>\r\n</div>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-49b06548a92a19db21b2a073feccb5f2be0fa81e2a58519a2c91756ab9e6d1f4a87a25b66c3e9bfe6db7737d735aeaa5258ae9875696d67169ff2237c9fa8e29",
+            "id": "module-AppModule-ae3ddce921eef698b7a1b16d745c2b1d55fdb45dc4f83f6dd6a53721d4e8054e0e987de317833773c457c5639617ad2241c4755f27effc69c23e6278d622ad60",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\nimport { HomeComponent } from './home/home.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
