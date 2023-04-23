@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderExampleComponent } from './header-example/header-example.component';
 import { CardExampleComponent } from './card-example/card-example.component';
 import { HomeComponent } from './home/home.component';
+import { TabExampleComponent } from './tab-example/tab-example.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     HeaderExampleComponent,
     CardExampleComponent,
     HomeComponent,
+    TabExampleComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,8 @@ import { SysSidebarComponent } from './sys-sidebar/sys-sidebar.component';
 import { SysSidebarItemComponent } from './sys-sidebar/sys-sidebar-item/sys-sidebar-item.component';
 import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-container/sys-sidebar-container.component';
 import { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sys-sidebar-content.component';
+import { SysTabComponent } from './sys-tab/sys-tab.component';
+import { TabComponent } from './sys-tab/tab/tab.component';
 
 
 
@@ -29,7 +31,9 @@ import { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sy
     SysSidebarComponent,
     SysSidebarItemComponent,
     SysSidebarContainerComponent,
-    SysSidebarContentComponent
+    SysSidebarContentComponent,
+    SysTabComponent,
+    TabComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +50,9 @@ import { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sy
     SysCardHeaderActionComponent,
     SysSidebarComponent,
     SysSidebarItemComponent,
-    SysSidebarContentComponent
+    SysSidebarContentComponent,
+    SysTabComponent,
+    TabComponent
   ]
 })
 export class sysDesignModule { }

@@ -1,0 +1,8 @@
+<div class="tabs">
+    <div class="tab-header">
+        <button class="tab"  *ngFor="let tab of tabs" [disabled]="tab.disable"  (click)="selectTab(tab)"><mat-icon *ngIf="tab.icon">{{tab.icon}}</mat-icon>  {{tab.tabTitle}}</button> 
+    </div>
+    <div class="tab-body">
+        <ng-content></ng-content>
+    </div>
+  </div>
