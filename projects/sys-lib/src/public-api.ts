@@ -19,3 +19,7 @@ export * from "./lib/sys-header/sys-header.component";
 export * from "./lib/sys-sidebar/sys-sidebar.component";
 export * from "./lib/sys-sidebar/sys-sidebar-container/sys-sidebar-container.component";
 export * from "./lib/sys-sidebar/sys-sidebar-item/sys-sidebar-item.component";
+export * from "./lib/sys-sidebar/sys-sidebar-content/sys-sidebar-content.component"
+
+export * from "./lib/sys-tab/sys-tab.component";
+export * from "./lib/sys-tab/tab/tab.component";

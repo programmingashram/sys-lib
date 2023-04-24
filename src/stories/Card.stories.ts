@@ -29,7 +29,7 @@ export default {
 export const DefaultCard: Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
-  <sys-card title="Card Title"  subTitle="Sub Title">
+  <sys-card title="Card Title" [divider]="true" subTitle="Sub Title">
     <sys-card-content>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
@@ -43,7 +43,7 @@ export const DefaultCard: Story<SysCardComponent> = (args) => ({
 export const CardWithCTA: Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
-  <sys-card title="Card Title" subTitle="Sub Title" icon="settings">
+  <sys-card title="Card Title" [divider]="true" subTitle="Sub Title" icon="settings">
     <sys-card-content>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
