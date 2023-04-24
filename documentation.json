@@ -56,7 +56,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"sys-container\">\r\n  <div class=\"sidebar-container\">\r\n    <sys-sidebar>\r\n      <sys-sidebar-item sidebarLogo=\"Sys Design\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"home\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"settings\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"settings\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n    </sys-sidebar>\r\n  </div>\r\n  <div class=\"right\">\r\n    <sys-header >\r\n      <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n    </sys-header>\r\n    <div class=\"content\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n \r\n</div>"
+            "templateData": "<div class=\"sys-container\">\r\n  <div class=\"sidebar-container\">\r\n    <sys-sidebar>\r\n      <sys-sidebar-item sidebarLogo=\"Sys Design\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"smart_button\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_agenda\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"tab\" label=\"Tabs\" route=\"/tab\"></sys-sidebar-item>\r\n    </sys-sidebar>\r\n  </div>\r\n  <div class=\"right\">\r\n    <sys-header >\r\n      <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n    </sys-header>\r\n    <div class=\"content\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n \r\n</div>"
         },
         {
             "name": "ButtonExampleComponent",
@@ -227,19 +227,59 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<sys-header logo=\"Sys Design\" >\r\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n</sys-header>\r\n\r\n\r\n<div class=\"sidebar-container\">\r\n  <sys-sidebar>\r\n    <sys-sidebar-item icon=\"home\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"settings\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\r\n    <sys-sidebar-item icon=\"settings\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\r\n  </sys-sidebar>\r\n</div>"
+            "templateData": "<sys-header logo=\"Sys Design\" >\n    <sys-button icon=\"attachment\" class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\n</sys-header>\n\n\n<div class=\"sidebar-container\">\n  <sys-sidebar>\n    <sys-sidebar-item icon=\"home\" label=\"Button\" route=\"/button\"></sys-sidebar-item>\n    <sys-sidebar-item icon=\"settings\" label=\"Cards\" route=\"/card\"></sys-sidebar-item>\n    <sys-sidebar-item icon=\"settings\" label=\"Contact\" route=\"/contact\"></sys-sidebar-item>\n  </sys-sidebar>\n</div>"
+        },
+        {
+            "name": "TabExampleComponent",
+            "id": "component-TabExampleComponent-1ec8e43c913533f25e7315ea790912934a5d6db9d4c8854e3dbe1faf8fb74b55f4a195beb43a508d2df2cda401f7cef60c9360283bb8cf6a1530265528b61685",
+            "file": "src/app/tab-example/tab-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tab-example",
+            "styleUrls": [
+                "./tab-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tab-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-tab-example',\n  templateUrl: './tab-example.component.html',\n  styleUrls: ['./tab-example.component.scss']\n})\nexport class TabExampleComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tab-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<sys-tabs>\n    <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vitae earum blanditiis enim dolorem sit aut nobis doloribus praesentium assumenda exercitationem laudantium!</p>\n        <sys-button icon=\"send\" color=\"accent\" >\n            sys button\n        </sys-button>\n    </sys-tab>\n    <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n    </sys-tab>\n    <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n    </sys-tab>\n</sys-tabs>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-ae3ddce921eef698b7a1b16d745c2b1d55fdb45dc4f83f6dd6a53721d4e8054e0e987de317833773c457c5639617ad2241c4755f27effc69c23e6278d622ad60",
+            "id": "module-AppModule-44b0e1b9bad0ca79909647c52e7fbbd4a563ee7590af8edd2fc368bbeb34f48a9ff5e64ecbbbe4f4bef476e25956a64c936279db584c2a2f94bc78733f3862f1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\nimport { HomeComponent } from './home/home.component';\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n    TabExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -262,6 +302,9 @@
                         },
                         {
                             "name": "HomeComponent"
+                        },
+                        {
+                            "name": "TabExampleComponent"
                         }
                     ]
                 },
@@ -293,13 +336,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-6b403ffd33222dbf308f00c3242dedb2aa6cb876f813048140429a7ed12ec301b772034f8628ae5b50759eea6f9f557920383680d76229e7b6e2dca8da94f0cb",
+            "id": "module-AppRoutingModule-a212e22b270e3edad2367019a6eaea2b348e307a1b9edeaaf0838f5d260b204e4dc926e4d865460ba01c8cddbfc6b2069935276743b99ec5778fd09dda3f09d5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"tab\", component: TabExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -369,6 +412,26 @@
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\"  subTitle=\"Sub Title\">\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n   `,\r\n})"
+            },
+            {
+                "name": "DefaultTab",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Tab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysCardComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-tabs>\r\n        <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vitae earum blanditiis enim dolorem sit aut nobis doloribus praesentium assumenda exercitationem laudantium!</p>\r\n            <sys-button icon=\"send\" color=\"accent\" >\r\n                sys button\r\n            </sys-button>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n    </sys-tabs>\r\n\r\n   `,\r\n})"
+            },
+            {
+                "name": "DisabledTab",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Tab.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysCardComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-tabs>\r\n        <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vitae earum blanditiis enim dolorem sit aut nobis doloribus praesentium assumenda exercitationem laudantium!</p>\r\n            <sys-button icon=\"send\" color=\"accent\" >\r\n                sys button\r\n            </sys-button>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n    </sys-tabs>`,\r\n})"
             },
             {
                 "name": "HeaderDefault",
@@ -519,6 +582,28 @@
                     "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"settings\" color=\"accent\"  class=\"textBtn\">\r\n        SYS Button\r\n      </sys-button>\r\n   `,\r\n})"
                 }
             ],
+            "src/stories/Tab.stories.ts": [
+                {
+                    "name": "DefaultTab",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Tab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysCardComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-tabs>\r\n        <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vitae earum blanditiis enim dolorem sit aut nobis doloribus praesentium assumenda exercitationem laudantium!</p>\r\n            <sys-button icon=\"send\" color=\"accent\" >\r\n                sys button\r\n            </sys-button>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n    </sys-tabs>\r\n\r\n   `,\r\n})"
+                },
+                {
+                    "name": "DisabledTab",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Tab.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysCardComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-tabs>\r\n        <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vitae earum blanditiis enim dolorem sit aut nobis doloribus praesentium assumenda exercitationem laudantium!</p>\r\n            <sys-button icon=\"send\" color=\"accent\" >\r\n                sys button\r\n            </sys-button>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n        <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n        </sys-tab>\r\n    </sys-tabs>`,\r\n})"
+                }
+            ],
             "src/stories/Header.stories.ts": [
                 {
                     "name": "HeaderDefault",
@@ -565,6 +650,10 @@
                     {
                         "path": "card",
                         "component": "CardExampleComponent"
+                    },
+                    {
+                        "path": "tab",
+                        "component": "TabExampleComponent"
                     }
                 ],
                 "kind": "module"
@@ -626,6 +715,15 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tab-example/tab-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabExampleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -716,6 +814,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "HeaderDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Tab.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultTab",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Tab.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledTab",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
