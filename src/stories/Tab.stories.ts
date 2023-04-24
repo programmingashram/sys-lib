@@ -100,7 +100,7 @@ export const CardWithTab: Story<SysCardComponent> = (args) => ({
 export const CardWithVerticalTab: Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
-  <sys-card title="Card Title"   subTitle="Sub Title" >
+  <sys-card title="Card Title" [divider]="true"  subTitle="Sub Title" >
   <sys-CardHeader-action>
     <sys-button icon="group_add"  class="" [iconBtn]="true" > </sys-button>
   </sys-CardHeader-action>
