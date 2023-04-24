@@ -78,7 +78,7 @@ export const CardWithTab: Story<SysCardComponent> = (args) => ({
     <sys-button icon="favorite"  [iconBtn]="true" > </sys-button>
   </sys-CardHeader-action>
   <sys-card-content>
-    <sys-tabs [noBorder]=true>
+    <sys-tabs >
       <sys-tab tabTitle="Tab 1" [active]="true" icon="tab">
         <h4>Tab 1</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
