@@ -9,7 +9,8 @@ import { TabComponent } from './tab/tab.component';
 export class SysTabComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Input() disable!: boolean;
-
+  @Input() noBorder: boolean;
+  @Input() vertical: boolean;
   ngAfterContentInit() {
     const activeTabs = this.tabs.filter((tab) => tab.active);
 

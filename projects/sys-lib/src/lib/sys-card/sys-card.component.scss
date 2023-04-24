@@ -40,7 +40,7 @@
 
 .title{
   color: rgba(0, 0, 0);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   font-weight: 500;
   font-size: 1rem;
 }
@@ -55,6 +55,12 @@
   }
 }
 
+.divider{
+  height: 1px;
+  width: 100%;
+  background-color: #F5F5F5;
+  margin-bottom: 0.5rem;
+}
 
 .sys-card-action{
   display: flex;

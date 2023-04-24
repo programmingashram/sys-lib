@@ -7,8 +7,8 @@
         </div>
         <mat-icon class="mat-18" *ngIf="icon" >{{icon}}</mat-icon>
         <ng-content select="sys-CardHeader-action" *ngIf="sysCardHeaderAction"></ng-content>
-
     </div>
+    <div class="divider" *ngIf="divider"></div>
     <div class="cardImg" *ngIf="cardImg" [ngClass]="{'pad-10': !flatImage}">
       <img src="{{cardImg}}" alt="" >
     </div>

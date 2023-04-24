@@ -1,7 +1,47 @@
+.noBorder{
+  border: none !important;
+  .divider{
+    height: 0;
+  }
+}
+.vertical{
+  &.tabs{
+      display: flex;
+      .tab-header{
+          flex-wrap: wrap;
+          height: auto;
+          white-space: nowrap;
+          width: auto;
+          .tab{
+            gap: 0px !important;
+            width: 100%;
+            &:first-child{
+              border-top-left-radius: 4px;
+             }
+             &:last-child{
+              border-top-right-radius: 0px;
+              border-bottom-left-radius: 4px;
+             }
+          }
+      }
+      .tab-body{
+        width: 100%;
+      }
+      .divider{
+        display: none;
+      }
+
+  }
+}
+.divider{
+  height: 1px;
+  width: 100%;
+  background-color: #F5F5F5;
+}
 .tabs {
     border: 1px solid #D9D9D9;
     border-radius: 4px;
-   
+
     .tab-body{
         padding: 1rem;
         background: white;
@@ -13,20 +53,22 @@
     display: flex;
     width: 100%;
     cursor: pointer;
-    background: #F5F5F5;
+    background:white;
     color: #000000;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    height: 44px;
+    height: 34px;
     .tab{
         padding: 0.6rem 1rem;
         display: flex;
         align-items: center;
-        gap: 0px 11px;
+        gap: 0px 6px;
         width: 100%;
         border: none;
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 600;
+        background: white;
+        white-space: nowrap;
        &:first-child{
         border-top-left-radius: 4px;
        }
@@ -35,7 +77,7 @@
        }
         cursor: pointer;
         .mat-icon{
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             height: auto;
         }
         &:hover{
@@ -65,7 +107,6 @@
         height: 30px;
       }
     .tab{
-        padding: 0 !important;
         padding-left: 0.3rem !important;
         display: flex;
         align-items: center;
@@ -83,7 +124,7 @@
         cursor: pointer;
         .mat-icon{
             font-size: 1rem !important;
-            
+
         }
         &:hover{
             background-color: #5C5CFFB2;

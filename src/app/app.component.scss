@@ -6,13 +6,12 @@
 }
 .sys-container{
   display: flex;
-  gap: 0px 138px;
+  gap: 0px 0px;
 
   .right{
-    width: 80%;
-    position: absolute;
+    width: 100%;
     right: 0;
-    margin-left: 116px;
+
     .content{
       padding: 10px;
     }
