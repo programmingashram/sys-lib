@@ -7,9 +7,37 @@
 .p-10{
   padding:1rem;
 }
+table{
+  width: 100%;
+  tbody tr{
+    display: flex;
+    td{
+      h5{
+        font-weight: 900;
+      }
+      // border: 1px solid  rgba(128, 128, 128, 0.1411764706);
+      padding: 1rem;
+      float: left;
+      width: 33.333%;
+    }
+  }
+}
 
 @media(max-width: 767px){
-  .flex-box{
-    flex-wrap: wrap;
+  table{
+    width: 100%;
+    tbody tr{
+      display: flex;
+      flex-wrap: wrap;
+      td{
+        h5{
+          font-weight: 900;
+        }
+        // border: 1px solid  rgba(128, 128, 128, 0.1411764706);
+        padding: 1rem;
+        float: none;
+        width: 100%;
+      }
+    }
   }
 }

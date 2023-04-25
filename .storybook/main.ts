@@ -10,6 +10,9 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: true,
-  }
+  },
+  features: {
+    legacyMdx1: true, // 👈 Enables MDX v1 support
+  },
 };
 export default config;

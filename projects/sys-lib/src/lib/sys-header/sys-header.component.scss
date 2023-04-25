@@ -40,7 +40,7 @@
 
 @media(max-width: 767px){
   .sys-header{
-    padding: 1.2rem 1.2rem;
+    padding: auto;
     .mobileMenubtn{
       display: block !important;
     }
@@ -51,5 +51,9 @@
       position: fixed;
       top: 10px;
     }
+  }
+  .router-content{
+    padding: 1rem;
+    margin-left: 44px;
   }
 }

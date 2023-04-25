@@ -11,6 +11,7 @@ export class SysTabComponent implements AfterContentInit {
   @Input() disable!: boolean;
   @Input() noBorder: boolean;
   @Input() vertical: boolean;
+  @Input() bottomHeader : boolean;
   ngAfterContentInit() {
     const activeTabs = this.tabs.filter((tab) => tab.active);
 

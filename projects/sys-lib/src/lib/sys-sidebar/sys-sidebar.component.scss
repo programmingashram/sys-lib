@@ -6,6 +6,7 @@
       margin-top: 3rem;
     }
 }
+
 ::ng-deep{
     nav{
       width: 200px;
@@ -19,6 +20,7 @@
         overflow-y: scroll;
         padding-left: 0px;
         z-index: 99999;
+        border-right: 1px solid rgba(128, 128, 128, 0.1411764706);
         &::-webkit-scrollbar {
             display: none;
         }
@@ -36,6 +38,7 @@
         height: 23px;
         border-bottom: 1px solid #80808024;
         &.active{
+
           background-color: #4343FF;
           a{
             color: white;
@@ -81,6 +84,18 @@
           gap: 0px 15px;
           font-size: 1rem;
         }
+      }
+    }
+    @media(max-width: 767px){
+      .label, .logo{
+        display: none;
+      }
+      nav {
+        width: 50px;
+        height: 100%;
+      }
+      .sidenav-container{
+        position: fixed;
       }
     }
   }
