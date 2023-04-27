@@ -16,6 +16,10 @@ import { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-containe
 import { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sys-sidebar-content.component';
 import { SysTabComponent } from './sys-tab/sys-tab.component';
 import { TabComponent } from './sys-tab/tab/tab.component';
+import { SysAccordionComponent } from './sys-accordion/sys-accordion.component';
+import { SysAccordionItemComponent } from './sys-accordion/sys-accordion-item/sys-accordion-item.component';
+import { SysAccordionHeaderComponent } from './sys-accordion/sys-accordion-header/sys-accordion-header.component';
+import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sys-accordion-body.component';
 
 
 
@@ -33,7 +37,11 @@ import { TabComponent } from './sys-tab/tab/tab.component';
     SysSidebarContainerComponent,
     SysSidebarContentComponent,
     SysTabComponent,
-    TabComponent
+    TabComponent,
+    SysAccordionComponent,
+    SysAccordionItemComponent,
+    SysAccordionHeaderComponent,
+    SysAccordionBodyComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +60,11 @@ import { TabComponent } from './sys-tab/tab/tab.component';
     SysSidebarItemComponent,
     SysSidebarContentComponent,
     SysTabComponent,
-    TabComponent
+    TabComponent,
+    SysAccordionComponent,
+    SysAccordionItemComponent,
+    SysAccordionHeaderComponent,
+    SysAccordionBodyComponent
   ]
 })
 export class sysDesignModule { }

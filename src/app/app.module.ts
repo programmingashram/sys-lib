@@ -11,6 +11,7 @@ import { HeaderExampleComponent } from './header-example/header-example.componen
 import { CardExampleComponent } from './card-example/card-example.component';
 import { HomeComponent } from './home/home.component';
 import { TabExampleComponent } from './tab-example/tab-example.component';
+import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -22,6 +23,7 @@ import { TabExampleComponent } from './tab-example/tab-example.component';
     CardExampleComponent,
     HomeComponent,
     TabExampleComponent,
+    AccordionExampleComponent,
   ],
   imports: [
     BrowserModule,

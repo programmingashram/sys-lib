@@ -1,0 +1,15 @@
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.accordion__panel {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion__panel--active {
+  background-color: #e2e2e2;
+}
