@@ -1,4 +1,4 @@
-<div class="sys-header" color="accent">
+<div class="sys-header" color="accent" [ngClass]="{'fixed': fixed}">
     <div class="sys-row">
         <div class="col2">
             <h1 class="title" [ngClass]="{'mb-0': !subTitle}" *ngIf="logo">{{logo}}</h1>

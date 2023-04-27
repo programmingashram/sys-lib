@@ -43,7 +43,7 @@ npm i sysdesign2023
 **After Install sysdesign2023 you also need to install material for icons:** 
 
 ```sh
-ng add @angular/maetrial
+ng add @angular/material
 ```
 
 **Now import sysDesignModule from sysdesign2023 in your app.module.ts** 

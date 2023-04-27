@@ -8,8 +8,27 @@
 }
 
 ::ng-deep{
+  .router-content{
+    padding: 1rem;
+    margin-left: 200px;
+  }
+}
+
+::ng-deep{
+    .label, .mat-icon{
+      font-size: 1rem;
+      height: auto !important;
+    }
     nav{
       width: 200px;
+      position: fixed;
+      height: 100%;
+      &.small{
+          width: 40px;
+          .label{
+            display: none;
+          }
+      }
     }
     .sys-menu{
         display: block;
@@ -29,14 +48,17 @@
           content: "";
 
         }
+
       li{
         margin-right: 1rem;
         line-height: 0;
         list-style: none;
         width: 100%;
         padding: 1.2rem 0px;
-        height: 23px;
+        height: 10px;
         border-bottom: 1px solid #80808024;
+
+
         &.ripple {
           background-position: center;
           transition: background 0.8s;
@@ -53,7 +75,7 @@
             display: flex;
             align-items: unset;
             background-color: #4343FF;
-            height: 23px;
+            height: 7px;
             a{
                 color: white;
                 font-size: 1.4rem;
@@ -85,7 +107,7 @@
           display: flex;
           align-items: center;
           padding-left: 10px;
-          gap: 0px 15px;
+          gap: 0px 5px;
           font-size: 1rem;
         }
       }
