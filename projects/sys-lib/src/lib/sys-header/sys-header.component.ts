@@ -8,12 +8,13 @@ import { SysSidebarComponent } from '../sys-sidebar/sys-sidebar.component';
 })
 export class SysHeaderComponent {
   @Input() logo!: any;
+  @Input() logoIcon!: any;;
   @Input() subTitle!: string;
   @Input() fixed!:boolean;
   @Input() Menu!: any[];
   menu: boolean = false;
   menuClose: boolean = false;
-  
+
   @ViewChild(SysSidebarComponent) sidebarComponent: SysSidebarComponent;
 
   toggleSidebar() {
@@ -21,7 +22,7 @@ export class SysHeaderComponent {
   }
 
   menuOpen(){
-    this.menu=!this.menu;
+
   }
   ngOnInit(){
 

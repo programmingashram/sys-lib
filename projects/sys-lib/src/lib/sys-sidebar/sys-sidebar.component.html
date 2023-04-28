@@ -1,9 +1,10 @@
 <div class="sidenav-container">
-  <nav class="nav">
+  <nav class="nav" [ngClass]="{'small': small}">
     <ul class="sys-menu">
       <div class="data">
         <ng-content></ng-content>
       </div>
     </ul>
   </nav>
+  
 </div>

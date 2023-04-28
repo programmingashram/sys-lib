@@ -23,3 +23,10 @@ export * from "./lib/sys-sidebar/sys-sidebar-content/sys-sidebar-content.compone
 
 export * from "./lib/sys-tab/sys-tab.component";
 export * from "./lib/sys-tab/tab/tab.component";
+
+
+export * from "./lib/sys-accordion/sys-accordion.component";
+export * from "./lib/sys-accordion/sys-accordion-body/sys-accordion-body.component";
+export * from "./lib/sys-accordion/sys-accordion-header/sys-accordion-header.component";
+export * from "./lib/sys-accordion/sys-accordion-item/sys-accordion-item.component";
+export * from "./lib/sys-accordion/sys-panel-header/sys-panel-header.component";

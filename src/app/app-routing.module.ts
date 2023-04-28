@@ -4,6 +4,8 @@ import { ButtonExampleComponent } from './button-example/button-example.componen
 import { CardExampleComponent } from './card-example/card-example.component';
 import { TabExampleComponent } from './tab-example/tab-example.component';
 import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
+import { HeaderExampleComponent } from './header-example/header-example.component';
+import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,10 @@ const routes: Routes = [
   ,
   {
     path: "accordion", component: AccordionExampleComponent,
+  }
+  ,
+  {
+    path: "sidebar", component: SidebarExampleComponent,
   }
 ];
 

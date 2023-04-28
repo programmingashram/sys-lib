@@ -1,18 +1,12 @@
 .sidenav-container{
     display: flex;
-    height: 100vh;
     .sys-sidebar-content{
       padding: 1.3rem;
       margin-top: 3rem;
     }
 }
 
-::ng-deep{
-  .router-content{
-    padding: 1rem;
-    margin-left: 200px;
-  }
-}
+
 
 ::ng-deep{
     .label, .mat-icon{
@@ -23,10 +17,15 @@
       width: 200px;
       position: fixed;
       height: 100%;
+      z-index: 999;
+
       &.small{
           width: 40px;
           .label{
             display: none;
+          }
+          mat-icon{
+            width: auto !important;
           }
       }
     }
@@ -75,7 +74,9 @@
             display: flex;
             align-items: unset;
             background-color: #4343FF;
-            height: 7px;
+            height: 5px;
+            position: sticky;
+            top: 0;
             a{
                 color: white;
                 font-size: 1.4rem;
@@ -88,6 +89,7 @@
             a{
                 color: white;
             }
+
         }
         &:focus{
             background-color: #2E2EFFBF;
@@ -113,6 +115,9 @@
       }
     }
     @media(max-width: 767px){
+      .sidebar-header {
+        height: 4px !important;
+      }
       .label, .logo{
         display: none;
       }

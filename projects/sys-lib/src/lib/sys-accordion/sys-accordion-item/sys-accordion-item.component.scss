@@ -1,0 +1,72 @@
+.accordion__panel__header{
+  background-color: #00000005;
+  padding: 4px 10px;
+  border-bottom: 1px solid #f6f6f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .panelTitle{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .mat-icon{
+    font-size: 1rem;
+  }
+  .panelHeaderDesciption{
+    font-size: 0.7rem;
+  }
+  .left, .right{
+    display: flex;
+    align-items: center;
+    gap: 0px 15px;
+  }
+  &:hover{
+    background-color:  rgba(46, 46, 255, 0.7490196078);
+    color: white;
+
+  }
+
+
+}
+.disable{
+  background-color: #80808047;
+  color: #00000069;
+  pointer-events: none;
+}
+.accordion__panel__content{
+  padding: 4px 10px;
+}
+
+
+
+::ng-deep{
+  .accordion__panel--active {
+    .accordion__panel__header{
+      background-color: rgb(67 67 255);
+      color: white;
+    }
+
+  }
+
+}
+
+
+
+@media(max-width: 767px){
+  .accordion__panel__header .panelTitle {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    max-width: 135px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .panelHeaderDesciption{
+    display: none;
+  }
+}

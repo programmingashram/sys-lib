@@ -1,4 +1,4 @@
-import { Component, ContentChildren, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ContentChildren, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { SysHeaderComponent } from '../sys-header/sys-header.component';
 import { SidebarService } from './sidebar.service';
@@ -13,6 +13,7 @@ interface SidebarItem {
 })
 export class SysSidebarComponent {
   @Input() items: SidebarItem[];
+  @Input() small: boolean;
   selectedItem: string;
 
   isOpen = false;
@@ -20,6 +21,8 @@ export class SysSidebarComponent {
   toggle() {
     this.isOpen = !this.isOpen;
   }
+
+@Output() myEvent = new EventEmitter()
 
   constructor(private router: Router, private element: ElementRef, private sidebarService: SidebarService) { }
 

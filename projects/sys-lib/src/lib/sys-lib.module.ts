@@ -20,6 +20,7 @@ import { SysAccordionComponent } from './sys-accordion/sys-accordion.component';
 import { SysAccordionItemComponent } from './sys-accordion/sys-accordion-item/sys-accordion-item.component';
 import { SysAccordionHeaderComponent } from './sys-accordion/sys-accordion-header/sys-accordion-header.component';
 import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sys-accordion-body.component';
+import { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-panel-header.component';
 
 
 
@@ -41,7 +42,8 @@ import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sy
     SysAccordionComponent,
     SysAccordionItemComponent,
     SysAccordionHeaderComponent,
-    SysAccordionBodyComponent
+    SysAccordionBodyComponent,
+    SysPanelHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sy
     SysAccordionComponent,
     SysAccordionItemComponent,
     SysAccordionHeaderComponent,
-    SysAccordionBodyComponent
+    SysAccordionBodyComponent,
+    SysPanelHeaderComponent
   ]
 })
 export class sysDesignModule { }
