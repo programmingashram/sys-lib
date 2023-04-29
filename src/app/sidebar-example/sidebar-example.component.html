@@ -2,7 +2,7 @@
 <h4>Sidebar</h4>
 <sys-sidebar [small]="small">
   <sys-sidebar-item menuIcon="menu" (click)="menu()"></sys-sidebar-item>
-  <sys-sidebar-item *ngFor="let data of menuData" [icon]="data.icon" [route]="data.routerLink">{{data.label}}</sys-sidebar-item>
+  <sys-sidebar-item *ngFor="let data of menuData" [icon]="data.icon" >{{data.label}}</sys-sidebar-item>
 </sys-sidebar>
 
 

@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sys-design';
-   small : boolean = false;
-   menu(){
+    small : boolean = false;
+    menu(){
       this.small = !this.small;
-   }
+    }
 }

@@ -14,17 +14,17 @@ export class SidebarExampleComponent {
         {
           icon: "smart_button",
           label: "Button",
-          routerLink: "/button"
+
         },
         {
           icon: "smart_button",
           label: "Badge",
-          routerLink: "/button"
+
         },
         {
           icon: "smart_button",
           label: "Grid",
-          routerLink: "/button"
+
         }
     ]
 }

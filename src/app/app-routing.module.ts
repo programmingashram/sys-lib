@@ -6,6 +6,7 @@ import { TabExampleComponent } from './tab-example/tab-example.component';
 import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
 import { HeaderExampleComponent } from './header-example/header-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
+import { BadgeExampleComponent } from './badge-example/badge-example.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
   ,
   {
     path: "sidebar", component: SidebarExampleComponent,
+  },
+  {
+    path: "badge", component: BadgeExampleComponent,
   }
 ];
 
