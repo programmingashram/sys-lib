@@ -1,0 +1,2857 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "SidebarItem",
+            "id": "interface-SidebarItem-7a72d38c6949d5a2829daa309da0774fa8a94a935e459e65af08372304257578e9382e26c1af2e9412c6f08671fc8fd5e4f3b654b44d50ad6504a6e3a42a8df9",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, ContentChildren, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';\nimport { NavigationEnd, Router } from '@angular/router';\nimport { SysHeaderComponent } from '../sys-header/sys-header.component';\nimport { SidebarService } from './sidebar.service';\ninterface SidebarItem {\n  label: string;\n  route: string;\n}\n@Component({\n  selector: 'sys-sidebar',\n  templateUrl: './sys-sidebar.component.html',\n  styleUrls: ['./sys-sidebar.component.scss']\n})\nexport class SysSidebarComponent {\n  @Input() items: SidebarItem[];\n  @Input() small: boolean;\n  selectedItem: string;\n\n  isOpen = false;\n\n  toggle() {\n    this.isOpen = !this.isOpen;\n  }\n\n@Output() myEvent = new EventEmitter()\n\n  constructor(private router: Router, private element: ElementRef, private sidebarService: SidebarService) { }\n\n  menuBar(){\n    const sidebar = this.element.nativeElement.querySelector('.nav');\n    const routerContent = this.element.nativeElement.querySelector('.router-content');\n    sidebar.classList.add(\"small\");\n\n  }\n\n  ngAfterViewInit() {\n\n  }\n\n  ngOnInit() {\n\n    this.router.events.subscribe((event) => {\n      if (event instanceof NavigationEnd) {\n        this.selectedItem = event.url;\n      }\n    });\n  }\n}\nfunction contentChildren(SysHeaderComponent: any): (target: SysSidebarComponent, propertyKey: \"header\") => void {\n  throw new Error('Function not implemented.');\n}\n\n",
+            "properties": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "projects/sys-lib/src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "SidebarService",
+            "id": "injectable-SidebarService-21ba33869b9e1ad1248ee12b0d05ff91ae0fc53e4a5371e7074b9993f457cec6641cc904e8fa4dc21946f37f99a361899dc84f77c638c9dd819d6fb32ccd0587",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sidebar.service.ts",
+            "properties": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "methods": [
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SidebarService {\r\n  isOpen = false;\r\n\r\n  toggle() {\r\n    this.isOpen = !this.isOpen;\r\n  }\r\n}\r\n",
+            "type": "injectable"
+        },
+        {
+            "name": "SysLibService",
+            "id": "injectable-SysLibService-a3396624875c19d251a4fa37fb447f7b92ab4b1c0729f376a345f4ddba415d9e65efdc364fdd37303dff8f26f411c86ce32442c126a45b39c631a49d468efc4f",
+            "file": "projects/sys-lib/src/lib/sys-lib.service.ts",
+            "properties": [],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SysLibService {\r\n\r\n  constructor() { }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 6
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [
+        {
+            "name": "CustomBadgeDirective",
+            "id": "directive-CustomBadgeDirective-b52d93a2f91819a2a2e0d25c3f63c5cb06c6fcd1642d52314c11dc476fa724627a6f669074571aabb26f3aa78ba3916cbc90633a4abdd1f7799af450c51e201c",
+            "file": "projects/sys-lib/src/lib/sys-badge/badge.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[sysBadge]'\n})\nexport class CustomBadgeDirective {\n  @Input('sysBadge') badgeContent: string;\n\n  constructor(private el: ElementRef, private renderer: Renderer2) {}\n\n  ngOnInit(): void {\n    this.setBadgeContent();\n  }\n\n  private setBadgeContent(): void {\n    const badge = this.renderer.createElement('span');\n    const text = this.renderer.createText(this.badgeContent);\n    this.renderer.appendChild(badge, text);\n    this.renderer.addClass(badge, 'sys-badge-content');\n    this.renderer.appendChild(this.el.nativeElement, badge);\n\n  }\n}\n",
+            "selector": "[sysBadge]",
+            "providers": [],
+            "inputsClass": [
+                {
+                    "name": "sysBadge",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 7,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setBadgeContent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-a53fd738b978780d39fb5fcc9ae4cfe0088e57a1f6ce674862d57dab9192140bd1c05548a9910db0469a431142886e658ff2e761f15781b2ad430e58d64724d0",
+            "file": "projects/sys-lib/src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 786,
+                            "end": 799,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 787,
+                                "end": 795,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 42,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 34,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 48,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 50
+                    }
+                }
+            }
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a71f246366d5d3dd2485d220bc2c384ceb3f056eb50faded8ff9e4a6404ca4a28c23117da4b98825de8da482bc2ba3b9abeab416745b32d1a89f68595d2dc939",
+            "file": "projects/sys-lib/src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "NestedMenuComponent",
+            "id": "component-NestedMenuComponent-08b23d6c4914015cd90c6a0d3db1973022a751967e4e7ab6e99639085f009de91c13925ddf625d305570eb78ff68155e3fa832fa4ea60d4cfb76ae43bf296d71",
+            "file": "projects/sys-lib/src/lib/sys-header/nested-menu/nested-menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-menu",
+            "styleUrls": [
+                "./nested-menu.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./nested-menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-menu',\r\n  templateUrl: './nested-menu.component.html',\r\n  styleUrls: ['./nested-menu.component.css']\r\n})\r\nexport class NestedMenuComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./nested-menu.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\r\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-f5d2fd9ba0ee70c24f514ef21ebdae50beb2e2f42594802a96cdbeb02a59371897162b6be17fcb45cdc0d237d3e4bee611d1ad1d446a54e0699ba35b48991b87",
+            "file": "projects/sys-lib/src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 64
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "SysAccordionBodyComponent",
+            "id": "component-SysAccordionBodyComponent-88ce36765c571fb5561f32996a59108a592624aaeabb163e6dfe9d2cdd3a36ba9c58714285ed61e82c5e46410f928c7a7b86e276713941289ec59b4c209e85eb",
+            "file": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-body/sys-accordion-body.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-accordion-body",
+            "styleUrls": [
+                "./sys-accordion-body.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-accordion-body.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'sys-accordion-body',\n  templateUrl: './sys-accordion-body.component.html',\n  styleUrls: ['./sys-accordion-body.component.css']\n})\nexport class SysAccordionBodyComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sys-accordion-body.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "SysAccordionComponent",
+            "id": "component-SysAccordionComponent-af957b0410d188c98c5f8b9a3afb2eefb3437b6883ab52b8222f4288e33f7eda7b393881043c567b9ff785370f55cfcd4f632010904a835f30af950a658e5b0e",
+            "file": "projects/sys-lib/src/lib/sys-accordion/sys-accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-accordion",
+            "styleUrls": [
+                "./sys-accordion.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-accordion.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "panels",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueryList<SysAccordionItemComponent>",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "ContentChildren",
+                            "stringifiedArguments": "SysAccordionItemComponent"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "togglePanel",
+                    "args": [
+                        {
+                            "name": "panel",
+                            "type": "SysAccordionItemComponent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "panel",
+                            "type": "SysAccordionItemComponent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ContentChildren, QueryList } from '@angular/core';\nimport { SysAccordionItemComponent } from './sys-accordion-item/sys-accordion-item.component';\n\n@Component({\n  selector: 'sys-accordion',\n  templateUrl: './sys-accordion.component.html',\n  styleUrls: ['./sys-accordion.component.scss']\n})\nexport class SysAccordionComponent {\n  @ContentChildren(SysAccordionItemComponent) panels: QueryList<SysAccordionItemComponent>;\n\n  constructor() { }\n\n  ngOnInit(): void {\n    this.panels.toArray()[0].active = true;\n  }\n\n  togglePanel(panel: SysAccordionItemComponent) {\n    this.panels.toArray().forEach(p => {\n      if (p !== panel) {\n        p.active = false;\n      }\n    });\n    panel.active = !panel.active;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".accordion {\r\n  border: 1px solid #D9D9D9;\r\n  border-radius: 4px;\r\n}\r\n\r\n\r\n\r\n.accordion__panel {\r\n\r\n  padding: 10px;\r\n  cursor: pointer;\r\n}\r\n\r\n",
+                    "styleUrl": "./sys-accordion.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "templateData": "<div class=\"accordion\">\n  <ng-content select=\"sys-accordion-item\"></ng-content>\n</div>\n"
+        },
+        {
+            "name": "SysAccordionHeaderComponent",
+            "id": "component-SysAccordionHeaderComponent-f2faa7bf740b34c6d9dc23668cf4a2d5b01d71dc4ccd4ba0b4c3ba2da6da6a8a30edd7cec7ec5054daa6e91b9aee308406007676723dc5fc8fcef118337b74da",
+            "file": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-header/sys-accordion-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-accordion-header",
+            "styleUrls": [
+                "./sys-accordion-header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-accordion-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'sys-accordion-header',\n  templateUrl: './sys-accordion-header.component.html',\n  styleUrls: ['./sys-accordion-header.component.css']\n})\nexport class SysAccordionHeaderComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sys-accordion-header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "SysAccordionItemComponent",
+            "id": "component-SysAccordionItemComponent-06816ff7a98720581e57904b22db409092f3e7c4aed9530875846d893812f0103ff75eff92aa1abfed1c5ca1156eaf6124b4c4ad895a87f0fa1ff77a5f9cd93b",
+            "file": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-item/sys-accordion-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-accordion-item",
+            "styleUrls": [
+                "./sys-accordion-item.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-accordion-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "discription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "expendless",
+                    "defaultValue": "\"expand_less\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "expendMore",
+                    "defaultValue": "\"expand_more\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleActive",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'sys-accordion-item',\n  templateUrl: './sys-accordion-item.component.html',\n  styleUrls: ['./sys-accordion-item.component.scss']\n})\nexport class SysAccordionItemComponent {\n  @Input() active: boolean = false;\n  @Input() label: string;\n  @Input() discription: string;\n  @Input() disable: boolean;\n  @Input() expendless: string = \"expand_less\";\n  @Input() expendMore: string = \"expand_more\";\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  toggleActive() {\n    this.active = !this.active;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".accordion__panel__header{\r\n  background-color: #FFFFFF;\r\n  padding: 4px 10px;\r\n  border-bottom: 1px solid #f6f6f6;\r\n  cursor: pointer;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  border-top-right-radius: 4px;\r\n  border-top-left-radius: 4px;\r\n  border-top: 1px solid #f6f6f6;\r\n\r\n  .panelTitle{\r\n    font-size: 0.8rem;\r\n    font-weight: 500;\r\n    margin-bottom: 0;\r\n  }\r\n  .mat-icon{\r\n    font-size: 1rem;\r\n  }\r\n  .panelHeaderDesciption{\r\n    font-size: 0.7rem;\r\n  }\r\n  .left, .right{\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 0px 15px;\r\n  }\r\n  &:hover{\r\n    background-color:  rgba(46, 46, 255, 0.7490196078);\r\n    color: white;\r\n    border-bottom-right-radius: 4px;\r\n    border-bottom-left-radius: 4px;\r\n  }\r\n\r\n\r\n}\r\n.disable{\r\n  background-color: #80808047;\r\n  color: #00000069;\r\n  pointer-events: none;\r\n  border-top-right-radius: 4px;\r\n  border-top-left-radius: 4px;\r\n  border-bottom-right-radius: 4px;\r\n  border-bottom-left-radius: 4px;\r\n}\r\n.accordion__panel__content{\r\n  padding: 4px 10px;\r\n}\r\n\r\n\r\n\r\n::ng-deep{\r\n  .accordion__panel--active {\r\n    margin-bottom: 1rem;\r\n    .accordion__panel__header{\r\n      background-color: rgb(67 67 255);\r\n      color: white;\r\n    }\r\n  }\r\n}\r\n\r\n\r\n\r\n@media(max-width: 767px){\r\n  .accordion__panel__header .panelTitle {\r\n    font-size: 0.8rem;\r\n    font-weight: 500;\r\n    margin-bottom: 0;\r\n    max-width: 135px;\r\n    overflow-x: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n    width: 100%;\r\n  }\r\n  .panelHeaderDesciption{\r\n    display: none;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./sys-accordion-item.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "templateData": "<div class=\"accordion__panel\" [class.accordion__panel--active]=\"active\" [ngClass]=\"{'disable': disable}\">\n  <div class=\"accordion__panel__header\" [attr.disabled]=\"disable\" (click)=\"toggleActive()\">\n    <div class=\"left\">\n      <h4 class=\"panelTitle\">{{label}}</h4>\n      <span class=\"panelHeaderDesciption\" *ngIf=\"discription\">{{discription}}</span>\n    </div>\n    <div class=\"right\">\n      <ng-content select=\"sys-panel-header\"></ng-content>\n      <mat-icon class=\"mat-18\" *ngIf=\"active\">{{expendless}}</mat-icon>\n      <mat-icon class=\"mat-18\" *ngIf=\"!active\">{{expendMore}}</mat-icon>\n    </div>\n  </div>\n  <div class=\"accordion__panel__content\" [hidden]=\"!active\">\n    <ng-content select=\"sys-accordion-body\"></ng-content>\n  </div>\n</div>\n\n<!-- <li [routerLink]=\"route\" routerLinkActive=\"active\" class=\"ripple\"  [ngClass]=\"{'sidebar-header': sidebarLogo}\">\n  <a disabled>\n    <mat-icon class=\"mat-18\"  *ngIf=\"icon\">{{icon}}</mat-icon>\n    <span class=\"label\">{{label}}</span>\n    <span class=\"logo\">{{sidebarLogo}}</span>\n  </a>\n</li> -->\n"
+        },
+        {
+            "name": "SysButtonComponent",
+            "id": "component-SysButtonComponent-9b3fe736ebbe24a28fd0c9952a634b7537539399fd8a121135f0196c25f39e834c0d535f5438cd8ed910636693620926f48d2f0b54eade634daa82f10b04dc91",
+            "file": "projects/sys-lib/src/lib/sys-button/sys-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-button",
+            "styleUrls": [
+                "./sys-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconBtn",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "outline",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "varient",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewChild } from '@angular/core';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'sys-button',\r\n  templateUrl: './sys-button.component.html',\r\n  styleUrls: ['./sys-button.component.scss']\r\n})\r\nexport class SysButtonComponent {\r\n  [x: string]: any;\r\n  @Input() icon!: string;\r\n  @Input() color!: string;\r\n  @Input() disable!: boolean;\r\n  @Input() outline!: boolean;\r\n  @Input() type!: string;\r\n  @Input() iconBtn!: boolean;\r\n  varient: any;\r\n\r\n\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep{\r\n  sys-button{\r\n    position: relative;\r\n    width: 100px;\r\n  }\r\n}\r\n.sys-button{\r\n  padding: 0.8rem 0.5rem;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 0px 6px;\r\n  height:30px;\r\n  line-height: 0;\r\n  border-radius: 3px;\r\n  border: none;\r\n  cursor: pointer;\r\n  text-transform: capitalize;\r\n  box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.12);\r\n  background-color: #FFFFFF;\r\n\r\n  span{\r\n    font-size: 0.9rem;\r\n    margin-top: 1px;\r\n  }\r\n  .mat-icon{\r\n    font-size: 1rem;\r\n    height: auto;\r\n    width: auto;\r\n  }\r\n\r\n  &:disabled{\r\n    opacity: 0.5;\r\n    pointer-events: none;\r\n\r\n  }\r\n\r\n  &[color=accent]{\r\n    background-color: #2E2EFF;\r\n    color: #ffffff;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n    /* Ripple effect */\r\n    &.ripple {\r\n      background-position: center;\r\n      transition: background 0.8s;\r\n    }\r\n    &.ripple:hover {\r\n      background: #2E2EFF radial-gradient(circle, transparent 1%, #2E2EFF 1%) center/15000%;\r\n    }\r\n    &.ripple:active {\r\n      background-color: #FFFFFF;\r\n      background-size: 100%;\r\n      transition: background 0.03s;\r\n    }\r\n\r\n  }\r\n\r\n  &[color=olive]{\r\n    background-color: #5FD855;\r\n    color: #ffffff;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n    /* Ripple effect */\r\n    &.ripple {\r\n      background-position: center;\r\n      transition: background 0.8s;\r\n    }\r\n    &.ripple:hover {\r\n      background: #5FD855 radial-gradient(circle, transparent 1%, #5FD855 1%) center/15000%;\r\n    }\r\n    &.ripple:active {\r\n      background-color: #FFFFFF;\r\n      background-size: 100%;\r\n      transition: background 0.03s;\r\n    }\r\n\r\n  }\r\n\r\n  &[color=alert]{\r\n    background-color: #FFB800;\r\n    color: #ffffff;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n    /* Ripple effect */\r\n    &.ripple {\r\n      background-position: center;\r\n      transition: background 0.8s;\r\n    }\r\n    &.ripple:hover {\r\n      background: #FFB800 radial-gradient(circle, transparent 1%, #FFB800 1%) center/15000%;\r\n    }\r\n    &.ripple:active {\r\n      background-color: #FFFFFF;\r\n      background-size: 100%;\r\n      transition: background 0.03s;\r\n    }\r\n\r\n  }\r\n\r\n  &[color=error]{\r\n    background-color: #C73E1D;\r\n    color: #ffffff;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n    /* Ripple effect */\r\n    &.ripple {\r\n      background-position: center;\r\n      transition: background 0.8s;\r\n    }\r\n    &.ripple:hover {\r\n      background: #C73E1D radial-gradient(circle, transparent 1%, #C73E1D 1%) center/15000%;\r\n    }\r\n    &.ripple:active {\r\n      background-color: #FFFFFF;\r\n      background-size: 100%;\r\n      transition: background 0.03s;\r\n    }\r\n\r\n  }\r\n  &[color=secondary]{\r\n    background-color: #6C757D;\r\n    color: #ffffff;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n    /* Ripple effect */\r\n    &.ripple {\r\n      background-position: center;\r\n      transition: background 0.8s;\r\n    }\r\n    &.ripple:hover {\r\n      background: #6C757D radial-gradient(circle, transparent 1%,#6C757D 1%) center/15000%;\r\n    }\r\n    &.ripple:active {\r\n      background-color: #FFFFFF;\r\n      background-size: 100%;\r\n      transition: background 0.03s;\r\n    }\r\n  }\r\n  &.ripple {\r\n    background-position: center;\r\n    transition: background 0.8s;\r\n  }\r\n  &.ripple:hover {\r\n    background: #FFFFFF radial-gradient(circle, transparent 1%, #FFFFFF 1%) center/15000%;\r\n  }\r\n  &.ripple:active {\r\n    background-color: #868383;\r\n    background-size: 100%;\r\n    transition: background 0.03s;\r\n  }\r\n}\r\n\r\n::ng-deep{\r\n  .outline{\r\n    .sys-button{\r\n      border: 1.3px solid gray;\r\n      background-color: transparent !important;\r\n\r\n      &.ripple {\r\n        background-position: center;\r\n        transition: background 0.8s;\r\n      }\r\n      &.ripple:hover {\r\n        background: #FFFFFF radial-gradient(circle, #86838337 1%, transparent 1%) center/15000%;\r\n      }\r\n      &.ripple:active {\r\n        background-color: #868383;\r\n        background-size: 100%;\r\n        transition: background 0.03s;\r\n      }\r\n\r\n      &[color=accent]{\r\n        background-color: transparent !important;\r\n        border:1.3px solid #2E2EFF;\r\n        color: #2E2EFF;\r\n        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #2e2eff29 radial-gradient(circle, #2e2eff37 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #2E2EFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n\r\n      &[color=olive]{\r\n        border:1.3px solid #5FD855;\r\n        color: #5FD855;\r\n        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #5FD855 radial-gradient(circle, #5fd85537 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n\r\n      &[color=alert]{\r\n        border:1.3px solid #FFB800;\r\n        color: #FFB800;\r\n        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #FFB800 radial-gradient(circle, #ffb80037 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n\r\n      &[color=error]{\r\n        border:1.3px solid #C73E1D;\r\n        color: #C73E1D;\r\n        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #C73E1D radial-gradient(circle, #c73e1d37  1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n      &[color=secondary]{\r\n        border:1.3px solid #6C757D;\r\n        color: #6C757D;\r\n        box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #6C757D radial-gradient(circle, #6c757d37 1%,transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  .textBtn{\r\n    .sys-button{\r\n      background-color: transparent !important;\r\n      box-shadow: none ;\r\n      &.ripple {\r\n        background-position: center;\r\n        transition: background 0.8s;\r\n      }\r\n      &.ripple:hover {\r\n        background: #FFFFFF radial-gradient(circle, #86838337 1%, transparent 1%) center/15000%;\r\n      }\r\n      &.ripple:active {\r\n        background-color: #868383;\r\n        background-size: 100%;\r\n        transition: background 0.03s;\r\n      }\r\n\r\n      &[color=accent]{\r\n        background-color: transparent !important;\r\n        color: #2E2EFF;\r\n        box-shadow: none ;\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #2e2eff29 radial-gradient(circle, #2e2eff37 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #2E2EFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n          box-shadow: 0 4px 8px 0 rgba(0, 0, 209, 0.12);\r\n        }\r\n\r\n      }\r\n\r\n      &[color=olive]{\r\n        color: #5FD855;\r\n        box-shadow: none !important;\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #5FD855 radial-gradient(circle, #5fd85537 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n\r\n      &[color=alert]{\r\n        color: #FFB800;\r\n        box-shadow: none ;\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #FFB800 radial-gradient(circle, #ffb80037 1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n\r\n      &[color=error]{\r\n        color: #C73E1D;\r\n        box-shadow: none ;\r\n\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #C73E1D radial-gradient(circle, #c73e1d37  1%, transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n\r\n      }\r\n      &[color=secondary]{\r\n        color: #6C757D;\r\n        box-shadow: none ;\r\n\r\n\r\n        /* Ripple effect */\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #6C757D radial-gradient(circle, #6c757d37 1%,transparent 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.03s;\r\n        }\r\n      }\r\n    }\r\n  }\r\n\r\n  .rounded{\r\n    .sys-button{\r\n        border-radius: 30px;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./sys-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button class=\"sys-button ripple\"  [attr.color]=\"color\" [disabled]=\"disable\" [type]=\"type\" [attr.iconBtn]=\"iconBtn\">\r\n    <mat-icon class=\"mat-18\">{{icon}}</mat-icon>\r\n    <span *ngIf=\"!iconBtn\">\r\n      <ng-content></ng-content>\r\n    </span>\r\n</button>\r\n\r\n\r\n"
+        },
+        {
+            "name": "SysCardActionComponent",
+            "id": "component-SysCardActionComponent-d298ee26407a9104e0857349642ec0de54d06fb74b6a13dec6f8665d2d87d8f565b31480c568181a01741e8f9bdae903b963f7f149d246f79e9837113955e7e6",
+            "file": "projects/sys-lib/src/lib/sys-card/sys-card-action/sys-card-action.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-card-action",
+            "styleUrls": [
+                "./sys-card-action.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-card-action.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-card-action',\r\n  templateUrl: './sys-card-action.component.html',\r\n  styleUrls: ['./sys-card-action.component.scss']\r\n})\r\nexport class SysCardActionComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sys-action{\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 0px 10px;\r\n}\r\n",
+                    "styleUrl": "./sys-card-action.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"sys-action\">\r\n    <ng-content></ng-content>\r\n</div>\r\n"
+        },
+        {
+            "name": "SysCardComponent",
+            "id": "component-SysCardComponent-d9cda2a57bede135a934b349284415e154092eda9584f86cb250d2f619c6fecde01c5f1aa6acf9bdce820d91de63ce58a7bb256ccbea74f6ac79f0c88f598793",
+            "file": "projects/sys-lib/src/lib/sys-card/sys-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-card",
+            "styleUrls": [
+                "./sys-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "cardImg",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "divider",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "flatImage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "horigentalCard",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "preIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "subTitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "sysCardHeaderAction",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SysCardHeaderActionComponent",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "ContentChild",
+                            "stringifiedArguments": "SysCardHeaderActionComponent"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ContentChild, Input } from '@angular/core';\r\nimport { SysCardActionComponent } from './sys-card-action/sys-card-action.component';\r\nimport { SysCardContentComponent } from './sys-card-content/sys-card-content.component';\r\nimport { SysCardHeaderActionComponent } from './sys-card-header-action/sys-card-header-action.component';\r\n\r\n@Component({\r\n  selector: 'sys-card',\r\n  templateUrl: './sys-card.component.html',\r\n  styleUrls: ['./sys-card.component.scss']\r\n})\r\nexport class SysCardComponent {\r\n  @Input() title!: string;\r\n  @Input() subTitle!: string;\r\n  @Input() icon!: string;\r\n  @Input() preIcon!: string;\r\n  @Input() cardImg?: string;\r\n  @Input() flatImage:boolean;\r\n  @Input() horigentalCard: boolean;\r\n  @Input() divider: boolean;\r\n  @ContentChild(SysCardHeaderActionComponent) sysCardHeaderAction: SysCardHeaderActionComponent;\r\n\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sys-card{\r\n  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.04);\r\n  background-color: white;\r\n  border-radius: 4px;\r\n  border: 1px solid #F5F5F5;\r\n  width: 100%;\r\n  .sys-card-head{\r\n    padding: 10px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n  }\r\n  .sys-card-head{\r\n    .mat-icon{\r\n      font-size: 1.3rem;\r\n      height: auto;\r\n    }\r\n  }\r\n  .sys-card-body{\r\n    padding: 10px;\r\n  }\r\n\r\n  .cardImg{\r\n\r\n    img{\r\n      width: 100%;\r\n    }\r\n  }\r\n}\r\n.text-center{\r\n  text-align: center;\r\n}\r\n.pad-10{\r\n  padding: 10px;\r\n  img{\r\n    width: 100%;\r\n    max-height: fit-content;\r\n    border-radius: 2.5px;\r\n  }\r\n}\r\n\r\n.title{\r\n  color: rgba(0, 0, 0);\r\n  margin-bottom: 0.2rem;\r\n  font-weight: 500;\r\n  font-size: 1rem;\r\n}\r\n.subTitle{\r\n  color: rgba(134, 131, 131, 1);\r\n  font-size: 0.8rem;\r\n}\r\n\r\n::ng-deep{\r\n  .sys-card-content{\r\n    margin-top: -10px;\r\n  }\r\n}\r\n\r\n.divider{\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: #F5F5F5;\r\n  margin-bottom: 0.5rem;\r\n}\r\n\r\n.sys-card-action{\r\n  display: flex;\r\n  gap: 0px 10px;\r\n  align-items: center;\r\n}\r\n.horigentalCard{\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  gap: 0px 10px;\r\n  ::ng-deep{\r\n    .sys-card-content{\r\n      margin-top: 1rem;\r\n      font-size: 0.9rem;\r\n      line-height: 16px;\r\n    }\r\n  }\r\n  .head{\r\n    width: 60px;\r\n    white-space: nowrap;\r\n  }\r\n  .cardImg{\r\n    img{\r\n      width: 100px;\r\n      padding: 0;\r\n    }\r\n  }\r\n  .sys-card-body{\r\n    width: 100%;\r\n  }\r\n  .sys-card-content{\r\n    width: 100%;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./sys-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"sys-card\" [ngClass]=\"{'horigentalCard': horigentalCard}\">\r\n    <div class=\"sys-card-head\" *ngIf=\"!horigentalCard || !cardImg\" [ngClass]=\"{'text-center': preIcon}\">\r\n        <mat-icon class=\"mat-18\" *ngIf=\"preIcon\">{{preIcon}}</mat-icon>\r\n        <div class=\"head\" *ngIf=\"title || subTitle\">\r\n          <div class=\"title\" *ngIf=\"title\">{{title}}</div>\r\n          <div class=\"subTitle\" *ngIf=\"subTitle\">{{subTitle}}</div>\r\n        </div>\r\n        <mat-icon class=\"mat-18\" *ngIf=\"icon\" >{{icon}}</mat-icon>\r\n        <ng-content select=\"sys-CardHeader-action\" *ngIf=\"sysCardHeaderAction\"></ng-content>\r\n    </div>\r\n    <div class=\"divider\" *ngIf=\"divider\"></div>\r\n    <div class=\"cardImg\" *ngIf=\"cardImg\" [ngClass]=\"{'pad-10': !flatImage}\">\r\n      <img src=\"{{cardImg}}\" alt=\"\" >\r\n    </div>\r\n    <div class=\"sys-card-body\" [ngClass]=\"{'horigentalCard': horigentalCard}\">\r\n        <ng-content ></ng-content>\r\n    </div>\r\n</div>\r\n\r\n\r\n"
+        },
+        {
+            "name": "SysCardContentComponent",
+            "id": "component-SysCardContentComponent-af8c461f0eb2cb74ba99c25d1dbf1b5b5dbcae0ed71383dc32336f6990f26a1617d7d574473d3ca36166dbf9fbb35c8f3ffaa75d91bd20a5bce8a19e3451d8c4",
+            "file": "projects/sys-lib/src/lib/sys-card/sys-card-content/sys-card-content.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-card-content",
+            "styleUrls": [
+                "./sys-card-content.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-card-content.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-card-content',\r\n  templateUrl: './sys-card-content.component.html',\r\n  styleUrls: ['./sys-card-content.component.scss']\r\n})\r\nexport class SysCardContentComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n",
+                    "styleUrl": "./sys-card-content.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"sys-card-content\">\r\n  <ng-content></ng-content>\r\n</div>\r\n"
+        },
+        {
+            "name": "SysCardHeaderActionComponent",
+            "id": "component-SysCardHeaderActionComponent-9746b8f196cccc97cb64009d93061d07b7dee71591fbbb66893fd04970b92db29b9621b301f61d95429bed880a3ba0ee715435ea03a3b167a268a05df2da1883",
+            "file": "projects/sys-lib/src/lib/sys-card/sys-card-header-action/sys-card-header-action.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-CardHeader-action",
+            "styleUrls": [
+                "./sys-card-header-action.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-card-header-action.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-CardHeader-action',\r\n  templateUrl: './sys-card-header-action.component.html',\r\n  styleUrls: ['./sys-card-header-action.component.scss']\r\n})\r\nexport class SysCardHeaderActionComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sys-card-header-action.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\r\n"
+        },
+        {
+            "name": "SysHeaderComponent",
+            "id": "component-SysHeaderComponent-eb93ef13a92b340440f760a3c93aa37fda495bca3af44ce032114d6263677cc0660d19afe1662a66eaa57f701d82828f2366b30b7b6e1bf7952c38b8a702881a",
+            "file": "projects/sys-lib/src/lib/sys-header/sys-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-header",
+            "styleUrls": [
+                "./sys-header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "fixed",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "logo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "logoIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "Menu",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "subTitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menu",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "menuClose",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "sidebarComponent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SysSidebarComponent",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "SysSidebarComponent"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "menuOpen",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ContentChildren, Input, ViewChild } from '@angular/core';\r\nimport { SysSidebarComponent } from '../sys-sidebar/sys-sidebar.component';\r\n\r\n@Component({\r\n  selector: 'sys-header',\r\n  templateUrl: './sys-header.component.html',\r\n  styleUrls: ['./sys-header.component.scss']\r\n})\r\nexport class SysHeaderComponent {\r\n  @Input() logo!: any;\r\n  @Input() logoIcon!: any;;\r\n  @Input() subTitle!: string;\r\n  @Input() fixed!:boolean;\r\n  @Input() Menu!: any[];\r\n  menu: boolean = false;\r\n  menuClose: boolean = false;\r\n\r\n  @ViewChild(SysSidebarComponent) sidebarComponent: SysSidebarComponent;\r\n\r\n  toggleSidebar() {\r\n    this.sidebarComponent.toggle();\r\n  }\r\n\r\n  menuOpen(){\r\n\r\n  }\r\n  ngOnInit(){\r\n\r\n    if (window.innerWidth >= 768) {\r\n      this.menu=!this.menu;\r\n      this.menuClose = !this.menuClose;\r\n    }else{\r\n    }\r\n\r\n    return true;\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sys-header{\r\n    padding: 7px 1rem;\r\n    z-index: 9999999;\r\n    top: 0;\r\n    right: 0;\r\n\r\n    .logobar{\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 0px 10px;\r\n      position: relative;\r\n      left: 35px;\r\n      .logoIcon{\r\n        width: 83px;\r\n      }\r\n    }\r\n\r\n  &.fixed{\r\n    position: sticky;\r\n    top: 0;\r\n    z-index: 1;\r\n  }\r\n  .sys-row{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n  }\r\n  .title{\r\n    margin-bottom: 1.2rem !important;\r\n    font-size: 1rem;\r\n    // margin-left: 40px !important;\r\n  }\r\n  .mb-0{\r\n    margin-bottom:0px !important;\r\n  }\r\n  .title, .subTitle{\r\n    line-height: 0;\r\n    margin: 0;\r\n  }\r\n  .subTitle{\r\n    color: #f5f5f58a;\r\n  }\r\n\r\n  &[color=\"accent\"]{\r\n    background-color: #4343FF;\r\n    color: #FFFFFF;\r\n  }\r\n  .mobileMenubtn{\r\n    display: none !important;\r\n  }\r\n  .mobileMenu{\r\n    display: flex !important;\r\n  }\r\n  .mobileMenuClosebtn{\r\n    display: none !important;\r\n  }\r\n}\r\n.router-content{\r\n  padding: 1rem;\r\n  margin-left: 44px;\r\n  position: relative;\r\n}\r\n\r\n\r\n@media(max-width: 767px){\r\n\r\n  .sys-header{\r\n    padding: 10px 1rem;\r\n    .mobileMenubtn{\r\n      display: block !important;\r\n    }\r\n    .logobar{\r\n      left: 0;\r\n    }\r\n\r\n    .mobileMenuClosebtn{\r\n      display: block !important;\r\n      z-index: 99999999;\r\n      position: fixed;\r\n      top: 10px;\r\n    }\r\n  }\r\n  .router-content{\r\n    padding: 1rem;\r\n    margin-left: 44px;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./sys-header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"sys-header\" color=\"accent\" [ngClass]=\"{'fixed': fixed}\">\r\n    <div class=\"sys-row\">\r\n        <div class=\"col2\">\r\n            <div class=\"logobar\">\r\n              <img src=\"{{logoIcon}}\" alt=\"\" *ngIf=\"logoIcon\" class=\"logoIcon\">\r\n              <div class=\"underLogobar\">\r\n                <h1 class=\"title\" [ngClass]=\"{'mb-0': !subTitle}\" *ngIf=\"logo\" >{{logo}}</h1>\r\n                <h5 class=\"subTitle\" *ngIf=\"subTitle\">{{subTitle}}</h5>\r\n              </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col10\">\r\n            <div class=\"mobileMenubtn\">\r\n              <!-- <sys-button icon=\"dehaze\" (click)=\"menuOpen()\"  [iconBtn]=\"true\" ></sys-button> -->\r\n            </div>\r\n\r\n            <div class=\"sys-row mobileMenu\" *ngIf=\"menu\">\r\n              <ng-content></ng-content>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"router-content\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
+        },
+        {
+            "name": "SysLibComponent",
+            "id": "component-SysLibComponent-dd569efe2154dec6b148c86eaf3d91338c57f5d2c4b898ff1ff8dcf92c8594aa1d2dc93bbb40b571ee2d44bb48a5c3120da82665451ab0b812d9a9937c2934c1",
+            "file": "projects/sys-lib/src/lib/sys-lib.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-lib",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p>\n  sys-lib works!\n</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-lib',\r\n  template: `\r\n    <p>\r\n      sys-lib works!\r\n    </p>\r\n  `,\r\n  styles: [\r\n  ]\r\n})\r\nexport class SysLibComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        },
+        {
+            "name": "SysPanelHeaderComponent",
+            "id": "component-SysPanelHeaderComponent-8c8b166ccc2307dab2652e35ecd398a80eca6327e8acbdd5d7b96b67b44d51b96624a6781d5967f1d5c9411db23a812f5f9929a874a92f661e8a7bb0d0ace45a",
+            "file": "projects/sys-lib/src/lib/sys-accordion/sys-panel-header/sys-panel-header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-panel-header",
+            "styleUrls": [
+                "./sys-panel-header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-panel-header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'sys-panel-header',\n  templateUrl: './sys-panel-header.component.html',\n  styleUrls: ['./sys-panel-header.component.css']\n})\nexport class SysPanelHeaderComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sys-panel-header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\n"
+        },
+        {
+            "name": "SysSidebarComponent",
+            "id": "component-SysSidebarComponent-7a72d38c6949d5a2829daa309da0774fa8a94a935e459e65af08372304257578e9382e26c1af2e9412c6f08671fc8fd5e4f3b654b44d50ad6504a6e3a42a8df9",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-sidebar",
+            "styleUrls": [
+                "./sys-sidebar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "SidebarItem[]",
+                    "decorators": []
+                },
+                {
+                    "name": "small",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "myEvent",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "selectedItem",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "menuBar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ContentChildren, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';\nimport { NavigationEnd, Router } from '@angular/router';\nimport { SysHeaderComponent } from '../sys-header/sys-header.component';\nimport { SidebarService } from './sidebar.service';\ninterface SidebarItem {\n  label: string;\n  route: string;\n}\n@Component({\n  selector: 'sys-sidebar',\n  templateUrl: './sys-sidebar.component.html',\n  styleUrls: ['./sys-sidebar.component.scss']\n})\nexport class SysSidebarComponent {\n  @Input() items: SidebarItem[];\n  @Input() small: boolean;\n  selectedItem: string;\n\n  isOpen = false;\n\n  toggle() {\n    this.isOpen = !this.isOpen;\n  }\n\n@Output() myEvent = new EventEmitter()\n\n  constructor(private router: Router, private element: ElementRef, private sidebarService: SidebarService) { }\n\n  menuBar(){\n    const sidebar = this.element.nativeElement.querySelector('.nav');\n    const routerContent = this.element.nativeElement.querySelector('.router-content');\n    sidebar.classList.add(\"small\");\n\n  }\n\n  ngAfterViewInit() {\n\n  }\n\n  ngOnInit() {\n\n    this.router.events.subscribe((event) => {\n      if (event instanceof NavigationEnd) {\n        this.selectedItem = event.url;\n      }\n    });\n  }\n}\nfunction contentChildren(SysHeaderComponent: any): (target: SysSidebarComponent, propertyKey: \"header\") => void {\n  throw new Error('Function not implemented.');\n}\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".sidenav-container{\r\n    display: flex;\r\n    .sys-sidebar-content{\r\n      padding: 1.3rem;\r\n      margin-top: 3rem;\r\n    }\r\n}\r\n\r\n\r\n\r\n::ng-deep{\r\n    .label, .mat-icon{\r\n      font-size: 1rem;\r\n      height: auto !important;\r\n    }\r\n    nav{\r\n      width: 200px;\r\n      position: fixed;\r\n      height: 100%;\r\n      z-index: 999;\r\n\r\n      &.small{\r\n          width: 40px;\r\n          .label{\r\n            display: none;\r\n          }\r\n          mat-icon{\r\n            width: auto !important;\r\n          }\r\n      }\r\n    }\r\n    .sys-menu{\r\n        display: block;\r\n        margin: 0;\r\n        background-color: white;\r\n        height: 100%;\r\n        top: 0;\r\n        overflow-y: scroll;\r\n        padding-left: 0px;\r\n        z-index: 99999;\r\n        border-right: 1px solid rgba(128, 128, 128, 0.1411764706);\r\n      &:hover{\r\n        box-shadow: 1px 106px 38px -4px #80808045;\r\n        transition: 0.3s;\r\n        &::-webkit-scrollbar {\r\n          width: 2px;\r\n          height: 50px;\r\n          border-radius: 100%;\r\n          display: block;\r\n\r\n        }\r\n      }\r\n        &::-webkit-scrollbar {\r\n          width: 2px;\r\n          height: 50px;\r\n          border-radius: 100%;\r\n          display: none;\r\n          cursor: s-resize;\r\n        }\r\n\r\n        /* Track */\r\n        &::-webkit-scrollbar-track {\r\n          box-shadow: inset 0 0 5px rgb(224, 223, 223);\r\n          border-radius: 50%;\r\n        }\r\n\r\n        /* Handle */\r\n        &::-webkit-scrollbar-thumb {\r\n          background: rgba(46, 46, 255, 0.7490196078);\r\n          border-radius: 50%;\r\n          width: 1px;\r\n        }\r\n\r\n        /* Handle on hover */\r\n        &::-webkit-scrollbar-thumb:hover {\r\n          background: #2E2EFF;\r\n        }\r\n\r\n\r\n        &:hover{\r\n          &::-webkit-scrollbar {\r\n            display: block;\r\n          }\r\n        }\r\n\r\n        &:after{\r\n          position: absolute;\r\n          content: \"\";\r\n\r\n        }\r\n\r\n      li{\r\n        margin-right: 1rem;\r\n        line-height: 0;\r\n        list-style: none;\r\n        width: 100%;\r\n        padding: 1.2rem 0px;\r\n        height: 10px;\r\n        border-bottom: 1px solid #80808024;\r\n\r\n\r\n        &.ripple {\r\n          background-position: center;\r\n          transition: background 0.8s;\r\n        }\r\n        &.ripple:hover {\r\n          background: #2E2EFF radial-gradient(circle, transparent 1%, #2E2EFF 1%) center/15000%;\r\n        }\r\n        &.ripple:active {\r\n          background-color: #FFFFFF;\r\n          background-size: 100%;\r\n          transition: background 0.01s;\r\n        }\r\n        &.sidebar-header{\r\n            display: flex;\r\n            align-items: unset;\r\n            background-color: #4343FF;\r\n            height: 5px;\r\n            position: sticky;\r\n            top: 0;\r\n            a{\r\n                color: white;\r\n                font-size: 1.4rem;\r\n            }\r\n        }\r\n\r\n        &:hover{\r\n            background-color: #4343ff96;\r\n            cursor: pointer;\r\n            a{\r\n                color: white;\r\n            }\r\n\r\n        }\r\n        &:focus{\r\n            background-color: #2E2EFFBF;\r\n            a{\r\n                color: white;\r\n            }\r\n        }\r\n        &.active{\r\n            background-color: #2E2EFFBF ;\r\n            a{\r\n                color: white;\r\n            }\r\n        }\r\n        a{\r\n          text-decoration: none;\r\n          color:#000000;\r\n          display: flex;\r\n          align-items: center;\r\n          padding-left: 10px;\r\n          gap: 0px 5px;\r\n          font-size: 1rem;\r\n        }\r\n      }\r\n    }\r\n    @media(max-width: 767px){\r\n      .sidebar-header {\r\n        height: 4px !important;\r\n      }\r\n      .label, .logo{\r\n        display: none;\r\n      }\r\n\r\n      nav{\r\n        width:44px;\r\n        height: 100%;\r\n\r\n        &.small{\r\n            width: 44px;\r\n        }\r\n      }\r\n      .sidenav-container{\r\n        position: fixed;\r\n      }\r\n    }\r\n  }\r\n",
+                    "styleUrl": "./sys-sidebar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "sidebarService",
+                        "type": "SidebarService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 25,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "element",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "sidebarService",
+                        "type": "SidebarService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<div class=\"sidenav-container\">\r\n  <nav class=\"nav\" [ngClass]=\"{'small': small}\">\r\n    <ul class=\"sys-menu\">\r\n      <div class=\"data\">\r\n        <ng-content></ng-content>\r\n      </div>\r\n    </ul>\r\n  </nav>\r\n  \r\n</div>\r\n"
+        },
+        {
+            "name": "SysSidebarContainerComponent",
+            "id": "component-SysSidebarContainerComponent-9b283c32a3c3839afd23bc7f70cd64698b4778ed2c6f554fd22870ccff157ab0504ad80243000e93a60fdd73f1feb93f290d534ba7570e7eeb45a6cbfaa11231",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-container/sys-sidebar-container.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-sidebar-container",
+            "styleUrls": [
+                "./sys-sidebar-container.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-sidebar-container.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'sys-sidebar-container',\n  templateUrl: './sys-sidebar-container.component.html',\n  styleUrls: ['./sys-sidebar-container.component.scss']\n})\nexport class SysSidebarContainerComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "// .sys-sidebar-container{\r\n//   display: flex;\r\n// }\r\n\r\n\r\n// ::ng-deep{\r\n//   .sys-menu{\r\n//     display: flex;\r\n//     align-items: center;\r\n//     margin: 0;\r\n//     li{\r\n//       margin-right: 1rem;\r\n//       line-height: 0;\r\n//       list-style: none;\r\n//       a{\r\n//         text-decoration: none;\r\n//         color:#FFFFFF;\r\n//         display: flex;\r\n//         align-items: center;\r\n//         gap: 0px 5px;\r\n//       }\r\n//     }\r\n//   }\r\n// }",
+                    "styleUrl": "./sys-sidebar-container.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<!-- <div class=\"sys-sidebar-container\">\r\n  <sys-sidebar>\r\n    <ng-content select=\"sys-sidebar-item\"></ng-content>\r\n  </sys-sidebar>\r\n  <ng-content select=\"sys-sidebar-content\"></ng-content>\r\n</div> -->\r\n"
+        },
+        {
+            "name": "SysSidebarContentComponent",
+            "id": "component-SysSidebarContentComponent-bd970a4e9173f3421441b13f37f791a291bf1f3c2fd757ef4983f04d0aa814e7f1fd37452f1e205cfe0c917a08577878af18b781611891a585437d04a44e96c0",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-content/sys-sidebar-content.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-sidebar-content",
+            "styleUrls": [
+                "./sys-sidebar-content.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-sidebar-content.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-sidebar-content',\r\n  templateUrl: './sys-sidebar-content.component.html',\r\n  styleUrls: ['./sys-sidebar-content.component.scss']\r\n})\r\nexport class SysSidebarContentComponent {\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sys-sidebar-content.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": ""
+        },
+        {
+            "name": "SysSidebarItemComponent",
+            "id": "component-SysSidebarItemComponent-eb7a2a7e1e1e99fd063e840fec61c0d5571f4ea7f4378e0b727414361a8e89ab8f6ad0758173e96bc6c58031d9e90938fdf111eb5a48aeb3c546ffb0fdfb5680",
+            "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-item/sys-sidebar-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-sidebar-item",
+            "styleUrls": [
+                "./sys-sidebar-item.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-sidebar-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "menuIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-sidebar-item',\r\n  templateUrl: './sys-sidebar-item.component.html',\r\n  styleUrls: ['./sys-sidebar-item.component.scss']\r\n})\r\nexport class SysSidebarItemComponent {\r\n @Input() icon: string;\r\n  @Input() label: string;\r\n  @Input() route: string;\r\n  @Input() menuIcon: string;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n",
+                    "styleUrl": "./sys-sidebar-item.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<li [routerLink]=\"route\" routerLinkActive=\"active\" class=\"ripple\"  [ngClass]=\"{'sidebar-header': menuIcon}\">\r\n  <a disabled>\r\n    <mat-icon class=\"mat-18\"  *ngIf=\"icon\">{{icon}}</mat-icon>\r\n    <span class=\"label\" *ngIf=\"label\">{{label}}</span>\r\n    <span class=\"label\" *ngIf=\"!label\">\r\n      <ng-content></ng-content>\r\n    </span>\r\n    <span class=\"logo\">\r\n      <mat-icon class=\"mat-18\">\r\n        {{menuIcon}}\r\n      </mat-icon>\r\n    </span>\r\n  </a>\r\n</li>\r\n"
+        },
+        {
+            "name": "SysTabComponent",
+            "id": "component-SysTabComponent-9b521ec328f15db472b7470dc7702910b61f8a9da1d9d745287989e7e07f9f19b27022ce51a149c8b8fbaabe15eea8d755a2c09bea3835ecf823ddf4fff2c11c",
+            "file": "projects/sys-lib/src/lib/sys-tab/sys-tab.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-tabs",
+            "styleUrls": [
+                "./sys-tab.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sys-tab.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "bottomHeader",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "noBorder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "vertical",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "tabs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "QueryList<TabComponent>",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "decorators": [
+                        {
+                            "name": "ContentChildren",
+                            "stringifiedArguments": "TabComponent"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectTab",
+                    "args": [
+                        {
+                            "name": "tab",
+                            "type": "TabComponent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "tab",
+                            "type": "TabComponent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { AfterContentInit, Component, ContentChild, ContentChildren, Input, QueryList } from '@angular/core';\r\nimport { TabComponent } from './tab/tab.component';\r\n\r\n@Component({\r\n  selector: 'sys-tabs',\r\n  templateUrl: './sys-tab.component.html',\r\n  styleUrls: ['./sys-tab.component.scss']\r\n})\r\nexport class SysTabComponent implements AfterContentInit {\r\n  @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;\r\n  @Input() disable!: boolean;\r\n  @Input() noBorder: boolean;\r\n  @Input() vertical: boolean;\r\n  @Input() bottomHeader : boolean;\r\n  ngAfterContentInit() {\r\n    const activeTabs = this.tabs.filter((tab) => tab.active);\r\n\r\n    if (activeTabs.length === 0) {\r\n      this.selectTab(this.tabs.first);\r\n    }\r\n  }\r\n\r\n  selectTab(tab: TabComponent) {\r\n    this.tabs.toArray().forEach((tab) => (tab.active = false));\r\n    tab.active = true;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".noBorder{\r\n  border: none !important;\r\n  .divider{\r\n    height: 0;\r\n  }\r\n}\r\n.vertical{\r\n  &.tabs{\r\n      display: flex;\r\n      .tab-header{\r\n          flex-wrap: wrap;\r\n          height: auto;\r\n          white-space: nowrap;\r\n          width: auto;\r\n          border-bottom-left-radius: 4px;\r\n          .tab{\r\n            gap: 0px !important;\r\n            width: 100%;\r\n            &:first-child{\r\n              border-top-left-radius: 4px;\r\n             }\r\n             &:last-child{\r\n              border-top-right-radius: 0px;\r\n              border-bottom-left-radius: 4px;\r\n             }\r\n          }\r\n      }\r\n      .tab-body{\r\n        width: 100%;\r\n      }\r\n      .divider{\r\n        display: none;\r\n      }\r\n\r\n  }\r\n}\r\n.divider{\r\n  height: 1px;\r\n  width: 100%;\r\n  background-color: #F5F5F5;\r\n}\r\n.tabs {\r\n    border: 1px solid #D9D9D9;\r\n    border-radius: 4px;\r\n\r\n    .tab-body{\r\n        padding: 1rem;\r\n        background: white;\r\n        border-bottom-left-radius: 4px;\r\n        border-bottom-right-radius: 4px;\r\n    }\r\n  }\r\n.tab-header {\r\n  display: flex;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  background:white;\r\n  color: #000000;\r\n  border-top-left-radius: 4px;\r\n  border-top-right-radius: 4px;\r\n  height: 34px;\r\n  @media(max-width: 767px){\r\n    overflow: scroll;\r\n    &::-webkit-scrollbar {\r\n      display: none;\r\n    }\r\n  }\r\n  .tab{\r\n      padding: 0.6rem 1rem;\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 0px 6px;\r\n      width: 100%;\r\n      border: none;\r\n      font-size: 0.8rem;\r\n      font-weight: 600;\r\n      background: white;\r\n      white-space: nowrap;\r\n\r\n      &.ripple {\r\n        background-position: center;\r\n        transition: background 0.8s;\r\n      }\r\n      &.ripple:hover {\r\n        background: #5C5CFFB2 radial-gradient(circle, transparent 1%, #5C5CFFB2 1%) center/15000%;\r\n      }\r\n      &.ripple:active {\r\n        background-color: #FFFFFF;\r\n        background-size: 100%;\r\n        transition: background 0.01s;\r\n      }\r\n\r\n      &:first-child{\r\n      border-top-left-radius: 4px;\r\n      }\r\n      &:last-child{\r\n      border-top-right-radius: 4px;\r\n      }\r\n      cursor: pointer;\r\n      .mat-icon{\r\n          font-size: 1.2rem;\r\n          height: auto;\r\n      }\r\n      &:hover{\r\n          background-color: #5C5CFFB2;\r\n          color: white;\r\n      }\r\n      &:focus{\r\n          background-color: rgba(46, 46, 255, 0.7490196078);\r\n          color: white;\r\n      }\r\n      &:disabled{\r\n          background-color: #80808029;\r\n          pointer-events: none;\r\n          cursor: alias;\r\n          &:hover{\r\n              color: rgb(167 167 167);\r\n          }\r\n      }\r\n  }\r\n}\r\n.tab-header.active {\r\n  background-color: #fff;\r\n}\r\n.tab-header-bottom {\r\n  display: flex;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  background:white;\r\n  color: #000000;\r\n  border-bottom-left-radius: 4px !important;\r\n  border-bottom-right-radius: 4px !important;\r\n  height: 34px;\r\n  @media(max-width: 767px){\r\n    overflow: scroll;\r\n    &::-webkit-scrollbar {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  .tab{\r\n      padding: 0.6rem 1rem;\r\n      display: flex;\r\n      align-items: center;\r\n      gap: 0px 6px;\r\n      width: 100%;\r\n      border: none;\r\n      font-size: 0.8rem;\r\n      font-weight: 600;\r\n      background: white;\r\n      white-space: nowrap;\r\n\r\n      &.ripple {\r\n        background-position: center;\r\n        transition: background 0.8s;\r\n      }\r\n      &.ripple:hover {\r\n        background: #5C5CFFB2 radial-gradient(circle, transparent 1%, #5C5CFFB2 1%) center/15000%;\r\n      }\r\n      &.ripple:active {\r\n        background-color: #FFFFFF;\r\n        background-size: 100%;\r\n        transition: background 0.01s;\r\n      }\r\n\r\n      &:first-child{\r\n      border-bottom-left-radius: 4px;\r\n      }\r\n      &:last-child{\r\n      border-bottom-right-radius: 4px;\r\n      }\r\n      cursor: pointer;\r\n      .mat-icon{\r\n          font-size: 1.2rem;\r\n          height: auto;\r\n      }\r\n      &:hover{\r\n          background-color: #5C5CFFB2;\r\n          color: white;\r\n      }\r\n      &:focus{\r\n          background-color: rgba(46, 46, 255, 0.7490196078);\r\n          color: white;\r\n      }\r\n      &:disabled{\r\n          background-color: #80808029;\r\n          pointer-events: none;\r\n          cursor: alias;\r\n          &:hover{\r\n              color: rgb(167 167 167);\r\n          }\r\n      }\r\n  }\r\n}\r\n\r\n.tab-header.active {\r\n  background-color: #fff;\r\n}\r\n\r\n.top-body{\r\n  border-top-left-radius: 4px !important;\r\n  border-top-right-radius: 4px !important;\r\n}\r\n\r\n@media(max-width: 767px){\r\n  .tab-header {\r\n      height: 35px;\r\n      .tab{\r\n        padding-left: 0.3rem !important;\r\n        display: flex;\r\n        align-items: center;\r\n        gap: 0px 5px !important;\r\n        width: 100%;\r\n        border: none;\r\n        font-size: 13px !important;\r\n        font-weight: 600;\r\n        &:first-child{\r\n        border-top-left-radius: 4px;\r\n        }\r\n        &:last-child{\r\n        border-top-right-radius: 4px;\r\n        }\r\n        cursor: pointer;\r\n        .mat-icon{\r\n            font-size: 18px !important;\r\n\r\n        }\r\n        &:hover{\r\n            background-color: #5C5CFFB2;\r\n            color: white;\r\n        }\r\n        &:focus{\r\n            background-color: rgba(46, 46, 255, 0.7490196078);\r\n            color: white;\r\n        }\r\n        &:disabled{\r\n            background-color: #80808029;\r\n            pointer-events: none;\r\n            cursor: alias;\r\n            &:hover{\r\n                color: rgb(167 167 167);\r\n            }\r\n        }\r\n    }\r\n    }\r\n\r\n}\r\n",
+                    "styleUrl": "./sys-tab.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "AfterContentInit"
+            ],
+            "templateData": "<div class=\"tabs\" [ngClass]=\"{'noBorder': noBorder, 'vertical': vertical}\">\r\n    <div class=\"tab-header\" *ngIf=\"!bottomHeader\">\r\n        <button class=\"tab ripple\"  *ngFor=\"let tab of tabs\" [disabled]=\"tab.disable\"  (click)=\"selectTab(tab)\"><mat-icon *ngIf=\"tab.icon\">{{tab.icon}}</mat-icon>  {{tab.tabTitle}}</button>\r\n    </div>\r\n    <div class=\"divider\" *ngIf=\"!bottomHeader\"></div>\r\n    <div class=\"tab-body\" [ngClass]=\"{'top-body' : bottomHeader}\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n    <div class=\"divider\" *ngIf=\"bottomHeader\"></div>\r\n    <div class=\"tab-header-bottom\"  *ngIf=\"bottomHeader\">\r\n      <button class=\"tab ripple\"  *ngFor=\"let tab of tabs\" [disabled]=\"tab.disable\"  (click)=\"selectTab(tab)\"><mat-icon *ngIf=\"tab.icon\">{{tab.icon}}</mat-icon>  {{tab.tabTitle}}</button>\r\n    </div>\r\n\r\n  </div>\r\n"
+        },
+        {
+            "name": "TabComponent",
+            "id": "component-TabComponent-e68dceb9a1554e6ee216c3e723bfb0472ef7bf717f4edbbddcdb81b70bef5f12d53562b8de9e48225dd833a178d01df13785df2c28b8e3bd7d9c3a6ff525a089",
+            "file": "projects/sys-lib/src/lib/sys-tab/tab/tab.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sys-tab",
+            "styleUrls": [
+                "./tab.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tab.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "active",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tabTitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'sys-tab',\r\n  templateUrl: './tab.component.html',\r\n  styleUrls: ['./tab.component.scss']\r\n})\r\nexport class TabComponent {\r\n  @Input() active: boolean;\r\n  @Input() tabTitle: any;\r\n  @Input() icon: string;\r\n  @Input() disable: boolean;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./tab.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div *ngIf=\"active\">\r\n    <ng-content></ng-content>\r\n  </div>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "sysDesignModule",
+            "id": "module-sysDesignModule-4167ca92c65de61876fd3a259458de7cd2f62dc0335194cbbb08bfdba362ca9d02db549d26e4664bed76e3cf38f6106faa0c2bca20d504e72d471d878e4aa941",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/sys-lib/src/lib/sys-lib.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { SysLibComponent } from './sys-lib.component';\r\nimport { SysButtonComponent } from './sys-button/sys-button.component';\r\nimport {MatIconModule} from '@angular/material/icon';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SysHeaderComponent } from './sys-header/sys-header.component';\r\nimport { SysCardComponent } from './sys-card/sys-card.component';\r\nimport { SysCardActionComponent } from './sys-card/sys-card-action/sys-card-action.component';\r\nimport { SysCardContentComponent } from './sys-card/sys-card-content/sys-card-content.component';\r\nimport { SysCardHeaderActionComponent } from './sys-card/sys-card-header-action/sys-card-header-action.component';\r\nimport { RouterModule } from '@angular/router';\r\n\r\nimport { SysSidebarComponent } from './sys-sidebar/sys-sidebar.component';\r\nimport { SysSidebarItemComponent } from './sys-sidebar/sys-sidebar-item/sys-sidebar-item.component';\r\nimport { SysSidebarContainerComponent } from './sys-sidebar/sys-sidebar-container/sys-sidebar-container.component';\r\nimport { SysSidebarContentComponent } from './sys-sidebar/sys-sidebar-content/sys-sidebar-content.component';\r\nimport { SysTabComponent } from './sys-tab/sys-tab.component';\r\nimport { TabComponent } from './sys-tab/tab/tab.component';\r\nimport { SysAccordionComponent } from './sys-accordion/sys-accordion.component';\r\nimport { SysAccordionItemComponent } from './sys-accordion/sys-accordion-item/sys-accordion-item.component';\r\nimport { SysAccordionHeaderComponent } from './sys-accordion/sys-accordion-header/sys-accordion-header.component';\r\nimport { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sys-accordion-body.component';\r\nimport { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-panel-header.component';\r\nimport { CustomBadgeDirective } from './sys-badge/badge.directive';\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    SysLibComponent,\r\n    SysButtonComponent,\r\n    SysHeaderComponent,\r\n    SysCardComponent,\r\n    SysCardActionComponent,\r\n    SysCardContentComponent,\r\n    SysCardHeaderActionComponent,\r\n    SysSidebarComponent,\r\n    SysSidebarItemComponent,\r\n    SysSidebarContainerComponent,\r\n    SysSidebarContentComponent,\r\n    SysTabComponent,\r\n    TabComponent,\r\n    SysAccordionComponent,\r\n    SysAccordionItemComponent,\r\n    SysAccordionHeaderComponent,\r\n    SysAccordionBodyComponent,\r\n    SysPanelHeaderComponent,\r\n    CustomBadgeDirective,\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    MatIconModule,\r\n    RouterModule\r\n  ],\r\n  exports: [\r\n    SysLibComponent,\r\n    SysButtonComponent,\r\n    SysHeaderComponent,\r\n    SysCardComponent,\r\n    SysCardActionComponent,\r\n    SysCardContentComponent,\r\n    SysCardHeaderActionComponent,\r\n    SysSidebarComponent,\r\n    SysSidebarItemComponent,\r\n    SysSidebarContainerComponent,\r\n    SysSidebarContentComponent,\r\n    SysTabComponent,\r\n    TabComponent,\r\n    SysAccordionComponent,\r\n    SysAccordionItemComponent,\r\n    SysAccordionHeaderComponent,\r\n    SysAccordionBodyComponent,\r\n    SysPanelHeaderComponent,\r\n    CustomBadgeDirective\r\n  ]\r\n})\r\nexport class sysDesignModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CustomBadgeDirective"
+                        },
+                        {
+                            "name": "SysAccordionBodyComponent"
+                        },
+                        {
+                            "name": "SysAccordionComponent"
+                        },
+                        {
+                            "name": "SysAccordionHeaderComponent"
+                        },
+                        {
+                            "name": "SysAccordionItemComponent"
+                        },
+                        {
+                            "name": "SysButtonComponent"
+                        },
+                        {
+                            "name": "SysCardActionComponent"
+                        },
+                        {
+                            "name": "SysCardComponent"
+                        },
+                        {
+                            "name": "SysCardContentComponent"
+                        },
+                        {
+                            "name": "SysCardHeaderActionComponent"
+                        },
+                        {
+                            "name": "SysHeaderComponent"
+                        },
+                        {
+                            "name": "SysLibComponent"
+                        },
+                        {
+                            "name": "SysPanelHeaderComponent"
+                        },
+                        {
+                            "name": "SysSidebarComponent"
+                        },
+                        {
+                            "name": "SysSidebarContainerComponent"
+                        },
+                        {
+                            "name": "SysSidebarContentComponent"
+                        },
+                        {
+                            "name": "SysSidebarItemComponent"
+                        },
+                        {
+                            "name": "SysTabComponent"
+                        },
+                        {
+                            "name": "TabComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CustomBadgeDirective"
+                        },
+                        {
+                            "name": "SysAccordionBodyComponent"
+                        },
+                        {
+                            "name": "SysAccordionComponent"
+                        },
+                        {
+                            "name": "SysAccordionHeaderComponent"
+                        },
+                        {
+                            "name": "SysAccordionItemComponent"
+                        },
+                        {
+                            "name": "SysButtonComponent"
+                        },
+                        {
+                            "name": "SysCardActionComponent"
+                        },
+                        {
+                            "name": "SysCardComponent"
+                        },
+                        {
+                            "name": "SysCardContentComponent"
+                        },
+                        {
+                            "name": "SysCardHeaderActionComponent"
+                        },
+                        {
+                            "name": "SysHeaderComponent"
+                        },
+                        {
+                            "name": "SysLibComponent"
+                        },
+                        {
+                            "name": "SysPanelHeaderComponent"
+                        },
+                        {
+                            "name": "SysSidebarComponent"
+                        },
+                        {
+                            "name": "SysSidebarContainerComponent"
+                        },
+                        {
+                            "name": "SysSidebarContentComponent"
+                        },
+                        {
+                            "name": "SysSidebarItemComponent"
+                        },
+                        {
+                            "name": "SysTabComponent"
+                        },
+                        {
+                            "name": "TabComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Button>",
+                "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Header>",
+                "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Page>",
+                "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+            }
+        ],
+        "functions": [
+            {
+                "name": "contentChildren",
+                "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "SysHeaderComponent",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "void",
+                "jsdoctags": [
+                    {
+                        "name": "SysHeaderComponent",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Header>",
+                "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Page>",
+                "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/sys-lib/src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Button>",
+                    "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                }
+            ],
+            "projects/sys-lib/src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Header>",
+                    "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                }
+            ],
+            "projects/sys-lib/src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Page>",
+                    "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                }
+            ],
+            "projects/sys-lib/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sys-lib/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts": [
+                {
+                    "name": "contentChildren",
+                    "file": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "SysHeaderComponent",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "void",
+                    "jsdoctags": [
+                        {
+                            "name": "SysHeaderComponent",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/sys-lib/src/stories/Button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/sys-lib/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/sys-lib/src/stories/Header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Header>",
+                    "file": "projects/sys-lib/src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/sys-lib/src/stories/Page.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Page>",
+                    "file": "projects/sys-lib/src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 2,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/sys-lib/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-body/sys-accordion-body.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysAccordionBodyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-header/sys-accordion-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysAccordionHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-accordion/sys-accordion-item/sys-accordion-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysAccordionItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-accordion/sys-accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysAccordionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-accordion/sys-panel-header/sys-panel-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysPanelHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-badge/badge.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CustomBadgeDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-button/sys-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-card/sys-card-action/sys-card-action.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysCardActionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-card/sys-card-content/sys-card-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysCardContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-card/sys-card-header-action/sys-card-header-action.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysCardHeaderActionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-card/sys-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-header/nested-menu/nested-menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NestedMenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-header/sys-header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysHeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-lib.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysLibComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-lib.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "SysLibService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sidebar.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "SidebarService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-container/sys-sidebar-container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysSidebarContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-content/sys-sidebar-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysSidebarContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar-item/sys-sidebar-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysSidebarItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysSidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SidebarItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-sidebar/sys-sidebar.component.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "contentChildren",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-tab/sys-tab.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SysTabComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/lib/sys-tab/tab/tab.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sys-lib/src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            }
+        ]
+    }
+}

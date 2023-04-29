@@ -18,5 +18,6 @@ export class CustomBadgeDirective {
     this.renderer.appendChild(badge, text);
     this.renderer.addClass(badge, 'sys-badge-content');
     this.renderer.appendChild(this.el.nativeElement, badge);
+
   }
 }
