@@ -606,6 +606,16 @@
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
             },
             {
+                "name": "DefaultAccordion",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysAccordionComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-accordion>\r\n  <sys-accordion-item label=\"Expension Panel 1\" expendless=\"close\" expendMore=\"add\"  discription=\"sit amet consectetur adipisicing elit. Veniam ab nostru\" >\r\n    <sys-panel-header>\r\n      <sys-button [iconBtn]=\"true\"  icon=\"groups\">\r\n      </sys-button>\r\n    </sys-panel-header>\r\n    <sys-accordion-body>\r\n    <h4>Tab 1</h4>\r\n    <p>\r\n     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n    </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n  <sys-accordion-item  label=\"Expension Panel 2\">\r\n    <sys-accordion-body>\r\n      <h4>Tab 2</h4>\r\n      <p>\r\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n      </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n  <sys-accordion-item [disable]=\"true\" label=\"Expension Panel 2\">\r\n    <sys-accordion-body>\r\n      <h4>Tab 2</h4>\r\n      <p>\r\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n      </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n</sys-accordion>\r\n   `,\r\n})"
+            },
+            {
                 "name": "DefaultCard",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -826,6 +836,18 @@
                     "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n      <sys-button icon=\"settings\" color=\"accent\"  class=\"textBtn\">\r\n        SYS Button\r\n      </sys-button>\r\n   `,\r\n})"
                 }
             ],
+            "src/stories/Accordion.stories.ts": [
+                {
+                    "name": "DefaultAccordion",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Accordion.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysAccordionComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-accordion>\r\n  <sys-accordion-item label=\"Expension Panel 1\" expendless=\"close\" expendMore=\"add\"  discription=\"sit amet consectetur adipisicing elit. Veniam ab nostru\" >\r\n    <sys-panel-header>\r\n      <sys-button [iconBtn]=\"true\"  icon=\"groups\">\r\n      </sys-button>\r\n    </sys-panel-header>\r\n    <sys-accordion-body>\r\n    <h4>Tab 1</h4>\r\n    <p>\r\n     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n    </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n  <sys-accordion-item  label=\"Expension Panel 2\">\r\n    <sys-accordion-body>\r\n      <h4>Tab 2</h4>\r\n      <p>\r\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n      </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n  <sys-accordion-item [disable]=\"true\" label=\"Expension Panel 2\">\r\n    <sys-accordion-body>\r\n      <h4>Tab 2</h4>\r\n      <p>\r\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\r\n      </p>\r\n    </sys-accordion-body>\r\n  </sys-accordion-item>\r\n</sys-accordion>\r\n   `,\r\n})"
+                }
+            ],
             "src/stories/Header.stories.ts": [
                 {
                     "name": "HeaderDefault",
@@ -985,6 +1007,16 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TabExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Accordion.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultAccordion",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

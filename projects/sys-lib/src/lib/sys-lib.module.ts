@@ -21,7 +21,7 @@ import { SysAccordionItemComponent } from './sys-accordion/sys-accordion-item/sy
 import { SysAccordionHeaderComponent } from './sys-accordion/sys-accordion-header/sys-accordion-header.component';
 import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sys-accordion-body.component';
 import { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-panel-header.component';
-import { CustomBadgeDirective } from './sys-badge/badge.directive';
+
 
 
 
@@ -50,7 +50,6 @@ import { CustomBadgeDirective } from './sys-badge/badge.directive';
     SysAccordionHeaderComponent,
     SysAccordionBodyComponent,
     SysPanelHeaderComponent,
-    CustomBadgeDirective,
   ],
   imports: [
     CommonModule,
@@ -76,7 +75,6 @@ import { CustomBadgeDirective } from './sys-badge/badge.directive';
     SysAccordionHeaderComponent,
     SysAccordionBodyComponent,
     SysPanelHeaderComponent,
-    CustomBadgeDirective
   ]
 })
 export class sysDesignModule { }
