@@ -28,7 +28,7 @@ const routes: Routes = [
     path: "sidebar", component: SidebarExampleComponent,
   },
   {
-    path: "badge", component: BadgeExampleComponent,
+    path: "dialog", component: BadgeExampleComponent,
   }
 ];
 

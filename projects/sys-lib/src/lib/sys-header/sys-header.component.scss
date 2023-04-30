@@ -1,6 +1,6 @@
 .sys-header{
     padding: 7px 1rem;
-    z-index: 9999999;
+    z-index: 9999;
     top: 0;
     right: 0;
 
@@ -18,7 +18,7 @@
   &.fixed{
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 9999;
   }
   .sys-row{
     display: flex;
@@ -59,6 +59,7 @@
   padding: 1rem;
   margin-left: 44px;
   position: relative;
+  z-index: 999;
 }
 
 

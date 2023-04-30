@@ -1,3 +1,39 @@
-<sys-button sysBadge="40">
-  sys button
-</sys-button>
+<button (click)="openDialog()">Open Dialog</button>
+<sys-dialog
+  *ngIf="showDialog"
+  [title]="'Dialog Box Title'"
+  [message]="'Dialog Box Content'"
+  (confirm)="onConfirm()"
+  (cancel)="onCancel()"
+
+>
+<sys-dialog-header>
+  Dialog 1 Title <button (click)="openDialog2()">Add</button>
+</sys-dialog-header>
+<sys-dialog-body>
+    <h3>Heading</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+    </p>
+</sys-dialog-body>
+</sys-dialog>
+
+
+<sys-dialog
+  *ngIf="showDialog2"
+  [title]="'Dialog Box Title'"
+  [message]="'Dialog Box Content'"
+  (confirm)="onConfirm2()"
+  (cancel)="onCancel2()"
+
+>
+<sys-dialog-header>
+  Dialog 2 Title
+</sys-dialog-header>
+<sys-dialog-body>
+    <h3>Heading</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+    </p>
+</sys-dialog-body>
+</sys-dialog>

@@ -1,0 +1,12 @@
+<div class="custom-dialog-box">
+  <div class="custom-dialog-box-header">
+    <ng-content select="sys-dialog-header"></ng-content>
+  </div>
+  <div class="custom-dialog-box-content">
+      <ng-content select="sys-dialog-body"></ng-content>
+  </div>
+  <div class="custom-dialog-box-actions">
+    <button (click)="onCancel()">Cancel</button>
+    <button (click)="onConfirm()">Ok</button>
+  </div>
+</div>

@@ -21,6 +21,10 @@ import { SysAccordionItemComponent } from './sys-accordion/sys-accordion-item/sy
 import { SysAccordionHeaderComponent } from './sys-accordion/sys-accordion-header/sys-accordion-header.component';
 import { SysAccordionBodyComponent } from './sys-accordion/sys-accordion-body/sys-accordion-body.component';
 import { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-panel-header.component';
+import { SysDialogComponent } from './sys-dialog/sys-dialog.component';
+import { SysDialogHeaderComponent } from './sys-dialog/sys-dialog-header/sys-dialog-header.component';
+import { SysDialogBodyComponent } from './sys-dialog/sys-dialog-body/sys-dialog-body.component';
+import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dialog-action.component';
 
 
 
@@ -50,6 +54,10 @@ import { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-pa
     SysAccordionHeaderComponent,
     SysAccordionBodyComponent,
     SysPanelHeaderComponent,
+    SysDialogComponent,
+    SysDialogHeaderComponent,
+    SysDialogBodyComponent,
+    SysDialogActionComponent,
   ],
   imports: [
     CommonModule,
@@ -75,6 +83,10 @@ import { SysPanelHeaderComponent } from './sys-accordion/sys-panel-header/sys-pa
     SysAccordionHeaderComponent,
     SysAccordionBodyComponent,
     SysPanelHeaderComponent,
+    SysDialogComponent,
+    SysDialogBodyComponent,
+    SysDialogActionComponent,
+    SysDialogHeaderComponent
   ]
 })
 export class sysDesignModule { }

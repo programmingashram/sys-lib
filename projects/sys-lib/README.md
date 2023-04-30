@@ -23,8 +23,9 @@ Our [documentation pages](https://programmingashram.github.io/sys-lib/) are also
 
 Also read about:
 
-* [Options](https://marked.js.org/#/USING_ADVANCED.md)
-* [Extensibility](https://marked.js.org/#/USING_PRO.md)
+## Support 
+
+Our Github Discuusion for your support , if you have any difficulty, confusion or any other implimentation issue with sysdesign2023 you can ping your questions in our [disccusion Page](https://github.com/SYS-DESIGN-2023/Support--SYSDESIGN2023/discussions) 
 
 ## Compatibility
 
