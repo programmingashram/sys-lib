@@ -1,12 +1,17 @@
-<div class="custom-dialog-box">
+<div class="custom-dialog-box center" [ngClass]="{'rightDialog': shiftRight, 'leftDialog': shiftLeft}">
   <div class="custom-dialog-box-header">
-    <ng-content select="sys-dialog-header"></ng-content>
+    <h4 class="title" *ngIf="title">{{title}}</h4>
+    <sys-button icon="close" class="textBtn rounded" [iconBtn]="true" *ngIf="title" (click)="closeDialog.emit()" color="error"></sys-button>
+    <ng-content select="sys-dialog-header" *ngIf="customHeader"></ng-content>
   </div>
-  <div class="custom-dialog-box-content">
+  <div class="divider"></div>
+  <div class="custom-dialog-box-content" [ngClass]="{'Contentscroll': scroll}">
       <ng-content select="sys-dialog-body"></ng-content>
   </div>
-  <div class="custom-dialog-box-actions">
-    <button (click)="onCancel()">Cancel</button>
-    <button (click)="onConfirm()">Ok</button>
-  </div>
+ <div class="dialog-footer-wrapper">
+   <div class="divider"></div>
+    <div class="custom-dialog-box-actions">
+      <ng-content select="sys-dialog-action"></ng-content>
+    </div>
+ </div>
 </div>

@@ -30,3 +30,10 @@ export * from "./lib/sys-accordion/sys-accordion-body/sys-accordion-body.compone
 export * from "./lib/sys-accordion/sys-accordion-header/sys-accordion-header.component";
 export * from "./lib/sys-accordion/sys-accordion-item/sys-accordion-item.component";
 export * from "./lib/sys-accordion/sys-panel-header/sys-panel-header.component";
+
+
+
+export * from "./lib/sys-dialog/sys-dialog.component";
+export * from "./lib/sys-dialog/sys-dialog-header/sys-dialog-header.component";
+export * from "./lib/sys-dialog/sys-dialog-action/sys-dialog-action.component";
+export * from "./lib/sys-dialog/sys-dialog-body/sys-dialog-body.component";

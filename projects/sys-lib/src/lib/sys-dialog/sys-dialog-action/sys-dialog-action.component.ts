@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-sys-dialog-action',
+  selector: 'sys-dialog-action',
   templateUrl: './sys-dialog-action.component.html',
-  styleUrls: ['./sys-dialog-action.component.css']
+  styleUrls: ['./sys-dialog-action.component.scss']
 })
 export class SysDialogActionComponent {
 
