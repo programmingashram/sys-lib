@@ -9,6 +9,7 @@ import { SidebarExampleComponent } from './sidebar-example/sidebar-example.compo
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { AlertExampleComponent } from './alert-example/alert-example.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { TreeExampleComponent } from './tree-example/tree-example.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   ,
   {
     path: "alert", component: AlertExampleComponent,
+  }
+   ,
+  {
+    path: "tree", component: TreeExampleComponent,
   }
 ];
 

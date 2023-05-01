@@ -37,3 +37,9 @@ export * from "./lib/sys-dialog/sys-dialog.component";
 export * from "./lib/sys-dialog/sys-dialog-header/sys-dialog-header.component";
 export * from "./lib/sys-dialog/sys-dialog-action/sys-dialog-action.component";
 export * from "./lib/sys-dialog/sys-dialog-body/sys-dialog-body.component";
+
+export * from "./lib/sys-alert/sys-alert.component";
+export * from "./lib/sys-alert/sys-alert-action/sys-alert-action.component";
+
+
+export * from "./lib/sys-tree/sys-tree.component";

@@ -16,6 +16,7 @@ import { SidebarExampleComponent } from './sidebar-example/sidebar-example.compo
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { AlertExampleComponent } from './alert-example/alert-example.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { TreeExampleComponent } from './tree-example/tree-example.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -32,6 +33,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     BadgeExampleComponent,
     AlertExampleComponent,
     DialogExampleComponent,
+    TreeExampleComponent,
   ],
   imports: [
     BrowserModule,

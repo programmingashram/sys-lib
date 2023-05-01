@@ -27,6 +27,7 @@ import { SysDialogBodyComponent } from './sys-dialog/sys-dialog-body/sys-dialog-
 import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dialog-action.component';
 import { SysAlertComponent } from './sys-alert/sys-alert.component';
 import { SysAlertActionComponent } from './sys-alert/sys-alert-action/sys-alert-action.component';
+import { SysTreeComponent } from './sys-tree/sys-tree.component';
 
 
 
@@ -62,6 +63,8 @@ import { SysAlertActionComponent } from './sys-alert/sys-alert-action/sys-alert-
     SysDialogActionComponent,
     SysAlertComponent,
     SysAlertActionComponent,
+    SysTreeComponent,
+
   ],
   imports: [
     CommonModule,
@@ -92,7 +95,8 @@ import { SysAlertActionComponent } from './sys-alert/sys-alert-action/sys-alert-
     SysDialogActionComponent,
     SysDialogHeaderComponent,
     SysAlertComponent,
-    SysAlertActionComponent
+    SysAlertActionComponent,
+    SysTreeComponent
   ]
 })
 export class sysDesignModule { }
