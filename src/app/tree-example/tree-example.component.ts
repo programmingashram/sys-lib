@@ -12,7 +12,7 @@ export class TreeExampleComponent {
       label: 'Parent 1',
       icon : "folder",
       children: [
-        { label: 'Child 1' , icon: "folder_open" , 
+        { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
           { label: 'Child 2' , icon: "picture_as_pdf"},
@@ -27,7 +27,7 @@ export class TreeExampleComponent {
       label: 'Parent 2',
       icon : "folder",
       children: [
-        { label: 'Child 1' , icon: "folder_open" , 
+        { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
           { label: 'Child 2' , icon: "picture_as_pdf"},
@@ -45,7 +45,7 @@ export class TreeExampleComponent {
       label: 'Parent 1',
       icon : "folder",
       children: [
-        { label: 'Child 1' , icon: "folder_open" , 
+        { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
           { label: 'Child 2' , icon: "picture_as_pdf"},
@@ -60,7 +60,7 @@ export class TreeExampleComponent {
       label: 'Parent 2',
       icon : "folder",
       children: [
-        { label: 'Child 1' , icon: "folder_open" , 
+        { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
           { label: 'Child 2' , icon: "picture_as_pdf"},

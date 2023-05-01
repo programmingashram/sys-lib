@@ -82,7 +82,6 @@ export const CustomIconTree: Story<SysTreeComponent> = (args) => ({
         children: [
           {
             label: 'Child 1',
-            icon: 'folder_open',
             children: [
               { label: 'Child 1', icon: 'picture_as_pdf' },
               { label: 'Child 2', icon: 'picture_as_pdf' },
@@ -99,7 +98,6 @@ export const CustomIconTree: Story<SysTreeComponent> = (args) => ({
         children: [
           {
             label: 'Child 1',
-            icon: 'folder_open',
             children: [
               { label: 'Child 1', icon: 'picture_as_pdf' },
               { label: 'Child 2', icon: 'picture_as_pdf' },
