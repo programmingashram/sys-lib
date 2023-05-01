@@ -7,6 +7,8 @@ import { AccordionExampleComponent } from './accordion-example/accordion-example
 import { HeaderExampleComponent } from './header-example/header-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
+import { AlertExampleComponent } from './alert-example/alert-example.component';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
 const routes: Routes = [
   {
@@ -26,9 +28,14 @@ const routes: Routes = [
   ,
   {
     path: "sidebar", component: SidebarExampleComponent,
-  },
+  }
+  ,
   {
-    path: "dialog", component: BadgeExampleComponent,
+    path: "dialog", component: DialogExampleComponent,
+  }
+  ,
+  {
+    path: "alert", component: AlertExampleComponent,
   }
 ];
 

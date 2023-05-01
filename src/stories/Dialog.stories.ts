@@ -77,3 +77,48 @@ export const RightDialog: Story<SysDialogComponent> = (args) => ({
    `,
 });
 
+
+export const ScrollDialog: Story<SysDialogComponent> = (args) => ({
+  props: args,
+  template: `
+  <sys-dialog  title="Dialog Box Title" (closeDialog)="onCancel3()" [scroll]="true">
+      <sys-dialog-header>
+        <!-- Dialog 1 Title <button (click)="openDialog2()">Add</button> -->
+      </sys-dialog-header>
+      <sys-dialog-body>
+          <h3>Heading 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+          </p>
+          <h3>Heading 2 </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+          </p>
+          <h3>Heading 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+          </p>
+          <h3>Heading 4</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+          </p>
+
+          <h3>Heading 5</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
+          </p>
+      </sys-dialog-body>
+
+      <sys-dialog-action>
+        <sys-button (click)="onCancel3()" icon="cancel" class="textBtn" color="error">
+          Cancel
+        </sys-button>
+        <sys-button (click)="onConfirm3()" icon="check" class="textBtn" color="olive">
+          Ok
+        </sys-button>
+      </sys-dialog-action>
+    </sys-dialog>
+   `,
+});
+
+

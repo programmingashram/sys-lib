@@ -1,10 +1,12 @@
 import { AfterContentInit, Component, ContentChild, ContentChildren, Input, QueryList } from '@angular/core';
 import { TabComponent } from './tab/tab.component';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'sys-tabs',
   templateUrl: './sys-tab.component.html',
-  styleUrls: ['./sys-tab.component.scss']
+  styleUrls: ['./sys-tab.component.scss'],
+
 })
 export class SysTabComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;

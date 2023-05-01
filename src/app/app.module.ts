@@ -14,6 +14,8 @@ import { TabExampleComponent } from './tab-example/tab-example.component';
 import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
 import { BadgeExampleComponent } from './badge-example/badge-example.component';
+import { AlertExampleComponent } from './alert-example/alert-example.component';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -28,6 +30,8 @@ import { BadgeExampleComponent } from './badge-example/badge-example.component';
     AccordionExampleComponent,
     SidebarExampleComponent,
     BadgeExampleComponent,
+    AlertExampleComponent,
+    DialogExampleComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, ContentChildren, ElementRef, EventEmitter, Input, Output, Vi
 import { NavigationEnd, Router } from '@angular/router';
 import { SysHeaderComponent } from '../sys-header/sys-header.component';
 import { SidebarService } from './sidebar.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 interface SidebarItem {
   label: string;
   route: string;
@@ -9,7 +10,18 @@ interface SidebarItem {
 @Component({
   selector: 'sys-sidebar',
   templateUrl: './sys-sidebar.component.html',
-  styleUrls: ['./sys-sidebar.component.scss']
+  styleUrls: ['./sys-sidebar.component.scss'],
+  animations: [
+    trigger('myAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0)' }), // start state
+        animate('200ms ease-out', style({ opacity: 1, transform: 'scale(1)' })) // end state
+      ]),
+      transition(':leave', [
+        animate('200ms ease-out', style({ opacity: 0, transform: 'scale(0)' })) // end state
+      ])
+    ])
+  ]
 })
 export class SysSidebarComponent {
   @Input() items: SidebarItem[];

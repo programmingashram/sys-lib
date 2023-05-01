@@ -25,6 +25,8 @@ import { SysDialogComponent } from './sys-dialog/sys-dialog.component';
 import { SysDialogHeaderComponent } from './sys-dialog/sys-dialog-header/sys-dialog-header.component';
 import { SysDialogBodyComponent } from './sys-dialog/sys-dialog-body/sys-dialog-body.component';
 import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dialog-action.component';
+import { SysAlertComponent } from './sys-alert/sys-alert.component';
+import { SysAlertActionComponent } from './sys-alert/sys-alert-action/sys-alert-action.component';
 
 
 
@@ -58,6 +60,8 @@ import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dia
     SysDialogHeaderComponent,
     SysDialogBodyComponent,
     SysDialogActionComponent,
+    SysAlertComponent,
+    SysAlertActionComponent,
   ],
   imports: [
     CommonModule,
@@ -86,7 +90,9 @@ import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dia
     SysDialogComponent,
     SysDialogBodyComponent,
     SysDialogActionComponent,
-    SysDialogHeaderComponent
+    SysDialogHeaderComponent,
+    SysAlertComponent,
+    SysAlertActionComponent
   ]
 })
 export class sysDesignModule { }

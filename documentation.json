@@ -48,6 +48,108 @@
             "templateData": "<sys-accordion>\n  <sys-accordion-item label=\"Expension Panel 1\" expendless=\"close\" expendMore=\"add\"  discription=\"sit amet consectetur adipisicing elit. Veniam ab nostru\" >\n    <sys-panel-header>\n      <sys-button [iconBtn]=\"true\"  icon=\"groups\">\n      </sys-button>\n    </sys-panel-header>\n    <sys-accordion-body>\n      <sys-tabs [bottomHeader]=\"true\">\n        <sys-tab tabTitle=\"Tab 1\"  [active]=\"true\" icon=\"person_add\">\n            <h4>Tab 1</h4>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n        </sys-tab>\n        <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\n            <h4>Tab 2</h4>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n        </sys-tab>\n        <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\n            <h4>Tab 3</h4>\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n        </sys-tab>\n        <sys-tab tabTitle=\"Tab 4\" icon=\"favorite\">\n          <h4>Tab 4</h4>\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\n      </sys-tab>\n      </sys-tabs>\n    </sys-accordion-body>\n  </sys-accordion-item>\n  <sys-accordion-item  label=\"Expension Panel 2\">\n    <sys-accordion-body>\n      <h4>Tab 2</h4>\n      <p>\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\n      </p>\n    </sys-accordion-body>\n  </sys-accordion-item>\n  <sys-accordion-item [disable]=\"true\" label=\"Expension Panel 2\">\n    <sys-accordion-body>\n      <h4>Tab 2</h4>\n      <p>\n       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?\n      </p>\n    </sys-accordion-body>\n  </sys-accordion-item>\n</sys-accordion>\n\n\n"
         },
         {
+            "name": "AlertExampleComponent",
+            "id": "component-AlertExampleComponent-8dcea9ca65fc93013cd5a859137b5a58508e1176dfae6503bb7363a265e7c4fe6c075c6288b39f6eabb0f5142526c95050bbd9396cb30f464c6a28636b18f564",
+            "file": "src/app/alert-example/alert-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-alert-example",
+            "styleUrls": [
+                "./alert-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./alert-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "alertDelete",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "alertSuccess",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "alertDeleteOpen",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "alertSuccessOpen",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeAlert",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeSuccess",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-alert-example',\n  templateUrl: './alert-example.component.html',\n  styleUrls: ['./alert-example.component.scss']\n})\nexport class AlertExampleComponent {\n  alertDelete = false;\n  alertSuccess = false\n\n  alertDeleteOpen(): void {\n    this.alertDelete = true;\n  }\n\n  alertSuccessOpen(): void{\n    this.alertSuccess = true;\n  }\n\n  closeSuccess(){\n    this.alertSuccess = false;\n    this.alertDelete = false;\n  }\n\n  closeAlert(){\n    this.alertDelete = false;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./alert-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\n<sys-button icon=\"delete\"  (click)=\"alertDeleteOpen()\">Delete Items</sys-button>\n\n<sys-alert *ngIf=\"alertDelete\" alertIcon=\"delete\">\n  Are u want to Delete this item ?\n  <sys-alert-action>\n    <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"alertSuccessOpen()\">\n      Yes\n    </sys-button>\n    <sys-button icon=\"check\" class=\"textBtn\" color=\"error\"  (click)=\"closeAlert()\">\n      No\n    </sys-button>\n  </sys-alert-action>\n</sys-alert>\n\n<sys-alert *ngIf=\"alertSuccess\" alertIcon=\"check_circle\">\n  Item Successfully Deleted !!\n\n  <sys-alert-action>\n    <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"closeSuccess()\">\n      Close\n    </sys-button>\n  </sys-alert-action>\n</sys-alert>\n\n"
+        },
+        {
             "name": "AppComponent",
             "id": "component-AppComponent-cb529722c154a866985295cebe3874d2a0819879d45350b87aa9bfd157e6bd4c2f50c0311b6c5e4d3f1f660af009b679df138dc7feebfc0b34edeac80eecf408",
             "file": "src/app/app.component.ts",
@@ -117,11 +219,11 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"sys-container\">\r\n  <div class=\"sidebar-container\">\r\n    <sys-sidebar [small]=\"small\">\r\n      <sys-sidebar-item menuIcon=\"menu\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"smart_button\" label=\"Button\" route=\"/button\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_agenda\" label=\"Cards\" route=\"/card\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"tab\" label=\"Tabs\" route=\"/tab\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"keyboard_arrow_down\" label=\"Expension Panel\" route=\"/accordion\" ></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"dock_to_right\" label=\"Sidebar\" route=\"/sidebar\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_agenda\" label=\"Dialog\" route=\"/dialog\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"verified\" label=\"Badge\" route=\"/badge\" (click)=\"menu()\"> </sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"tab\" label=\"Forms\" route=\"/forms\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"toggle_off\" label=\"Toggle Button\" route=\"/togglebuttons\" (click)=\"menu()\"></sys-sidebar-item>\r\n\r\n      <sys-sidebar-item icon=\"account_tree\" label=\"Tree\" route=\"/tree\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"construction\" label=\"ToolTip\" route=\"/tooltip\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"table_rows\" label=\"Table\" route=\"/table\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_kanban\" label=\"Grid\" route=\"/grid\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"footprint\" label=\"Footer\" route=\"/footer\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"face\" label=\"Header\" route=\"/header\"></sys-sidebar-item>\r\n    </sys-sidebar>\r\n  </div>\r\n  <div class=\"right\">\r\n    <sys-header [fixed]=\"true\" logo=\"SYS DESIGN\" subTitle=\"New gen. frontend library\">\r\n      <sys-button icon=\"attachment\"  class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n    </sys-header>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
+            "templateData": "<div class=\"sys-container\">\r\n  <div class=\"sidebar-container\">\r\n    <sys-sidebar [small]=\"small\">\r\n      <sys-sidebar-item menuIcon=\"menu\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"smart_button\" label=\"Button\" route=\"/button\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_agenda\" label=\"Cards\" route=\"/card\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"tab\" label=\"Tabs\" route=\"/tab\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"keyboard_arrow_down\" label=\"Expension Panel\" route=\"/accordion\" ></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"dock_to_right\" label=\"Sidebar\" route=\"/sidebar\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_agenda\" label=\"Dialog\" route=\"/dialog\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"warning\" label=\"Alerts\" route=\"/alert\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"verified\" label=\"Badge\" route=\"/badge\" (click)=\"menu()\"> </sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"tab\" label=\"Forms\" route=\"/forms\" (click)=\"menu()\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"toggle_off\" label=\"Toggle Button\" route=\"/togglebuttons\" (click)=\"menu()\"></sys-sidebar-item>\r\n\r\n      <sys-sidebar-item icon=\"account_tree\" label=\"Tree\" route=\"/tree\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"construction\" label=\"ToolTip\" route=\"/tooltip\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"table_rows\" label=\"Table\" route=\"/table\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"view_kanban\" label=\"Grid\" route=\"/grid\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"footprint\" label=\"Footer\" route=\"/footer\"></sys-sidebar-item>\r\n      <sys-sidebar-item icon=\"face\" label=\"Header\" route=\"/header\"></sys-sidebar-item>\r\n    </sys-sidebar>\r\n  </div>\r\n  <div class=\"right\">\r\n    <sys-header [fixed]=\"true\" logo=\"SYS DESIGN\" subTitle=\"New gen. frontend library\">\r\n      <sys-button icon=\"attachment\"  class=\"rounded\"  [iconBtn]=\"true\" ></sys-button>\r\n    </sys-header>\r\n  </div>\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "BadgeExampleComponent",
-            "id": "component-BadgeExampleComponent-9687ae56a239fb125010ef05f965eb75b2445f0fcf3e47ad72f4c5ba541f8a382a8bcd7fe75b792ea76d5a633e68a9a4cc3241e8c7e347810132df5d1d0a6a12",
+            "id": "component-BadgeExampleComponent-074788f3b020123049b16688bce7bcca7c4d558f2a03972340c5c6a3d0bd4bdfeb6c794a6c919dcf073774435e5cf935758792d0d93489d37602799aed7d22d9",
             "file": "src/app/badge-example/badge-example.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -139,90 +241,8 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "showDialog",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "showDialog2",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "onCancel",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 22,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onCancel2",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 37,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onConfirm",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onConfirm2",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 32,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "openDialog",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "openDialog2",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 27,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -230,7 +250,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-badge-example',\n  templateUrl: './badge-example.component.html',\n  styleUrls: ['./badge-example.component.scss']\n})\nexport class BadgeExampleComponent {\n  showDialog = false;\n  showDialog2 = false;\n\n  openDialog(): void {\n    this.showDialog = true;\n  }\n\n\n  onConfirm(): void {\n    console.log('Ok button clicked');\n    this.showDialog = false;\n  }\n\n  onCancel(): void {\n    console.log('Cancel button clicked');\n    this.showDialog = false;\n  }\n\n  openDialog2(): void {\n    this.showDialog2 = true;\n  }\n\n\n  onConfirm2(): void {\n    console.log('Ok button clicked');\n    this.showDialog2 = false;\n  }\n\n  onCancel2(): void {\n    console.log('Cancel button clicked');\n    this.showDialog2 = false;\n  }\n}\n",
+            "sourceCode": "import { animate, style, transition, trigger } from '@angular/animations';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-badge-example',\n  templateUrl: './badge-example.component.html',\n  styleUrls: ['./badge-example.component.scss'],\n\n})\nexport class BadgeExampleComponent {\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -239,7 +259,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<sys-button icon=\"view_agenda\"  (click)=\"openDialog()\">Center Dialog</sys-button>\n<br>\n<sys-button icon=\"view_agenda\"  (click)=\"openDialog2()\">Right Dialog</sys-button>\n\n\n\n<sys-dialog *ngIf=\"showDialog\" title=\"Dialog Box Title\" (closeDialog)=\"onCancel()\">\n  <sys-dialog-header>\n    <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\n  </sys-dialog-header>\n  <sys-dialog-body>\n      <h3>Heading</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n  </sys-dialog-body>\n  <sys-dialog-action>\n    <sys-button (click)=\"onCancel()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\n      Cancel\n    </sys-button>\n    <sys-button (click)=\"onConfirm()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\n      Ok\n    </sys-button>\n  </sys-dialog-action>\n</sys-dialog>\n\n\n\n\n<sys-dialog *ngIf=\"showDialog2\" title=\"Dialog Box Title\" [shiftRight]=\"true\" (closeDialog)=\"onCancel2()\">\n  <sys-dialog-header>\n    <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\n  </sys-dialog-header>\n  <sys-dialog-body>\n      <h3>Heading</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n  </sys-dialog-body>\n  <sys-dialog-action>\n    <sys-button (click)=\"onCancel2()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\n      Cancel\n    </sys-button>\n    <sys-button (click)=\"onConfirm2()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\n      Ok\n    </sys-button>\n  </sys-dialog-action>\n</sys-dialog>\n"
+            "templateData": ""
         },
         {
             "name": "ButtonExampleComponent",
@@ -331,6 +351,168 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"p-10\">\r\n  <div class=\"d-flex\">\r\n    <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\">\r\n      <sys-card-content>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n          </p>\r\n      </sys-card-content>\r\n    </sys-card>\r\n\r\n    <sys-card title=\"Card Title\" subTitle=\"Sub Title\" icon=\"settings\">\r\n      <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n      </sys-card-content>\r\n\r\n      <sys-card-action>\r\n        <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n          Cancel\r\n        </sys-button>\r\n\r\n        <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n          Accept\r\n        </sys-button>\r\n      </sys-card-action>\r\n    </sys-card>\r\n\r\n    <sys-card title=\"Card Title\" subTitle=\"Sub Title\"  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n      <sys-CardHeader-action>\r\n        <sys-button icon=\"favorite\"  [iconBtn]=\"true\" > </sys-button>\r\n      </sys-CardHeader-action>\r\n      <sys-card-content>\r\n        <p>\r\n\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n      </sys-card-content>\r\n\r\n    </sys-card>\r\n\r\n\r\n    <sys-card title=\"Card Title\" preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n\r\n      <sys-card-content>\r\n        <p>\r\n\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n        </p>\r\n      </sys-card-content>\r\n      <sys-card-action>\r\n        <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n          Cancel\r\n        </sys-button>\r\n\r\n        <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n          Accept\r\n        </sys-button>\r\n      </sys-card-action>\r\n    </sys-card>\r\n</div>\r\n<!-- -------------------------------------- -->\r\n\r\n\r\n\r\n\r\n<sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n</sys-card>\r\n<br>\r\n<sys-card preIcon=\"account_circle\"  [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n  <sys-card-action>\r\n    <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n      Accept\r\n    </sys-button>\r\n  </sys-card-action>\r\n</sys-card>\r\n<br>\r\n<sys-card preIcon=\"account_circle\"  [horigentalCard]=\"true\" >\r\n  <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n      </p>\r\n  </sys-card-content>\r\n  <sys-card-action>\r\n    <mat-icon class=\"mat-18\">edit</mat-icon>\r\n  </sys-card-action>\r\n</sys-card>\r\n<br>\r\n\r\n\r\n\r\n  <!-- <sys-card  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\" [flatImage]=\"true\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n    <sys-card-action>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>\r\n\r\n  <sys-card  cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\" [flatImage]=\"true\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n    <sys-card-action>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card> -->\r\n\r\n"
+        },
+        {
+            "name": "DialogExampleComponent",
+            "id": "component-DialogExampleComponent-af45acca072a30a07d6bf601a35f5321920f732cd6008e00a172a171ae70342ff42af6674220dc3351c44bfdf31ff165354d006666b513f0dd0463b0801ddb88",
+            "file": "src/app/dialog-example/dialog-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dialog-example",
+            "styleUrls": [
+                "./dialog-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "showDialog",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "showDialog2",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "showDialog3",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onCancel",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onCancel2",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onCancel3",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onConfirm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onConfirm2",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onConfirm3",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog2",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openDialog3",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-dialog-example',\n  templateUrl: './dialog-example.component.html',\n  styleUrls: ['./dialog-example.component.scss']\n})\nexport class DialogExampleComponent {\nshowDialog = false;\n  showDialog2 = false;\n  showDialog3 = false;\n\n\n  openDialog(): void {\n    this.showDialog = true;\n  }\n\n\n  onConfirm(): void {\n    console.log('Ok button clicked');\n    this.showDialog = false;\n  }\n\n  onCancel(): void {\n    console.log('Cancel button clicked');\n    this.showDialog = false;\n  }\n\n  openDialog2(): void {\n    this.showDialog2 = true;\n  }\n\n\n  onConfirm2(): void {\n    console.log('Ok button clicked');\n    this.showDialog2 = false;\n  }\n\n  onCancel2(): void {\n    console.log('Cancel button clicked');\n    this.showDialog2 = false;\n  }\n\n  openDialog3(): void {\n    this.showDialog3 = true;\n  }\n\n\n  onConfirm3(): void {\n    console.log('Ok button clicked');\n    this.showDialog3 = false;\n  }\n\n  onCancel3(): void {\n    console.log('Cancel button clicked');\n    this.showDialog3 = false;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dialog-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\n<sys-button icon=\"touch_app\"  (click)=\"openDialog()\">Center Dialog</sys-button>\n<br>\n<sys-button icon=\"touch_app\"  (click)=\"openDialog2()\">Right Dialog</sys-button>\n<br>\n<sys-button icon=\"touch_app\"  (click)=\"openDialog3()\">Scroll Dialog</sys-button>\n\n\n<sys-dialog *ngIf=\"showDialog\" title=\"Dialog Box Title\" (closeDialog)=\"onCancel()\">\n  <sys-dialog-header>\n    <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\n  </sys-dialog-header>\n  <sys-dialog-body>\n      <h3>Heading</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n      <h3>Heading</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n\n  </sys-dialog-body>\n\n  <sys-dialog-action>\n    <sys-button (click)=\"onCancel()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\n      Cancel\n    </sys-button>\n    <sys-button (click)=\"onConfirm()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\n      Ok\n    </sys-button>\n  </sys-dialog-action>\n</sys-dialog>\n\n\n<sys-dialog *ngIf=\"showDialog2\" title=\"Dialog Box Title\" [shiftRight]=\"true\" (closeDialog)=\"onCancel2()\">\n  <sys-dialog-header>\n    <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\n  </sys-dialog-header>\n  <sys-dialog-body>\n      <h3>Heading</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n  </sys-dialog-body>\n  <sys-dialog-action>\n    <sys-button (click)=\"onCancel2()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\n      Cancel\n    </sys-button>\n    <sys-button (click)=\"onConfirm2()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\n      Ok\n    </sys-button>\n  </sys-dialog-action>\n</sys-dialog>\n\n\n<sys-dialog *ngIf=\"showDialog3\" title=\"Dialog Box Title\" (closeDialog)=\"onCancel3()\" [scroll]=\"true\">\n  <sys-dialog-header>\n    <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\n  </sys-dialog-header>\n  <sys-dialog-body>\n      <h3>Heading 1</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n      <h3>Heading 2 </h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n      <h3>Heading 3</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n      <h3>Heading 4</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n\n      <h3>Heading 5</h3>\n      <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\n      </p>\n  </sys-dialog-body>\n\n  <sys-dialog-action>\n    <sys-button (click)=\"onCancel3()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\n      Cancel\n    </sys-button>\n    <sys-button (click)=\"onConfirm3()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\n      Ok\n    </sys-button>\n  </sys-dialog-action>\n</sys-dialog>\n\n\n"
         },
         {
             "name": "HeaderExampleComponent",
@@ -528,13 +710,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-52a4f7fe85039a8831a6ca47f652ff72e916fa39db31c6d3760f47f80ee7e09c62380648f504ab28deb9f51603cc17ed913b7a3acad4dfe389fe470575259bba",
+            "id": "module-AppModule-cc213a0df2e0866f7594f2a51f162d75da7ca451a9c4e3cbfa652a046bfe84519a545db467381ba510b77fc938b1c431643878605b8b11674880e8064a645420",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n    TabExampleComponent,\r\n    AccordionExampleComponent,\r\n    SidebarExampleComponent,\r\n    BadgeExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n    TabExampleComponent,\r\n    AccordionExampleComponent,\r\n    SidebarExampleComponent,\r\n    BadgeExampleComponent,\r\n    AlertExampleComponent,\r\n    DialogExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -547,6 +729,9 @@
                             "name": "AccordionExampleComponent"
                         },
                         {
+                            "name": "AlertExampleComponent"
+                        },
+                        {
                             "name": "AppComponent"
                         },
                         {
@@ -557,6 +742,9 @@
                         },
                         {
                             "name": "CardExampleComponent"
+                        },
+                        {
+                            "name": "DialogExampleComponent"
                         },
                         {
                             "name": "HeaderExampleComponent"
@@ -600,13 +788,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-01df6034b46990a7db10ebff9e0827689563c734d7107276cd09376273aac0fa1f02b30da75d030ac5d2b3be70cd7a510f241e09b3490eab076ef71a38772640",
+            "id": "module-AppRoutingModule-4a0ecd331276584755579c19c9bde6566e0d6ac415abf1fa647456587cc49c206ecd790c6142b96ab08a58067f2c941eb7451ece9d3a3e8e5538931662b4c5ff",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"tab\", component: TabExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"accordion\", component: AccordionExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"sidebar\", component: SidebarExampleComponent,\r\n  },\r\n  {\r\n    path: \"dialog\", component: BadgeExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\r\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\r\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"tab\", component: TabExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"accordion\", component: AccordionExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"sidebar\", component: SidebarExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"dialog\", component: DialogExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"alert\", component: AlertExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -788,6 +976,26 @@
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-dialog  title=\"Dialog Box Title\" [shiftRight]=\"true\" (closeDialog)=\"onCancel()\">\r\n    <sys-dialog-header>\r\n      <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\r\n    </sys-dialog-header>\r\n    <sys-dialog-body>\r\n        <h3>Heading</h3>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n        </p>\r\n    </sys-dialog-body>\r\n    <sys-dialog-action>\r\n      <sys-button (click)=\"onCancel()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n      <sys-button (click)=\"onConfirm()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Ok\r\n      </sys-button>\r\n    </sys-dialog-action>\r\n  </sys-dialog>\r\n\r\n   `,\r\n})"
             },
             {
+                "name": "ScrollDialog",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysDialogComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-dialog  title=\"Dialog Box Title\" (closeDialog)=\"onCancel3()\" [scroll]=\"true\">\r\n      <sys-dialog-header>\r\n        <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\r\n      </sys-dialog-header>\r\n      <sys-dialog-body>\r\n          <h3>Heading 1</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 2 </h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 3</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 4</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n\r\n          <h3>Heading 5</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n      </sys-dialog-body>\r\n\r\n      <sys-dialog-action>\r\n        <sys-button (click)=\"onCancel3()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n          Cancel\r\n        </sys-button>\r\n        <sys-button (click)=\"onConfirm3()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n          Ok\r\n        </sys-button>\r\n      </sys-dialog-action>\r\n    </sys-dialog>\r\n   `,\r\n})"
+            },
+            {
+                "name": "SuccessAlert",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Alert.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysAlertComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-alert  alertIcon=\"check_circle\">\r\n    Item Successfully Deleted !!\r\n\r\n    <sys-alert-action>\r\n      <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"closeSuccess()\">\r\n        Close\r\n      </sys-button>\r\n    </sys-alert-action>\r\n  </sys-alert>\r\n   `,\r\n})"
+            },
+            {
                 "name": "TextButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -806,6 +1014,16 @@
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
                 "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-tabs [vertical]=\"true\">\r\n    <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n      <h4>Tab 1</h4>\r\n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n    </sys-tab>\r\n    <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n        <h4>Tab 2</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n    </sys-tab>\r\n    <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n        <h4>Tab 3</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n    </sys-tab>\r\n  </sys-tabs>`,\r\n})"
+            },
+            {
+                "name": "WarningAlert",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Alert.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SysAlertComponent>",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-alert  alertIcon=\"delete\">\r\n    Are u want to Delete this item ?\r\n    <sys-alert-action>\r\n      <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"alertSuccessOpen()\">\r\n        Yes\r\n      </sys-button>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"error\"  (click)=\"closeAlert()\">\r\n        No\r\n      </sys-button>\r\n    </sys-alert-action>\r\n  </sys-alert>\r\n   `,\r\n})"
             }
         ],
         "functions": [],
@@ -970,6 +1188,16 @@
                     "deprecationMessage": "",
                     "type": "Story<SysDialogComponent>",
                     "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-dialog  title=\"Dialog Box Title\" [shiftRight]=\"true\" (closeDialog)=\"onCancel()\">\r\n    <sys-dialog-header>\r\n      <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\r\n    </sys-dialog-header>\r\n    <sys-dialog-body>\r\n        <h3>Heading</h3>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n        </p>\r\n    </sys-dialog-body>\r\n    <sys-dialog-action>\r\n      <sys-button (click)=\"onCancel()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n      <sys-button (click)=\"onConfirm()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Ok\r\n      </sys-button>\r\n    </sys-dialog-action>\r\n  </sys-dialog>\r\n\r\n   `,\r\n})"
+                },
+                {
+                    "name": "ScrollDialog",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysDialogComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-dialog  title=\"Dialog Box Title\" (closeDialog)=\"onCancel3()\" [scroll]=\"true\">\r\n      <sys-dialog-header>\r\n        <!-- Dialog 1 Title <button (click)=\"openDialog2()\">Add</button> -->\r\n      </sys-dialog-header>\r\n      <sys-dialog-body>\r\n          <h3>Heading 1</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 2 </h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 3</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n          <h3>Heading 4</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n\r\n          <h3>Heading 5</h3>\r\n          <p>\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!\r\n          </p>\r\n      </sys-dialog-body>\r\n\r\n      <sys-dialog-action>\r\n        <sys-button (click)=\"onCancel3()\" icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n          Cancel\r\n        </sys-button>\r\n        <sys-button (click)=\"onConfirm3()\" icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n          Ok\r\n        </sys-button>\r\n      </sys-dialog-action>\r\n    </sys-dialog>\r\n   `,\r\n})"
                 }
             ],
             "src/stories/Header.stories.ts": [
@@ -994,6 +1222,28 @@
                     "deprecationMessage": "",
                     "type": "Preview",
                     "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                }
+            ],
+            "src/stories/Alert.stories.ts": [
+                {
+                    "name": "SuccessAlert",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Alert.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysAlertComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-alert  alertIcon=\"check_circle\">\r\n    Item Successfully Deleted !!\r\n\r\n    <sys-alert-action>\r\n      <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"closeSuccess()\">\r\n        Close\r\n      </sys-button>\r\n    </sys-alert-action>\r\n  </sys-alert>\r\n   `,\r\n})"
+                },
+                {
+                    "name": "WarningAlert",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Alert.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SysAlertComponent>",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-alert  alertIcon=\"delete\">\r\n    Are u want to Delete this item ?\r\n    <sys-alert-action>\r\n      <sys-button  icon=\"cancel\" class=\"textBtn\" color=\"olive\" (click)=\"alertSuccessOpen()\">\r\n        Yes\r\n      </sys-button>\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"error\"  (click)=\"closeAlert()\">\r\n        No\r\n      </sys-button>\r\n    </sys-alert-action>\r\n  </sys-alert>\r\n   `,\r\n})"
                 }
             ]
         },
@@ -1033,7 +1283,11 @@
                     },
                     {
                         "path": "dialog",
-                        "component": "BadgeExampleComponent"
+                        "component": "DialogExampleComponent"
+                    },
+                    {
+                        "path": "alert",
+                        "component": "AlertExampleComponent"
                     }
                 ],
                 "kind": "module"
@@ -1064,6 +1318,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/alert-example/alert-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AlertExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -1078,7 +1341,7 @@
                 "linktype": "component",
                 "name": "BadgeExampleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1097,6 +1360,15 @@
                 "name": "CardExampleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dialog-example/dialog-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
@@ -1141,6 +1413,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "DefaultAccordion",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Alert.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SuccessAlert",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Alert.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WarningAlert",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1241,6 +1533,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "RightDialog",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Dialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ScrollDialog",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
