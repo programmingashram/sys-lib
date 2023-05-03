@@ -11,11 +11,24 @@ export class TreeExampleComponent {
     {
       label: 'Parent 1',
       icon : "folder",
+      expanded : true,
       children: [
         { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
-          { label: 'Child 2' , icon: "picture_as_pdf"},
+          { label: 'Child 2' ,
+            children: [
+              { label: 'Child 1' , icon: "picture_as_pdf"},
+              { label: 'Child 2' ,
+                children: [
+                  { label: 'Child 1' , icon: "picture_as_pdf"},
+                  { label: 'Child 2' , icon: "picture_as_pdf"},
+                  { label: 'Child 3' , icon: "picture_as_pdf"}
+                ]
+              },
+              { label: 'Child 3' , icon: "picture_as_pdf"}
+            ]
+          },
           { label: 'Child 3' , icon: "picture_as_pdf"}
         ]
         },

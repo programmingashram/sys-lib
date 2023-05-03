@@ -1,8 +1,15 @@
-<a href="https://programmingashram.github.io/sys-lib/?path=/docs/example-introduction--docs">
-  <img width="60px" height="60px" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci85ZTczNzEwN2YxMmNjOTgwNWQ4ZmYzNTIwMjNhMTQ0Nz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.ny7boq-PD5nvRT68fo3aEoNlsUIhOUWtm8__9YQhghk" align="right" />
-</a>
+<p align="center">
+  <a href="https://www.antdv.com/">
+    <img width="200" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci85ZTczNzEwN2YxMmNjOTgwNWQ4ZmYzNTIwMjNhMTQ0Nz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.ny7boq-PD5nvRT68fo3aEoNlsUIhOUWtm8__9YQhghk">
+  </a>
+</p>
 
-# Sys Design 2023
+<h1 align="center">
+  <a href="https://programmingashram.github.io/sysDesign-Sample/" target="_blank">SYS Design 2023</a>
+</h1>
+
+
+# Introduction
 
 SysDesign2023 is a front-end library that provides a set of reusable components and utility functions for building modern web applications. It is built on top of popular front-end frameworks  Angular.
 

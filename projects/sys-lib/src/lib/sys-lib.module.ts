@@ -28,12 +28,10 @@ import { SysDialogActionComponent } from './sys-dialog/sys-dialog-action/sys-dia
 import { SysAlertComponent } from './sys-alert/sys-alert.component';
 import { SysAlertActionComponent } from './sys-alert/sys-alert-action/sys-alert-action.component';
 import { SysTreeComponent } from './sys-tree/sys-tree.component';
-
-
-
-
-
-
+import { SysSelectComponent } from './sys-select/sys-select.component';
+import { SysOptionComponent } from './sys-select/sys-option/sys-option.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SysInputComponent } from './sys-input/sys-input.component';
 
 
 
@@ -64,12 +62,17 @@ import { SysTreeComponent } from './sys-tree/sys-tree.component';
     SysAlertComponent,
     SysAlertActionComponent,
     SysTreeComponent,
+    SysSelectComponent,
+    SysOptionComponent,
+    SysInputComponent,
 
   ],
   imports: [
     CommonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SysLibComponent,
@@ -96,7 +99,10 @@ import { SysTreeComponent } from './sys-tree/sys-tree.component';
     SysDialogHeaderComponent,
     SysAlertComponent,
     SysAlertActionComponent,
-    SysTreeComponent
+    SysTreeComponent,
+    SysSelectComponent,
+    SysOptionComponent,
+    SysInputComponent,
   ]
 })
 export class sysDesignModule { }

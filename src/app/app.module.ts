@@ -17,6 +17,8 @@ import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { AlertExampleComponent } from './alert-example/alert-example.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { TreeExampleComponent } from './tree-example/tree-example.component';
+import { FormExampleComponent } from './form-example/form-example.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -34,12 +36,15 @@ import { TreeExampleComponent } from './tree-example/tree-example.component';
     AlertExampleComponent,
     DialogExampleComponent,
     TreeExampleComponent,
+    FormExampleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     sysDesignModule,
     MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

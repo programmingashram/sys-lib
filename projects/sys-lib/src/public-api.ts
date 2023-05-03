@@ -43,3 +43,9 @@ export * from "./lib/sys-alert/sys-alert-action/sys-alert-action.component";
 
 
 export * from "./lib/sys-tree/sys-tree.component";
+
+export * from "./lib/sys-select/sys-select.component";
+export * from "./lib/sys-select/sys-option/sys-option.component";
+
+
+export * from "./lib/sys-input/sys-input.component";

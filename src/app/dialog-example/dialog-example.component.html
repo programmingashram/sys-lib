@@ -1,7 +1,7 @@
 
 <sys-button icon="touch_app"  (click)="openDialog()">Center Dialog</sys-button>
 <br>
-<sys-button icon="touch_app"  (click)="openDialog2()">Right Dialog</sys-button>
+<sys-button icon="touch_app"  (click)="openDialog2()">Right & Scroll Dialog</sys-button>
 <br>
 <sys-button icon="touch_app"  (click)="openDialog3()">Scroll Dialog</sys-button>
 
@@ -33,15 +33,38 @@
 </sys-dialog>
 
 
-<sys-dialog *ngIf="showDialog2" title="Dialog Box Title" [shiftRight]="true" (closeDialog)="onCancel2()">
+<sys-dialog *ngIf="showDialog2" title="Dialog Box Title" [shiftRight]="true" [scroll]="true" (closeDialog)="onCancel2()">
   <sys-dialog-header>
     <!-- Dialog 1 Title <button (click)="openDialog2()">Add</button> -->
   </sys-dialog-header>
   <sys-dialog-body>
-      <h3>Heading</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sit accusantium consequatur eius, a voluptates quae fugiat nemo dicta nam perferendis culpa mollitia velit qui labore. Magnam culpa adipisci atque!
-      </p>
+      <sys-tabs>
+        <sys-tab tabTitle="Tab 1" [active]="true" icon="tab">
+          <sys-card title="Card Title" [divider]="true" subTitle="Sub Title">
+            <sys-card-content>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
+                </p>
+            </sys-card-content>
+          </sys-card>
+        </sys-tab>
+        <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+            <h4>Tab 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+        </sys-tab>
+        <sys-tab tabTitle="Tab 3" icon="delete">
+            <h4>Tab 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+        </sys-tab>
+      </sys-tabs>
+      <h4>Content 1  Heading</h4>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates repellendus est dicta inventore ea nam excepturi libero odio eum perferendis deserunt, hic doloribus odit aliquid repudiandae soluta vel debitis a!</p>
+      <h4>Content 2 Heading</h4>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates repellendus est dicta inventore ea nam excepturi libero odio eum perferendis deserunt, hic doloribus odit aliquid repudiandae soluta vel debitis a!</p>
+      <h4>Content 3 Heading</h4>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates repellendus est dicta inventore ea nam excepturi libero odio eum perferendis deserunt, hic doloribus odit aliquid repudiandae soluta vel debitis a!</p>
+      <h4>Content 4 Heading</h4>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates repellendus est dicta inventore ea nam excepturi libero odio eum perferendis deserunt, hic doloribus odit aliquid repudiandae soluta vel debitis a!</p>
   </sys-dialog-body>
   <sys-dialog-action>
     <sys-button (click)="onCancel2()" icon="cancel" class="textBtn" color="error">

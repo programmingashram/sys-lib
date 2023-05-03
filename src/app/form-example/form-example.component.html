@@ -1,0 +1,47 @@
+<form [formGroup]="myForm">
+  <table>
+      <tbody>
+          <tr>
+              <th>Input</th>
+              <td>
+                <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" ></sys-input>
+              </td>
+              <td>
+                <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+              </td>
+              <td>
+               <sys-input  type="text" label="label" value="" formControlName="test" placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" icon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+              </td>
+          </tr>
+          <tr>
+            <th>
+              With Message
+            </th>
+            <td>
+              <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" preIcon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+            </td>
+            <td>
+              <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" preIcon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+            </td>
+            <td>
+              <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" warnIcon="warning" warnMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Search</th>
+            <td>
+              <sys-input  type="search" label="label" value=""  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+            </td>
+        </tr>
+      </tbody>
+  </table>
+</form>
+
+
+<br>
+
+<sys-button icon="home"  (click)="onSubmit()">
+  sys Button
+</sys-button>
+

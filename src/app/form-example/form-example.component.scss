@@ -1,0 +1,42 @@
+
+table{
+  width: 100%;
+  tbody tr{
+    th{
+      width: 94px;
+      font-weight: 400;
+    }
+    display: flex;
+    align-items: center;
+    gap: 0px 60px;
+    td{
+      // border: 1px solid  rgba(128, 128, 128, 0.1411764706);
+      padding: 0.5rem;
+      float: left;
+      width: 25%;
+    }
+  }
+}
+
+@media(max-width: 767px){
+  table{
+    width: 100%;
+    font-weight: 400;
+    tbody tr{
+      th{
+        width: auto;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      td{
+        h5{
+          font-weight: 900;
+        }
+        // border: 1px solid  rgba(128, 128, 128, 0.1411764706);
+        padding: 1rem;
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}

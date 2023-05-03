@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TreeNode } from 'projects/sys-lib/src/lib/sys-tree/sys-tree.component';
 
 @Component({
   selector: 'app-dialog-example',
@@ -57,5 +56,5 @@ showDialog = false;
     this.showDialog3 = false;
   }
 
- 
+
 }

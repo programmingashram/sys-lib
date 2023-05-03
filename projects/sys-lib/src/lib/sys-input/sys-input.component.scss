@@ -1,0 +1,76 @@
+.sys-form-field{
+  .isRightIcon{
+    padding-right: 23px !important;
+  }
+  .isLeftIcon{
+    padding-left: 23px !important;
+  }
+  .form-field{
+    width: 100%;
+    position: relative;
+    .icon{
+      position: absolute;
+      right: 6px;
+      top: 2px;
+      background: white;
+      width: auto;
+      font-size: 0.9rem;
+      bottom: 0;
+    }
+    .preIcon{
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      background: white;
+      width: auto;
+      font-size: 0.9rem;
+      bottom: 0;
+    }
+  }
+
+  .sys-input{
+     border: 1px solid #868383;
+      &:focus{
+        outline: none;
+      }
+      background-color: white;
+      border-radius: 4px;
+      padding: 8px 8px;
+      margin-bottom: 0.1rem;
+      &::placeholder {
+        color: #868383;
+        font-style: italic;
+        font-size: 0.6rem;
+      }
+    }
+
+  label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+  }
+  .error-messege, .warning-messege, .success-messege , .sample-messege{
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.1rem;
+    font-size: 0.6rem;
+    color: #C73E1D;
+    gap: 0px 5px;
+    .mat-icon{
+      font-size: 0.8rem;
+      width: auto;
+      height: auto;
+    }
+  }
+  .warning-messege{
+    color: #FFB800;
+  }
+  .success-messege{
+    color: #5FD855;
+  }
+  .sample-messege{
+    color: #6C757D;
+  }
+}

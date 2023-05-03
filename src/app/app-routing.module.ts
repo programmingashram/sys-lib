@@ -4,12 +4,11 @@ import { ButtonExampleComponent } from './button-example/button-example.componen
 import { CardExampleComponent } from './card-example/card-example.component';
 import { TabExampleComponent } from './tab-example/tab-example.component';
 import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
-import { HeaderExampleComponent } from './header-example/header-example.component';
 import { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';
-import { BadgeExampleComponent } from './badge-example/badge-example.component';
 import { AlertExampleComponent } from './alert-example/alert-example.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { TreeExampleComponent } from './tree-example/tree-example.component';
+import { FormExampleComponent } from './form-example/form-example.component';
 
 const routes: Routes = [
   {
@@ -41,6 +40,10 @@ const routes: Routes = [
    ,
   {
     path: "tree", component: TreeExampleComponent,
+  }
+  ,
+  {
+    path: "forms", component: FormExampleComponent,
   }
 ];
 
