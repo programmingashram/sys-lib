@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 @Component({
@@ -31,12 +31,16 @@ export class SysInputComponent implements ControlValueAccessor {
   @Input() sampleIcon: string;
   @Input() icon: string;
   @Input() preIcon: string;
+  @Input() outline: boolean;
+  @Input() modern: boolean;
+  @Input() default: boolean;
 
   myControl = new FormControl('', [Validators.required]);
   // add any other form controls and validation rules here
 
+  // @Output() closeDialog = new EventEmitter();
 
-
+  @Output() search = new EventEmitter();
 
   onChange: any = () => {};
   onTouch: any = () => {};

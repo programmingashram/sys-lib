@@ -12,19 +12,23 @@
       position: absolute;
       right: 6px;
       top: 2px;
-      background: white;
       width: auto;
       font-size: 0.9rem;
       bottom: 0;
+      color: rgba(46, 46, 255, 0.7490196078);;
     }
     .preIcon{
       position: absolute;
       left: 6px;
       top: 2px;
-      background: white;
       width: auto;
       font-size: 0.9rem;
       bottom: 0;
+      color: rgba(46, 46, 255, 0.7490196078);
+    }
+    &::after{
+      content: '';
+      position: absolute;
     }
   }
 
@@ -32,16 +36,45 @@
      border: 1px solid #868383;
       &:focus{
         outline: none;
+
       }
-      background-color: white;
-      border-radius: 4px;
-      padding: 8px 8px;
-      margin-bottom: 0.1rem;
+      &:hover{
+        border-top: 1px solid #00000042;
+        border-left: 1px solid #00000042;
+        border-right: 1px solid #00000042;
+      }
+        &.default{
+          padding: 8px 8px;
+          margin-bottom: 0.1rem;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          border: none;
+          border-bottom: 2px solid rgba(46, 46, 255, 0.7490196078);
+        }
+        &.outline{
+          padding: 8px 8px;
+          margin-bottom: 0.1rem;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          border: none;
+          border: 1px solid #0000003b;
+          border-bottom: 2px solid rgba(46, 46, 255, 0.7490196078);
+        }
+        &.modern{
+          padding: 8px 8px;
+          margin-bottom: 0.1rem;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          border: none;
+          background: #80808024;
+          border-bottom: 2px solid rgba(46, 46, 255, 0.7490196078);
+        }
       &::placeholder {
         color: #868383;
         font-style: italic;
         font-size: 0.6rem;
       }
+
     }
 
   label{
@@ -50,6 +83,41 @@
     margin-bottom: 0.2rem;
     font-size: 0.7rem;
   }
+  .errorState{
+    border-bottom: 2px solid #C73E1D !important;
+    ~.icon{
+      position: absolute;
+      right: 6px;
+      top: 2px;
+      width: auto;
+      font-size: 0.9rem;
+      bottom: 0;
+      color: #C73E1D !important;
+    }
+    ~.preIcon{
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: auto;
+      font-size: 0.9rem;
+      bottom: 0;
+      color: #C73E1D !important;
+    }
+  }
+
+  .disableState{
+    opacity: 0.4;
+    pointer-events: none;
+    ~.icon{
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    ~.preIcon{
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  }
+
   .error-messege, .warning-messege, .success-messege , .sample-messege{
     display: block;
     display: flex;
@@ -72,5 +140,8 @@
   }
   .sample-messege{
     color: #6C757D;
+  }
+  .search{
+    cursor: pointer;
   }
 }

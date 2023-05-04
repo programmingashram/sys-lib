@@ -14,7 +14,6 @@ export default {
   },
   argTypes: {
 
-
   },
   decorators: [
     moduleMetadata({
@@ -26,17 +25,38 @@ export default {
 
 
 
-export const Input: Story<SysInputComponent> = (args) => ({
+export const DefaultInput: Story<SysInputComponent> = (args) => ({
   props: args,
   template: `
-  <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" ></sys-input>
+  <sys-input  type="text" label="label" value="" [default]="true"  placeholder="Placeholder values" ></sys-input>
   `,
 });
 
-export const InputWithMessage: Story<SysInputComponent> = (args) => ({
+export const OutlineInput: Story<SysInputComponent> = (args) => ({
   props: args,
   template: `
-      <sys-input  type="text" label="label" value=""  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" preIcon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+    <sys-input  type="text" label="label" value=""  [outline]="true"  placeholder="Placeholder values" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+  `,
+});
+
+export const ModernInput: Story<SysInputComponent> = (args) => ({
+  props: args,
+  template: `
+    <sys-input  type="text" label="label" value=""  [modern]="true" placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" icon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+  `,
+});
+
+export const DisabledInput: Story<SysInputComponent> = (args) => ({
+  props: args,
+  template: `
+    <sys-input  type="text" label="label" value="" [modern]="true" [disable]="true"  placeholder="Placeholder values" preIcon="edit" ></sys-input>
+  `,
+});
+
+export const ReadonlyInput: Story<SysInputComponent> = (args) => ({
+  props: args,
+  template: `
+    <sys-input  type="text" label="label" value="test2" [modern]="true"  [readonly]="true"  placeholder="Readonly values" preIcon="edit" ></sys-input>
   `,
 });
 

@@ -30,7 +30,7 @@ export class SysDialogComponent {
 
   @Output() confirm: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
-
+  @Output() myEvent: EventEmitter<any> = new EventEmitter<any>();
 
   onConfirm(): void {
     this.confirm.emit();

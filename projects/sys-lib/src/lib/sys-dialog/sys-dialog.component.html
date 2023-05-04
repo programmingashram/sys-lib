@@ -1,7 +1,7 @@
 <div class="custom-dialog-box center" [ngClass]="{'rightDialog': shiftRight, 'leftDialog': shiftLeft}"  [@myAnimation]>
   <div class="custom-dialog-box-header">
     <h4 class="title" *ngIf="title">{{title}}</h4>
-    <sys-button icon="close" class="textBtn rounded" [iconBtn]="true" *ngIf="title" (click)="closeDialog.emit()" color="error"></sys-button>
+    <sys-button icon="close" class="textBtn rounded" [iconBtn]="true" *ngIf="title"  (click)="closeDialog.emit()" color="error"></sys-button>
     <ng-content select="sys-dialog-header" *ngIf="customHeader"></ng-content>
   </div>
   <div class="divider"></div>

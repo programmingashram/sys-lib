@@ -12,10 +12,11 @@ export class FormExampleComponent {
   test = "Default Value";
   ngOnInit(){
     this.myForm = new FormGroup({
-      test: new FormControl('')
+      test: new FormControl(''),
+      test2: new FormControl('Readonly value')
     });
   }
   onSubmit() {
-    console.log(this.myForm.getRawValue());
+    console.log(this.myForm.getRawValue().test);
   }
 }
