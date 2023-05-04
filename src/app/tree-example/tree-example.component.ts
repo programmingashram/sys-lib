@@ -16,10 +16,10 @@ export class TreeExampleComponent {
         { label: 'Child 1' ,
         children: [
           { label: 'Child 1' , icon: "picture_as_pdf"},
-          { label: 'Child 2' ,
+          { label: 'Click Me',
             children: [
               { label: 'Child 1' , icon: "picture_as_pdf"},
-              { label: 'Child 2' ,
+              { label: 'Child 2' ,action: () =>{ alert("hello")},
                 children: [
                   { label: 'Child 1' , icon: "picture_as_pdf"},
                   { label: 'Child 2' , icon: "picture_as_pdf"},
@@ -85,4 +85,8 @@ export class TreeExampleComponent {
       ]
     },
   ];
+
+  myEvent(){
+    alert("hello");
+  }
 }

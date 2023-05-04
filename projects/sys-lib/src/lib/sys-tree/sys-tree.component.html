@@ -1,8 +1,8 @@
 <ul>
   <li *ngFor="let node of nodes" >
     <div class="tree-head">
-      <mat-icon  *ngIf="node.children" (click)="toggleNode(node)" class="expend">{{ node.expanded ? expendedIcon : defaultIcon }}</mat-icon>
-      <mat-icon *ngIf="node.icon">{{node.icon}}</mat-icon> <span (click)="toggleNode(node)">{{ node.label }}</span>
+      <mat-icon  *ngIf="node.children" (click)="toggleNode(node)"  class="expend" ><span  (click)="onClickNode($event, node)">{{ node.expanded ? expendedIcon : defaultIcon }}</span></mat-icon>
+      <mat-icon *ngIf="node.icon" class="treeIcon">{{node.icon}}</mat-icon> <span  (click)="toggleNode(node)">{{ node.label }}</span>
     </div>
     <sys-tree class="child" *ngIf="node.children && node.expanded" [nodes]="node.children"></sys-tree>
   </li>

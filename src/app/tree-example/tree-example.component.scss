@@ -7,3 +7,16 @@
   }
 }
 
+::ng-deep{
+  .treeIcon{
+    color:  orange
+  }
+  .expend{
+    color:  green
+  }
+  .child {
+    .treeIcon{
+      color:  red
+    }
+  }
+}

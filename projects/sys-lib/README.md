@@ -6,6 +6,7 @@
 
 <h1 align="center">
   <a href="https://programmingashram.github.io/sysDesign-Sample/" target="_blank">SYS Design 2023</a>
+  [![Socket Badge](https://socket.dev/api/badge/npm/package/sysdesign2023)](https://socket.dev/npm/package/sysdesign2023)
 </h1>
 
 

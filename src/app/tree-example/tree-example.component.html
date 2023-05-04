@@ -8,7 +8,7 @@
 
   <sys-card title="Tree" [divider]="true" subTitle="Custom Icon">
     <sys-card-content>
-      <sys-tree  [nodes]="data2" expendedIcon="subdirectory_arrow_right" defaultIcon="add"></sys-tree>
+      <sys-tree  [nodes]="data2" (clicktreeMenu)="myEvent()" expendedIcon="subdirectory_arrow_right" defaultIcon="add"></sys-tree>
     </sys-card-content>
   </sys-card>
 </div>
