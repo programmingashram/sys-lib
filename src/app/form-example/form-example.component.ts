@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-example',
@@ -10,13 +10,23 @@ export class FormExampleComponent {
   myForm: FormGroup;
   constructor() { }
   test = "Default Value";
+  radio1 = new FormControl()
+  radio2 = new FormControl()
   ngOnInit(){
     this.myForm = new FormGroup({
-      test: new FormControl(''),
-      test2: new FormControl('Readonly value')
+      radio1 : new FormControl({}),
+      radio2 : new FormControl({})
     });
   }
   onSubmit() {
-    console.log(this.myForm.getRawValue().test);
+    console.log(this.myForm.getRawValue().radio1);
   }
+
+  selectedOption: string;
+
+  onOptionSelected(eve: any){
+    this.selectedOption = eve;
+    console.log(this.selectedOption);
+  }
+
 }

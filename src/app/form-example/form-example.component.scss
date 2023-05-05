@@ -1,3 +1,10 @@
+::ng-deep{
+  .sys-radio-group{
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+}
 
 table{
   width: 100%;

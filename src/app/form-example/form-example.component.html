@@ -2,15 +2,40 @@
   <table>
       <tbody>
           <tr>
+              <th>Radios and Radio Group</th>
+              <td>
+                <sys-radio type="radio" name="option1" label="Accent"  value="value1" [selected]="true"></sys-radio>
+              </td>
+              <td>
+                <sys-radio type="radio"  name="option2" label="Error" [danger]="true" [selected]="true" value="value2"></sys-radio>
+              </td>
+              <td>
+                <sys-radio type="radio"  name="option2" label="Disable" [danger]="true" [selected]="true" [disable]="true" value="value3"></sys-radio>
+              </td>
+          </tr>
+          <tr>
+             <th>Radio Group</th>
+            <td>
+              <sys-radio-group (radioSelected)="onOptionSelected($event)">
+                <sys-radio type="radio" value="value4" formControlName="radio1"  label="One"  [selected]="true"></sys-radio>
+                <sys-radio type="radio"  value="value5" formControlName="radio2" label="Disable" [disable]="true" [danger]="true" ></sys-radio>
+                <sys-radio type="radio" value="value6" formControlName="radio1"  label="Three"  [selected]="true"></sys-radio>
+                <sys-radio type="radio"  value="value7" formControlName="radio2" label="Forth" [danger]="true" ></sys-radio>
+
+
+              </sys-radio-group>
+            </td>
+          </tr>
+          <tr>
               <th>Input</th>
               <td>
-                <sys-input  type="text" label="label" value="" [default]="true"  placeholder="Placeholder values" ></sys-input>
+                <sys-input  type="text" label="Default" value="" [default]="true"  placeholder="Placeholder values" ></sys-input>
               </td>
               <td>
-                <sys-input  type="text" label="label" value=""  [outline]="true"  placeholder="Placeholder values" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+                <sys-input  type="text" label="Outline" value=""  [outline]="true"  placeholder="Placeholder values" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
               </td>
               <td>
-               <sys-input  type="text" label="label" value=""  [modern]="true" placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" icon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
+               <sys-input  type="text" label="Modern" value=""  [modern]="true" placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" icon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
               </td>
           </tr>
           <tr>
@@ -30,15 +55,15 @@
           <tr>
             <th>Search</th>
             <td>
-              <sys-input  type="search" label="label" value="" [default]="true" formControlName="test"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
+              <sys-input  type="search" label="label" value="" [default]="true"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
               <span><strong>Output  : </strong>  {{this.myForm.getRawValue().test}}</span>
             </td>
             <td>
-              <sys-input  type="search" label="label" value="" [outline]="true" formControlName="test"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
+              <sys-input  type="search" label="label" value="" [outline]="true"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
               <span><strong>Output  : </strong>  {{this.myForm.getRawValue().test}}</span>
             </td>
             <td>
-              <sys-input  type="search" label="label" value="" [modern]="true" formControlName="test"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
+              <sys-input  type="search" label="label" value="" [modern]="true" placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle"  successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text" (search)="onSubmit()"></sys-input>
               <span><strong>Output  : </strong>  {{this.myForm.getRawValue().test}}</span>
             </td>
           </tr>
@@ -48,10 +73,10 @@
               <sys-input  type="text" label="label" value="" [default]="true" [disable]="true"  placeholder="Placeholder values" errorIcon="error" errorMessege="Error messege" successIcon="check_circle" preIcon="edit" successMessege="Success Message" sampleIcon="sort_by_alpha" sampleMessege="Sample Text"></sys-input>
             </td>
             <td>
-              <sys-input  type="text" label="label" value="test2" [outline]="true" ormControlName="test2"  [readonly]="true"  placeholder="Readonly values" preIcon="edit" ></sys-input>
+              <sys-input  type="text" label="label" value="test2" [outline]="true"   [readonly]="true"  placeholder="Readonly values" preIcon="edit" ></sys-input>
             </td>
             <td>
-              <sys-input  type="text" label="label" value="test2" [modern]="true" ormControlName="test2"  [readonly]="true"  placeholder="Readonly values" preIcon="edit" ></sys-input>
+              <sys-input  type="text" label="label" value="test2" [modern]="true"   [readonly]="true"  placeholder="Readonly values" preIcon="edit" ></sys-input>
             </td>
           </tr>
       </tbody>

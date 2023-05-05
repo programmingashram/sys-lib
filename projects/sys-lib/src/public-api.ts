@@ -49,3 +49,7 @@ export * from "./lib/sys-select/sys-option/sys-option.component";
 
 
 export * from "./lib/sys-input/sys-input.component";
+
+
+export * from "./lib/sys-radio/sys-radio.component";
+export * from "./lib/sys-radio/sys-radio-group/sys-radio-group.component";

@@ -32,6 +32,8 @@ import { SysSelectComponent } from './sys-select/sys-select.component';
 import { SysOptionComponent } from './sys-select/sys-option/sys-option.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SysInputComponent } from './sys-input/sys-input.component';
+import { SysRadioComponent } from './sys-radio/sys-radio.component';
+import { SysRadioGroupComponent } from './sys-radio/sys-radio-group/sys-radio-group.component';
 
 
 
@@ -65,6 +67,8 @@ import { SysInputComponent } from './sys-input/sys-input.component';
     SysSelectComponent,
     SysOptionComponent,
     SysInputComponent,
+    SysRadioComponent,
+    SysRadioGroupComponent,
 
   ],
   imports: [
@@ -103,6 +107,8 @@ import { SysInputComponent } from './sys-input/sys-input.component';
     SysSelectComponent,
     SysOptionComponent,
     SysInputComponent,
+    SysRadioComponent,
+    SysRadioGroupComponent
   ]
 })
 export class sysDesignModule { }
