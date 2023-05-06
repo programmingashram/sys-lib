@@ -53,3 +53,6 @@ export * from "./lib/sys-input/sys-input.component";
 
 export * from "./lib/sys-radio/sys-radio.component";
 export * from "./lib/sys-radio/sys-radio-group/sys-radio-group.component";
+
+
+export * from "./lib/sys-slide/sys-slide.component";

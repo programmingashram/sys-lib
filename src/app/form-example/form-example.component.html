@@ -4,7 +4,7 @@
           <tr>
               <th>Radios and Radio Group</th>
               <td>
-                <sys-radio type="radio" name="option1" label="Accent"  value="value1" [selected]="true"></sys-radio>
+                <sys-radio type="radio" name="option1" label="Accent" formControlName="test2"  value="value1" [selected]="true"></sys-radio>
               </td>
               <td>
                 <sys-radio type="radio"  name="option2" label="Error" [danger]="true" [selected]="true" value="value2"></sys-radio>
@@ -21,8 +21,6 @@
                 <sys-radio type="radio"  value="value5" formControlName="radio2" label="Disable" [disable]="true" [danger]="true" ></sys-radio>
                 <sys-radio type="radio" value="value6" formControlName="radio1"  label="Three"  [selected]="true"></sys-radio>
                 <sys-radio type="radio"  value="value7" formControlName="radio2" label="Forth" [danger]="true" ></sys-radio>
-
-
               </sys-radio-group>
             </td>
           </tr>

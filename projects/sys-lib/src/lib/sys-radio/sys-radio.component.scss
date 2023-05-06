@@ -1,3 +1,10 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 .content{
   margin: auto;
@@ -6,9 +13,14 @@
   text-align: center;
 }
 .dpx{
+  display:-webkit-box;
+  display:-ms-flexbox;
   display:flex;
-  align-items:center;
-  justify-content:space-around;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -ms-flex-pack:distribute;
+      justify-content:space-around;
 }
 h1{
   font-size:28px;
@@ -50,7 +62,8 @@ label{
     right: 0;
     left: -5px;
     border-radius: 50%;
-    animation: bling 0.2s;
+    -webkit-animation: bling 0.2s;
+            animation: bling 0.2s;
   }
 
 
@@ -71,7 +84,8 @@ label{
      right: 0;
      left: -5px;
      border-radius: 50%;
-     animation: bling 0.2s;
+     -webkit-animation: bling 0.2s;
+             animation: bling 0.2s;
    }
 
    &.ripple:hover::after {
@@ -92,14 +106,32 @@ label{
 
 
 
-@keyframes bling {
+@-webkit-keyframes bling {
   0%{
     opacity: 0;
-    transform: scale(0);
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
   100%{
 
     opacity: 1;
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+
+@keyframes bling {
+  0%{
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100%{
+
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }

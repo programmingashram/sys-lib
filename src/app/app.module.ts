@@ -19,6 +19,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
 import { TreeExampleComponent } from './tree-example/tree-example.component';
 import { FormExampleComponent } from './form-example/form-example.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SlideExampleComponent } from './slide-example/slide-example.component';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -37,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DialogExampleComponent,
     TreeExampleComponent,
     FormExampleComponent,
+    SlideExampleComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@storybook/addon-storysource": "^7.0.6",
+    "autoprefixer": "^10.4.14",
     "generate-license-file": "^2.0.0",
     "how-to-npm": "^2.5.1",
     "rxjs": "~7.8.0",

@@ -15,11 +15,12 @@ export class FormExampleComponent {
   ngOnInit(){
     this.myForm = new FormGroup({
       radio1 : new FormControl({}),
-      radio2 : new FormControl({})
+      radio2 : new FormControl(''),
+      test2 : new FormControl(),
     });
   }
   onSubmit() {
-    console.log(this.myForm.getRawValue().radio1);
+    console.log(this.myForm.getRawValue());
   }
 
   selectedOption: string;

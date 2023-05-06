@@ -1,0 +1,20 @@
+<div class="sys-form-field">
+  <label for="{{id}}">{{label}}</label>
+  <span class="form-field">
+      <input
+        type="{{type}}"
+        [value]="value"
+        name="{{name}}"
+        [formControl]="myControl"
+        placeholder="{{placeholder}}"
+        [disabled]="disable"
+        class="sys-input ripple"
+        id="{{id}}"
+        (input)="onInputChange($event)"
+        [checked]="selected"
+        [disabled]="disable"
+        (change)="select()"
+        [ngClass]="{'danger': danger, 'disableState': disable, 'success': success}">
+  </span>
+
+</div>
