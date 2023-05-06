@@ -16,6 +16,7 @@ export class SysCardComponent {
   @Input() cardImg?: string;
   @Input() flatImage:boolean;
   @Input() horigentalCard: boolean;
+  @Input() divider: boolean;
   @ContentChild(SysCardHeaderActionComponent) sysCardHeaderAction: SysCardHeaderActionComponent;
 
 

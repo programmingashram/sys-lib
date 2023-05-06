@@ -1,0 +1,92 @@
+
+<div class="d-flex">
+  <div>
+    <sys-tabs [bottomHeader]="true">
+      <sys-tab tabTitle="Tab 1"  [active]="true" icon="person_add">
+          <h4>Tab 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+          <h4>Tab 2</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      <sys-tab tabTitle="Tab 3" icon="delete">
+          <h4>Tab 3</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      <sys-tab tabTitle="Tab 4" icon="favorite">
+        <h4>Tab 4</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+    </sys-tab>
+    </sys-tabs>
+  </div>
+  <div>
+    <sys-tabs [vertical]="true">
+      <sys-tab tabTitle="Tab 1" [active]="true" icon="tab">
+        <h4>Tab 1</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+          <h4>Tab 2</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      <sys-tab tabTitle="Tab 3" icon="delete">
+          <h4>Tab 3</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+    </sys-tabs>
+  </div>
+
+</div>
+<br>
+<div class="d-flex">
+  <div>
+    <sys-card title="Card Title" [divider]="true"  subTitle="Sub Title" >
+      <sys-CardHeader-action>
+        <sys-button icon="favorite"  [iconBtn]="true" > </sys-button>
+      </sys-CardHeader-action>
+      <sys-card-content>
+        <sys-tabs [noBorder]=true>
+          <sys-tab tabTitle="Tab 1" [active]="true" icon="tab">
+            <h4>Tab 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+          <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+              <h4>Tab 2</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+          <sys-tab tabTitle="Tab 3" icon="delete">
+              <h4>Tab 3</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+        </sys-tabs>
+      </sys-card-content>
+    </sys-card>
+  </div>
+
+  <div>
+    <sys-card title="Card Title"  [divider]="true" subTitle="Sub Title" >
+      <sys-CardHeader-action>
+        <sys-button icon="group_add"  class="" [iconBtn]="true" > </sys-button>
+      </sys-CardHeader-action>
+      <sys-card-content>
+        <sys-tabs  [vertical]="true">
+          <sys-tab tabTitle="Tab 1" [active]="true" icon="tab">
+            <h4>Tab 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+          <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+              <h4>Tab 2</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+          <sys-tab tabTitle="Tab 3" icon="delete">
+              <h4>Tab 3</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+          </sys-tab>
+        </sys-tabs>
+      </sys-card-content>
+    </sys-card>
+  </div>
+
+
+</div>

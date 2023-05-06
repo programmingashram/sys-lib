@@ -1,5 +1,4 @@
 .d-flex{
-  align-items: center;
   display: flex;
   gap: 0px 10px;
   margin-bottom: 1rem;
@@ -9,4 +8,11 @@
       flex-wrap: wrap;
       gap: 10px 10px;
     }
+}
+
+
+::ng-deep{
+  .sys-card-body{
+     padding: 10px;
+  }
 }

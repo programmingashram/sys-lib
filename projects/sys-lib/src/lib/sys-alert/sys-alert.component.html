@@ -1,0 +1,11 @@
+<div class="sys-alert" [@myAnimation]>
+    <div class="sys-alert-haeder">
+        <mat-icon>{{alertIcon}}</mat-icon>
+    </div>
+    <div class="sys-alert-content">
+        <ng-content></ng-content>
+    </div>
+    <div class="alert-action">
+      <ng-content select='sys-alert-action'></ng-content>
+    </div>
+</div>

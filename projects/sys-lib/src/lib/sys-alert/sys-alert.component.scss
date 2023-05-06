@@ -1,0 +1,23 @@
+.sys-alert{
+    width: 20%;
+    @media(max-width: 767px){
+      width: 70%;
+    }
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    box-shadow: 1px 13px 21px 21px rgba(217, 217, 217, 0.33);
+    border-radius: 4px;
+    background-color: white;
+    .mat-icon{
+      width: auto;
+      height: auto;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+}
+
+

@@ -1,0 +1,36 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+.expend{
+  border: none;
+  background: transparent;
+}
+.tree-head{
+    display: flex;
+    align-items: center;
+    gap: 0px 5px;
+    .mat-icon{
+      width: auto;
+      height: auto;
+    }
+}
+
+.child{
+  li{
+    padding: 0.5rem;
+    color: gray;
+  }
+  ul{
+    margin-left: 13px;
+  }
+  .tree-head{
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+  }
+}

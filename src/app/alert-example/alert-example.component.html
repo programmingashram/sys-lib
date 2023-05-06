@@ -1,0 +1,25 @@
+
+<sys-button icon="delete"  (click)="alertDeleteOpen()">Delete Items</sys-button>
+
+<sys-alert *ngIf="alertDelete" alertIcon="delete">
+  Are u want to Delete this item ?
+  <sys-alert-action>
+    <sys-button  icon="cancel" class="textBtn" color="olive" (click)="alertSuccessOpen()">
+      Yes
+    </sys-button>
+    <sys-button icon="check" class="textBtn" color="error"  (click)="closeAlert()">
+      No
+    </sys-button>
+  </sys-alert-action>
+</sys-alert>
+
+<sys-alert *ngIf="alertSuccess" alertIcon="check_circle">
+  Item Successfully Deleted !!
+
+  <sys-alert-action>
+    <sys-button  icon="cancel" class="textBtn" color="olive" (click)="closeSuccess()">
+      Close
+    </sys-button>
+  </sys-alert-action>
+</sys-alert>
+

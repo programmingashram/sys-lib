@@ -8,12 +8,14 @@ import { Component, Input, ViewChild } from '@angular/core';
   styleUrls: ['./sys-button.component.scss']
 })
 export class SysButtonComponent {
+  [x: string]: any;
   @Input() icon!: string;
   @Input() color!: string;
   @Input() disable!: boolean;
   @Input() outline!: boolean;
   @Input() type!: string;
   @Input() iconBtn!: boolean;
+  varient: any;
 
 
 

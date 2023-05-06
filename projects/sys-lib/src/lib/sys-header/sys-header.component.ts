@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, ContentChildren, Input, ViewChild } from '@angular/core';
+import { SysSidebarComponent } from '../sys-sidebar/sys-sidebar.component';
 
 @Component({
   selector: 'sys-header',
@@ -7,21 +8,30 @@ import { Component, Input } from '@angular/core';
 })
 export class SysHeaderComponent {
   @Input() logo!: any;
+  @Input() logoIcon!: any;;
   @Input() subTitle!: string;
+  @Input() fixed!:boolean;
   @Input() Menu!: any[];
   menu: boolean = false;
   menuClose: boolean = false;
 
+  @ViewChild(SysSidebarComponent) sidebarComponent: SysSidebarComponent;
+
+  toggleSidebar() {
+    this.sidebarComponent.toggle();
+  }
+
   menuOpen(){
-    this.menu=!this.menu;
+
   }
   ngOnInit(){
+
     if (window.innerWidth >= 768) {
       this.menu=!this.menu;
       this.menuClose = !this.menuClose;
     }else{
     }
-  
+
     return true;
   }
 

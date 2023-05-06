@@ -1,0 +1,39 @@
+<div class="sys-form-field">
+  <label for="{{id}}">{{label}}</label>
+  <span class="form-field">
+      <input
+        type="radio"
+        [value]="value"
+        name="{{name}}"
+        [formControl]="myControl"
+        placeholder="{{placeholder}}"
+        [disabled]="disable"
+        class="sys-input ripple"
+        id="{{id}}"
+        (input)="onInputChange($event)"
+        [checked]="selected"
+        [disabled]="disable"
+        (change)="select()"
+        [checked]="selected || defaultValue"
+        [ngClass]="{'danger': danger, 'disableState': disable}">
+
+
+      <!-- <mat-icon class="mat-18 icon" *ngIf="icon">{{icon}}</mat-icon>
+      <mat-icon class="mat-18 preIcon" *ngIf="preIcon">{{preIcon}}</mat-icon>
+      <mat-icon class="mat-18 icon search" *ngIf="type === 'search'" (click)="search.emit()">search</mat-icon> -->
+  </span>
+<!--
+  <span class="sample-messege" *ngIf="sampleIcon && sampleIcon">
+    <mat-icon class="mat-18">{{sampleIcon}}</mat-icon> {{sampleMessege}}
+  </span>
+  <span class="warning-messege" *ngIf="myControl.valid && (myControl.dirty || myControl.touched) || warnIcon && warnMessege">
+    <mat-icon class="mat-18">{{warnIcon}}</mat-icon> {{warnMessege}}
+  </span>
+  <span class="error-messege" *ngIf="myControl.invalid && (myControl.dirty || myControl.touched) && errorIcon && errorMessege">
+      <mat-icon class="mat-18">{{errorIcon}}</mat-icon> {{errorMessege}}
+  </span>
+
+  <span class="success-messege" *ngIf="myControl.valid && (myControl.dirty || myControl.touched) && successIcon && successMessege">
+    <mat-icon class="mat-18" >{{successIcon}}</mat-icon> {{successMessege}}
+  </span> -->
+</div>

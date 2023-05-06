@@ -1,0 +1,177 @@
+.custom-dialog-box{
+    &.center{
+      position: fixed;
+      z-index: 999999999999;
+      top: 80px;
+      right: 0;
+      left: 0;
+      background: white;
+      width: 50%;
+      margin: 0 auto;
+      box-shadow: 1px 13px 21px 21px rgba(217, 217, 217, 0.33);
+      border-radius: 4px;
+
+      .Contentscroll{
+        height: 250px;
+        overflow-y: scroll;
+      }
+    }
+    &.rightDialog{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0;
+      height: 100%;
+      left: auto;
+      width: 100%;
+      max-width: 25%;
+      .Contentscroll{
+        height: 100%;
+        overflow-y: scroll;
+      }
+      .dialog-footer-wrapper{
+          position: fixed;
+          width: 100%;
+          bottom: 0;
+          background-color: white;
+      }
+    }
+    &.leftDialog{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: auto;
+      height: 100%;
+      left: 0;
+      width: 100%;
+      width: 100%;
+      max-width: 25%;
+      .Contentscroll{
+        height: 100%;
+        overflow-y: scroll;
+      }
+      .dialog-footer-wrapper{
+          position: fixed;
+          bottom: 0;
+          background-color: white;
+      }
+    }
+
+
+    .title{
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+    .custom-dialog-box-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+    .custom-dialog-box-header, .custom-dialog-box-actions{
+      padding: 0.5rem 1rem;
+    }
+
+    .custom-dialog-box-content{
+      padding: 1rem;
+    }
+    .custom-dialog-box-actions{
+      padding: 0.5rem 1rem;
+    }
+}
+.divider{
+  height: 1px;
+  width: 100%;
+  background-color: #F5F5F5;
+}
+
+
+@media(max-width: 767px){
+  .custom-dialog-box{
+    background-color: white;
+    &.center{
+      position: fixed;
+      z-index: 999999999999;
+      top: 80px;
+      right: 0;
+      left: 0;
+      background: white;
+      width: 80%;
+      margin: 0 auto;
+      box-shadow: 1px 13px 21px 21px rgba(217, 217, 217, 0.33);
+      border-radius: 4px;
+
+      .Contentscroll{
+        height: 250px;
+        overflow-y: scroll;
+      }
+    }
+    &.rightDialog{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0;
+      height: 100%;
+      left: auto;
+      width: 100%;
+      max-width: 70%;
+      .Contentscroll{
+        height: 100%;
+        overflow-y: scroll;
+      }
+      .dialog-footer-wrapper{
+          position: fixed;
+          width: 100%;
+          bottom: 0;
+          background-color: white;
+      }
+    }
+    &.leftDialog{
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: auto;
+      height: 100%;
+      left: 0;
+      width: 100%;
+      width: 100%;
+      max-width: 25%;
+      .Contentscroll{
+        height: 100%;
+        overflow-y: scroll;
+      }
+      .dialog-footer-wrapper{
+          position: fixed;
+          bottom: 0;
+          background-color: white;
+      }
+    }
+
+
+    .title{
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+    .custom-dialog-box-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+      background-color: white;
+    }
+    .custom-dialog-box-header, .custom-dialog-box-actions{
+      padding: 0.5rem 1rem;
+    }
+
+    .custom-dialog-box-content{
+      padding: 1rem;
+    }
+    .custom-dialog-box-actions{
+      padding: 0.5rem 1rem;
+    }
+}
+}

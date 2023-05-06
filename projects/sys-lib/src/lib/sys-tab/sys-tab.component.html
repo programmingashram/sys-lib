@@ -1,0 +1,14 @@
+<div class="tabs" [ngClass]="{'noBorder': noBorder, 'vertical': vertical}">
+    <div class="tab-header" *ngIf="!bottomHeader">
+        <button class="tab ripple"  *ngFor="let tab of tabs" [disabled]="tab.disable"  (click)="selectTab(tab)"><mat-icon *ngIf="tab.icon">{{tab.icon}}</mat-icon>  {{tab.tabTitle}}</button>
+    </div>
+    <div class="divider" *ngIf="!bottomHeader"></div>
+    <div class="tab-body" [ngClass]="{'top-body' : bottomHeader}">
+        <ng-content></ng-content>
+    </div>
+    <div class="divider" *ngIf="bottomHeader"></div>
+    <div class="tab-header-bottom"  *ngIf="bottomHeader">
+      <button class="tab ripple"  *ngFor="let tab of tabs" [disabled]="tab.disable"  (click)="selectTab(tab)"><mat-icon *ngIf="tab.icon">{{tab.icon}}</mat-icon>  {{tab.tabTitle}}</button>
+    </div>
+
+  </div>
