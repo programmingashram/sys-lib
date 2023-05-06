@@ -1,15 +1,8 @@
-<p align="center">
-  <a href="https://www.antdv.com/">
-    <img width="200" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci85ZTczNzEwN2YxMmNjOTgwNWQ4ZmYzNTIwMjNhMTQ0Nz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.ny7boq-PD5nvRT68fo3aEoNlsUIhOUWtm8__9YQhghk">
-  </a>
-</p>
+<a href="https://programmingashram.github.io/sys-lib/?path=/docs/example-introduction--docs">
+  <img width="60px" height="60px" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci85ZTczNzEwN2YxMmNjOTgwNWQ4ZmYzNTIwMjNhMTQ0Nz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.ny7boq-PD5nvRT68fo3aEoNlsUIhOUWtm8__9YQhghk" align="right" />
+</a>
 
-<h1 align="center">
-  <a href="https://programmingashram.github.io/sysDesign-Sample/" target="_blank">SYS Design 2023</a>
-</h1>
-
-
-# Introduction
+# Sys Design 2023
 
 SysDesign2023 is a front-end library that provides a set of reusable components and utility functions for building modern web applications. It is built on top of popular front-end frameworks  Angular.
 
@@ -28,11 +21,34 @@ Checkout the [demo page](https://programmingashram.github.io/sysDesign-Sample/) 
 
 Our [documentation pages](https://programmingashram.github.io/sys-lib/) are also rendered using SysDesign2023 💯
 
-Also read about:
+### Component Status [ ✅ - Complete, 🚧 - Working ]
 
-## Support 
+| Material      | Dev Status | Documatation Status |
+| ----------- | ----------- | ----------- |
+| Header      | ✅          | 🚧 |
+| Sidebar      | ✅          | 🚧 |
+| Buttons      | ✅          | 🚧 |
+| Tabs      | ✅          | 🚧 |
+| cards      | ✅          | 🚧 |
+| Tree      | ✅          | 🚧 |
+| Slide Toggle      | ✅          | 🚧 |
+| Dialog      | ✅          | 🚧 |
+| Alerts      | ✅          | 🚧 |
+| Inputs      | ✅          | 🚧 |
+| Radios      | ✅          | 🚧 |
+| Expension Panel      | ✅          | 🚧 |
 
-Our Github Discuusion for your support , if you have any difficulty, confusion or any other implimentation issue with sysdesign2023 you can ping your questions in our [disccusion Page](https://github.com/SYS-DESIGN-2023/Support--SYSDESIGN2023/discussions) 
+________________________
+
+
+### Design Assets Status [ ✅ - Complete, 🚧 - Working ]
+
+| Material      | Design Status | Documatation Status |
+| ----------- | ----------- | ----------- |
+| Design Theme (Figma)      | 🚧          | 🚧 |
+| Icons     | 🚧          | 🚧 |
+
+
 
 ## Compatibility
 
@@ -51,7 +67,7 @@ npm i sysdesign2023
 **After Install sysdesign2023 you also need to install material for icons:** 
 
 ```sh
-ng add @angular/material
+ng add @angular/maetrial
 ```
 
 **Now import sysDesignModule from sysdesign2023 in your app.module.ts** 
@@ -73,7 +89,7 @@ import { sysDesignModule } from 'sysdesign2023';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    sysDesignModule,
+  >>>  sysDesignModule,
     MatIconModule,
     BrowserAnimationsModule
   ],
@@ -85,15 +101,7 @@ export class AppModule { }
 ```
 
 
-**Add Card**
 
-```html
-  <sys-card title="Card Title" [divider]="true" subTitle="Sub Title">
-      <sys-card-content>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere     deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi<br> soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
-          </p>
-      </sys-card-content>
-    </sys-card>
-```
+## Get Started
 
+Now You can start the building your application in angular with sysdesign2023 go to the documentation part from here [documentation pages](https://programmingashram.github.io/sys-lib/) are also rendered using SysDesign2023 💯

@@ -28,6 +28,7 @@ export class SysSlideComponent implements ControlValueAccessor {
   @Input() defaultValue: boolean;
   @Input() switchCard: boolean;
   @Input() divider: boolean;
+  @Input() accent: boolean;
 
   @Output() radioSelected = new EventEmitter<string>();
 

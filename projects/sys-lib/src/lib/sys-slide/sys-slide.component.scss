@@ -93,11 +93,12 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: translateX(100%);
-  box-shadow: 0px 0px 1px 1px 0px 0px 1px 1px #80808078;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16), 0 3px 1px rgba(0, 0, 0, 0.1);
   background-color: white;
+  top: -1px;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"].accent:checked {
   background: rgba(46, 46, 255, 0.7490196078);
 }
 

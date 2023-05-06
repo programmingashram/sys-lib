@@ -32,10 +32,13 @@ export const DefaultSlide: Story<SysSlideComponent> = (args) => ({
 });
 
 
-export const Disabled: Story<SysSlideComponent> = (args) => ({
+export const MultiVeriant: Story<SysSlideComponent> = (args) => ({
   props: args,
   template: `
-  <sys-slide type="checkbox" [disable]="true"  [danger]="true" [selected]="true"></sys-slide>`,
+  <sys-slide type="checkbox"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+  <sys-slide type="checkbox" [accent]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+  <sys-slide type="checkbox" [success]="true" [selected]="true"></sys-slide>
+  <sys-slide type="checkbox" [danger]="true"   [selected]="true"></sys-slide>`,
 });
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args

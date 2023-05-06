@@ -2,40 +2,39 @@
   <table>
       <tbody>
         <tr>
-          <th>Slides</th>
           <td>
             <sys-card title="Control center" [divider]="true" subTitle="by sys slide toggle">
               <sys-card-content>
                 <sys-slide type="checkbox" [divider]="true" label="Enable Wifi" [switchCard]="true" formControlName="enableWifi" [selected]="true"></sys-slide>
-                <sys-slide type="checkbox" [divider]="true" label="Enable Notification"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
-                <sys-slide type="checkbox"  label="Enable Dark Mode"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
+                <sys-slide type="checkbox" [accent]="true" [divider]="true" label="Enable Notification"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
+                <sys-slide type="checkbox" [accent]="true"  label="Enable Dark Mode"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
               </sys-card-content>
             </sys-card>
 
           </td>
           <td>
-            <sys-slide type="checkbox" [success]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
+            <div class="custom-card">
+              <sys-card title="Slide Toggle" [divider]="true" subTitle="Normal Behaviour">
+                <sys-card-content>
+                  <sys-slide type="checkbox"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [accent]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [success]="true" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [danger]="true"   [selected]="true"></sys-slide>
+                </sys-card-content>
+              </sys-card>
+            </div>
           </td>
           <td>
-            <sys-slide type="checkbox" [danger]="true" [selected]="true"></sys-slide>
-          </td>
-          <td>
-            <sys-slide type="checkbox" [danger]="true"  [selected]="true"></sys-slide>
-          </td>
-        </tr>
-        <tr>
-          <th>Disabled Slide </th>
-          <td>
-              <sys-slide type="checkbox" [disable]="true"  [selected]="true"></sys-slide>
-          </td>
-          <td>
-            <sys-slide type="checkbox" [disable]="true"  [success]="true" [selected]="true"></sys-slide>
-          </td>
-          <td>
-            <sys-slide type="checkbox" [disable]="true"  [danger]="true" [selected]="true"></sys-slide>
-          </td>
-          <td>
-            <sys-slide type="checkbox" [danger]="true" [disable]="true" [selected]="true"></sys-slide>
+            <div class="custom-card">
+              <sys-card title="Slide Toggle" [divider]="true" subTitle="Disabled">
+                <sys-card-content>
+                  <sys-slide type="checkbox" [disable]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [accent]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [disable]="true" [success]="true" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [disable]="true" [danger]="true"  [selected]="true"></sys-slide>
+                </sys-card-content>
+              </sys-card>
+            </div>
           </td>
         </tr>
       </tbody>
