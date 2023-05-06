@@ -3,7 +3,11 @@
   gap: 0px 20px;
 
 }
-
+::ng-deep{
+  .sys-card-body{
+     padding: 10px;
+  }
+}
 .p-10{
   padding:1rem;
 }

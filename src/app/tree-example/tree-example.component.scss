@@ -6,7 +6,11 @@
     flex-wrap:wrap;
   }
 }
-
+::ng-deep{
+  .sys-card-body{
+     padding: 10px;
+  }
+}
 ::ng-deep{
   .treeIcon{
     color:  orange

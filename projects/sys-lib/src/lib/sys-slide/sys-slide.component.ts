@@ -21,24 +21,13 @@ export class SysSlideComponent implements ControlValueAccessor {
   @Input() readonly: boolean;
   @Input() label: string;
   @Input() id?: any;
-  @Input() placeholder: string;
-  @Input() errorMessege: string;
-  @Input() errorIcon: string;
-  @Input() warnMessege: string;
-  @Input() warnIcon: string;
-  @Input() successMessege: string;
-  @Input() successIcon: string;
-  @Input() sampleMessege: string;
-  @Input() sampleIcon: string;
-  @Input() icon: string;
-  @Input() preIcon: string;
-  @Input() outline: boolean;
-  @Input() modern: boolean;
   @Input() default: boolean;
   @Input() danger: boolean;
   @Input() success: boolean;
   @Input() selected: boolean;
   @Input() defaultValue: boolean;
+  @Input() switchCard: boolean;
+  @Input() divider: boolean;
 
   @Output() radioSelected = new EventEmitter<string>();
 
