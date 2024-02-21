@@ -1,19 +1,44 @@
 .sys-header{
-   padding: 1.3rem 5.6rem;
+    padding: 7px 1rem;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+
+    .logobar{
+      display: flex;
+      align-items: center;
+      gap: 0px 10px;
+      position: relative;
+      left: 35px;
+      .logoIcon{
+        width: 83px;
+      }
+    }
+
+  &.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
   .sys-row{
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .title{
-    margin-bottom: 1.4rem !important;
+    margin-bottom: 1.2rem !important;
+    font-size: 1rem;
+    // margin-left: 40px !important;
+  }
+  .mb-0{
+    margin-bottom:0px !important;
   }
   .title, .subTitle{
     line-height: 0;
     margin: 0;
   }
   .subTitle{
-    color: #F5F5F5;
+    color: #f5f5f58a;
   }
 
   &[color="accent"]{
@@ -30,21 +55,33 @@
     display: none !important;
   }
 }
-
+.router-content{
+  padding: 1rem;
+  margin-left: 44px;
+  position: relative;
+}
 
 
 @media(max-width: 767px){
+
   .sys-header{
-    padding: 1.2rem 1.2rem;
+    padding: 15px 1rem;
     .mobileMenubtn{
       display: block !important;
     }
-    
+    .logobar{
+      left: 0;
+    }
+
     .mobileMenuClosebtn{
       display: block !important;
       z-index: 99999999;
       position: fixed;
       top: 10px;
     }
+  }
+  .router-content{
+    padding: 1rem;
+    margin-left: 44px;
   }
 }

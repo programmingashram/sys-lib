@@ -1,0 +1,15 @@
+.d-flex{
+  display: flex;
+  gap: 0px 10px;
+  div{
+    width: 100%;
+  }
+}
+
+
+@media(max-width: 767px){
+  .d-flex{
+    flex-wrap: wrap;
+    gap: 10px 0px;
+  }
+}

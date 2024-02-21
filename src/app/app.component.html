@@ -1,31 +1,30 @@
-<sys-header logo="Sys Design" subTitle="Front end Library">
-    <ul class="sys-menu">
-        <li>
-            <a href="#" routerLink="/button"><mat-icon class="mat-18">home</mat-icon> Button</a>
-        </li>
-        <li>
-          <a href="#" routerLink="/card"><mat-icon class="mat-18">home</mat-icon>Card</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Theme</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Typography</a>
-        </li>
-        <li>
-          <a href="#"><mat-icon class="mat-18">home</mat-icon> Support</a>
-        </li>
-    </ul>
-    <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
-</sys-header>
-
-
-<div class="sidebar-container">
-  <sys-sidebar>
-    <sys-sidebar-item icon="home" label="Home" route="/button"></sys-sidebar-item>
-    <sys-sidebar-item icon="fa fa-info-circle" label="About" route="/about"></sys-sidebar-item>
-    <sys-sidebar-item icon="fa fa-envelope" label="Contact" route="/contact"></sys-sidebar-item>
-  </sys-sidebar>
-
-  <router-outlet></router-outlet>
+<div class="sys-container">
+  <div class="sidebar-container">
+    <sys-sidebar [small]="small">
+      <sys-sidebar-item menuIcon="menu" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="smart_button"  route="/button" (click)="menu()">Button</sys-sidebar-item>
+      <sys-sidebar-item icon="view_agenda" label="Cards" route="/card" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="tab" label="Tabs" route="/tab" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="keyboard_arrow_down" label="Expension Panel" route="/accordion" ></sys-sidebar-item>
+      <sys-sidebar-item icon="dock_to_right" label="Sidebar" route="/sidebar" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="view_agenda" label="Dialog" route="/dialog" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="warning" label="Alerts" route="/alert" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="account_tree" label="Tree" route="/tree"></sys-sidebar-item>
+      <sys-sidebar-item icon="tab" label="Forms" route="/forms" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="toggle_off" label="Slide Button" route="/togglebuttons" (click)="menu()"></sys-sidebar-item>
+      <sys-sidebar-item icon="verified" label="Badge" route="/badge" (click)="menu()"> </sys-sidebar-item>
+      <sys-sidebar-item icon="construction" label="ToolTip" route="/tooltip"></sys-sidebar-item>
+      <sys-sidebar-item icon="table_rows" label="Table" route="/table"></sys-sidebar-item>
+      <sys-sidebar-item icon="view_kanban" label="Grid" route="/grid"></sys-sidebar-item>
+      <sys-sidebar-item icon="footprint" label="Footer" route="/footer"></sys-sidebar-item>
+      <sys-sidebar-item icon="face" label="Header" route="/header"></sys-sidebar-item>
+    </sys-sidebar>
+  </div>
+  <div class="right">
+    <sys-header [fixed]="true" logo="SYS DESIGN" subTitle="New gen. frontend library">
+      <sys-button icon="attachment"  class="rounded"  [iconBtn]="true" ></sys-button>
+    </sys-header>
+  </div>
 </div>
+
+

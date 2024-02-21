@@ -1,0 +1,19 @@
+<div class="sys-form-field" [ngClass]="{'switchCard': switchCard}">
+  <label for="{{id}}">{{label}}</label>
+  <span class="form-field">
+      <input
+        type="checkbox"
+        [value]="value"
+        name="{{name}}"
+        [formControl]="myControl"
+        [disabled]="disable"
+        class="sys-input ripple"
+        id="{{id}}"
+        (input)="onInputChange($event)"
+        [checked]="selected"
+        [disabled]="disable"
+        (change)="select()"
+        [ngClass]="{'danger': danger, 'disableState': disable, 'success': success, 'accent': accent}">
+  </span>
+</div>
+<div class="divider" *ngIf="divider"></div>

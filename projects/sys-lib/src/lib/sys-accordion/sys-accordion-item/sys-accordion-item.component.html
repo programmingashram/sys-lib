@@ -1,0 +1,24 @@
+<div class="accordion__panel" [class.accordion__panel--active]="active" [ngClass]="{'disable': disable}">
+  <div class="accordion__panel__header" [attr.disabled]="disable" (click)="toggleActive()">
+    <div class="left">
+      <h4 class="panelTitle">{{label}}</h4>
+      <span class="panelHeaderDesciption" *ngIf="discription">{{discription}}</span>
+    </div>
+    <div class="right">
+      <ng-content select="sys-panel-header"></ng-content>
+      <mat-icon class="mat-18" *ngIf="active">{{expendless}}</mat-icon>
+      <mat-icon class="mat-18" *ngIf="!active">{{expendMore}}</mat-icon>
+    </div>
+  </div>
+  <div class="accordion__panel__content" [hidden]="!active">
+    <ng-content select="sys-accordion-body"></ng-content>
+  </div>
+</div>
+
+<!-- <li [routerLink]="route" routerLinkActive="active" class="ripple"  [ngClass]="{'sidebar-header': sidebarLogo}">
+  <a disabled>
+    <mat-icon class="mat-18"  *ngIf="icon">{{icon}}</mat-icon>
+    <span class="label">{{label}}</span>
+    <span class="logo">{{sidebarLogo}}</span>
+  </a>
+</li> -->

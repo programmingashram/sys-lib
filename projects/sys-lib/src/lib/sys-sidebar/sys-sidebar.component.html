@@ -1,5 +1,10 @@
-<nav>
-  <ul>
-    <ng-content></ng-content>
-  </ul>
-</nav>
+<div class="sidenav-container" [@myAnimation]>
+  <nav class="nav" [ngClass]="{'small': small}">
+    <ul class="sys-menu">
+      <div class="data">
+        <ng-content></ng-content>
+      </div>
+    </ul>
+  </nav>
+
+</div>

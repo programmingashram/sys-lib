@@ -1,0 +1,46 @@
+<sys-accordion>
+  <sys-accordion-item label="Expension Panel 1" expendless="close" expendMore="add"  discription="sit amet consectetur adipisicing elit. Veniam ab nostru" >
+    <sys-panel-header>
+      <sys-button [iconBtn]="true"  icon="groups">
+      </sys-button>
+    </sys-panel-header>
+    <sys-accordion-body>
+      <sys-tabs [bottomHeader]="true">
+        <sys-tab tabTitle="Tab 1"  [active]="true" icon="person_add">
+            <h4>Tab 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+        </sys-tab>
+        <sys-tab tabTitle="Disable Tab" icon="edit" [disable]="true" >
+            <h4>Tab 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+        </sys-tab>
+        <sys-tab tabTitle="Tab 3" icon="delete">
+            <h4>Tab 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+        </sys-tab>
+        <sys-tab tabTitle="Tab 4" icon="favorite">
+          <h4>Tab 4</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>
+      </sys-tab>
+      </sys-tabs>
+    </sys-accordion-body>
+  </sys-accordion-item>
+  <sys-accordion-item  label="Expension Panel 2">
+    <sys-accordion-body>
+      <h4>Tab 2</h4>
+      <p>
+       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?
+      </p>
+    </sys-accordion-body>
+  </sys-accordion-item>
+  <sys-accordion-item [disable]="true" label="Expension Panel 2">
+    <sys-accordion-body>
+      <h4>Tab 2</h4>
+      <p>
+       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ab nostrum consectetur modi nisi nesciunt saepe eius aperiam, officia laudantium excepturi, ullam eum totam, corporis error id vero porro perspiciatis?
+      </p>
+    </sys-accordion-body>
+  </sys-accordion-item>
+</sys-accordion>
+
+

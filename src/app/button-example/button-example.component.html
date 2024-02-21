@@ -1,273 +1,401 @@
-<div class="flex-box">
-  <div class="default">
-    <h6>Default Button</h6>
-    <sys-button icon="home">
-      sys Button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" color="accent" >
-      sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" color="olive">
-        sys button
-    </sys-button>
+<sys-tabs >
+  <sys-tab tabTitle="Default"  [active]="true" icon="smart_button">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Default white">
+                <sys-card-content>
+                  <sys-button icon="home">
+                    sys Button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Accent">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" color="accent" >
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Olive">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" color="olive">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Alert">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" color="alert">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Error">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" color="error">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Default" [divider]="true" subTitle="Secondary">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" color="secondary">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </sys-tab>
+  <sys-tab tabTitle="Outline" icon="check_box_outline_blank" >
+     <table>
+        <tbody>
+          <tr>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="White">
+                <sys-card-content>
+                <sys-button icon="home" class="outline">
+                  SYS Button
+                </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Accent">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="outline" color="accent">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Olive">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="outline" color="olive">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Alert">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="outline" color="alert">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Error">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="outline" color="error">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Secondary">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="outline" color="secondary">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="White">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" >
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Accent">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" color="accent">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Olive">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" color="olive">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Alert">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" color="alert">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Error">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" color="error">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Outline" [divider]="true" subTitle="Secondary">
+                <sys-card-content>
+                  <sys-button icon="home" class="outline rounded" color="secondary">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+          </tr>
+        </tbody>
+     </table>
+  </sys-tab>
+  <sys-tab  tabTitle="Text" icon="title" >
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <sys-card title="Text Button" [divider]="true" subTitle="Default White">
+                <sys-card-content>
+                  <sys-button icon="home"  class="textBtn">
+                    SYS Button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Text Button" [divider]="true" subTitle="Default Accent">
+                <sys-card-content>
+                  <sys-button icon="home"  class="textBtn" color="accent">
+                    SYS Button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+            <sys-card title="Text Button" [divider]="true" subTitle="Default Olive">
+              <sys-card-content>
+                <sys-button icon="power_settings_new" class="textBtn" color="olive">
+                sys button
+                </sys-button>
+              </sys-card-content>
+            </sys-card>
 
-    <br>
-
-    <sys-button icon="power_settings_new" color="alert">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" color="error">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" color="secondary">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" color="accent" [disable]="true">
-      sys button
-    </sys-button>
-  </div>
-
-  <div>
-    <h6>Outline Button</h6>
-    <sys-button icon="home" class="outline">
-      SYS Button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="outline" color="accent">
-      sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="outline"   color="olive">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" class="outline"   color="alert">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" class="outline" color="error">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" class="outline" color="secondary">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" class="outline"  color="accent" [disable]="true">
-      sys button
-    </sys-button>
-  </div>
-
-  <div>
-    <h6>Text Button</h6>
-    <sys-button icon="home"  class="textBtn">
-      SYS Button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="textBtn"  color="accent">
-      sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="textBtn" color="olive">
-        sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="textBtn" color="alert">
-        sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="textBtn" color="error">
-        sys button
-    </sys-button>
-    <br>
-    <sys-button icon="power_settings_new" class="textBtn" color="secondary">
-        sys button
-    </sys-button>
-
-    <br>
-
-    <sys-button icon="power_settings_new" class="textBtn" color="accent" [disable]="true">
-      sys button
-    </sys-button>
-  </div>
-
-
-  <div>
-    <h6>Icon Button</h6>
-      <sys-button icon="attachment"  [iconBtn]="true" ></sys-button>
-    <br>
-      <sys-button icon="search"  [iconBtn]="true" color="accent"> </sys-button>
-    <br>
-      <sys-button icon="lock"  [iconBtn]="true" color="olive"></sys-button>
-    <br>
-      <sys-button icon="favorite"  [iconBtn]="true" color="alert"> </sys-button>
-    <br>
-      <sys-button icon="delete"  [iconBtn]="true" color="error"></sys-button>
-    <br>
-      <sys-button icon="send"  [iconBtn]="true" color="secondary"></sys-button>
-    <br>
-      <sys-button icon="home"  [iconBtn]="true" color="accent" [disable]="true"></sys-button>
-  </div>
-
-
-
-<div>
-  <h6>Rounded Button</h6>
-  <sys-button icon="home"  class="rounded">
-    SYS Button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="rounded"  color="accent">
-    sys button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="rounded" color="olive">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="rounded" color="alert">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="rounded" color="error">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="rounded" color="secondary">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="rounded" color="accent" [disable]="true">
-    sys button
-  </sys-button>
-</div>
-
-<div>
-  <h6>Rounded Icon Button</h6>
-    <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
-  <br>
-    <sys-button icon="search" class="rounded" [iconBtn]="true" color="accent" > </sys-button>
-  <br>
-    <sys-button icon="lock" class="rounded" [iconBtn]="true" color="olive"></sys-button>
-  <br>
-    <sys-button icon="favorite" class="rounded" [iconBtn]="true" color="alert"> </sys-button>
-  <br>
-    <sys-button icon="delete" class="rounded" [iconBtn]="true" color="error"></sys-button>
-  <br>
-    <sys-button icon="send" class="rounded" [iconBtn]="true" color="secondary"></sys-button>
-  <br>
-    <sys-button icon="home" class="rounded" [iconBtn]="true" color="accent" [disable]="true"></sys-button>
-</div>
-
-
-<div>
-  <h6>Outline Rounded Button</h6>
-  <sys-button icon="home" class="outline rounded">
-    SYS Button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="outline rounded" color="accent">
-    sys button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="outline rounded"   color="olive">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="outline rounded"   color="alert">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="outline rounded" color="error">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="outline rounded" color="secondary">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="outline rounded"  color="accent" [disable]="true">
-    sys button
-  </sys-button>
-</div>
-
-
-<div>
-  <h6>Text Button</h6>
-  <sys-button icon="home"  class="textBtn rounded">
-    SYS Button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="textBtn rounded"  color="accent">
-    sys button
-  </sys-button>
-  <br>
-  <sys-button icon="power_settings_new" class="textBtn rounded" color="olive">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="textBtn rounded" color="alert">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="textBtn rounded" color="error">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="textBtn rounded" color="secondary">
-      sys button
-  </sys-button>
-
-  <br>
-
-  <sys-button icon="power_settings_new" class="textBtn rounded" color="accent" [disable]="true">
-    sys button
-  </sys-button>
-</div>
-
-</div>
-
-
-
-
+            </td>
+            <td>
+              <sys-card title="Text Button" [divider]="true" subTitle="Default Alert">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="textBtn" color="alert">
+                    sys button
+                  </sys-button>
+              </sys-card-content>
+            </sys-card>
+            </td>
+            <td>
+              <sys-card title="Text Button" [divider]="true" subTitle="Default Error">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="textBtn" color="error">
+                    sys button
+                  </sys-button>
+              </sys-card-content>
+            </sys-card>
+            </td>
+            <td>
+              <sys-card title="Text Button" [divider]="true" subTitle="Default Secondary">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="textBtn" color="secondary">
+                    sys button
+                  </sys-button>
+              </sys-card-content>
+            </sys-card>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </sys-tab>
+  <sys-tab tabTitle="Rounded" icon="rounded_corner">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <sys-card title="Rounded" [divider]="true" subTitle="Default White">
+                <sys-card-content>
+                  <sys-button icon="home"  class="rounded">
+                    SYS Button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Rounded" [divider]="true" subTitle="Default Accent">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="rounded"  color="accent">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+            <sys-card title="Rounded" [divider]="true" subTitle="Default Olive">
+              <sys-card-content>
+                <sys-button icon="power_settings_new" class="rounded" color="olive">
+                  sys button
+                </sys-button>
+              </sys-card-content>
+            </sys-card>
+            </td>
+            <td>
+              <sys-card title="Rounded" [divider]="true" subTitle="Default Alert">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="rounded" color="alert">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Rounded" [divider]="true" subTitle="Default Error">
+                <sys-card-content>
+                  <sys-button icon="power_settings_new" class="rounded" color="error">
+                    sys button
+                  </sys-button>
+                </sys-card-content>
+              </sys-card>
+            </td>
+            <td>
+              <sys-card title="Rounded" [divider]="true" subTitle="Default Secondary">
+                  <sys-card-content>
+                    <sys-button icon="power_settings_new" class="rounded" color="secondary">
+                      sys button
+                    </sys-button>
+                  </sys-card-content>
+                </sys-card>
+            </td>
+          </tr>
+          </tbody>
+      </table>
+  </sys-tab>
+  <sys-tab tabTitle="Icon" icon="add_reaction">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default White">
+              <sys-card-content>
+                <sys-button icon="search"  [iconBtn]="true" > </sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default Accent">
+              <sys-card-content>
+                <sys-button icon="search"  [iconBtn]="true" color="accent"> </sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default Olive">
+              <sys-card-content>
+                <sys-button icon="lock"  [iconBtn]="true" color="olive"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default Alert">
+              <sys-card-content>
+                <sys-button icon="favorite"  [iconBtn]="true" color="alert"> </sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default Error">
+              <sys-card-content>
+                <sys-button icon="delete"  [iconBtn]="true" color="error"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Default Secondary">
+              <sys-card-content>
+                <sys-button icon="send"  [iconBtn]="true" color="secondary"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round White">
+              <sys-card-content>
+                <sys-button icon="attachment" class="rounded"  [iconBtn]="true" ></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round Accent">
+              <sys-card-content>
+                <sys-button icon="search" class="rounded" [iconBtn]="true" color="accent" > </sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round Olive">
+              <sys-card-content>
+                <sys-button icon="lock" class="rounded" [iconBtn]="true" color="olive"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round Alert">
+              <sys-card-content>
+                <sys-button icon="favorite" class="rounded" [iconBtn]="true" color="alert"> </sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round Error">
+              <sys-card-content>
+                <sys-button icon="delete" class="rounded" [iconBtn]="true" color="error"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+          <td>
+            <sys-card title="Icon Button" [divider]="true" subTitle="Round Secondary">
+              <sys-card-content>
+              <sys-button icon="send" class="rounded" [iconBtn]="true" color="secondary"></sys-button>
+              </sys-card-content>
+            </sys-card>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</sys-tab>
+</sys-tabs>

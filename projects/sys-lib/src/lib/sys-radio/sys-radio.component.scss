@@ -1,0 +1,137 @@
+/*
+* Prefixed by:
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+
+.content{
+  margin: auto;
+  padding: 15px;
+  max-width: 50px;
+  text-align: center;
+}
+.dpx{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -ms-flex-pack:distribute;
+      justify-content:space-around;
+}
+h1{
+  font-size:28px;
+  line-height:28px;
+  margin-bottom:15px;
+}
+label{
+  display:block;
+  line-height:40px;
+}
+.sys-input {
+  position: relative;
+
+
+  &.disableState{
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &.ripple:hover::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: rgb(0 0 255 / 18%);
+    top: -5px;
+    right: 0;
+    left: -5px;
+    border-radius: 50%;
+  }
+
+  &.ripple:checked::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: rgb(0 0 255 / 18%);
+    top: -5px;
+    right: 0;
+    left: -5px;
+    border-radius: 50%;
+    -webkit-animation: bling 0.2s;
+            animation: bling 0.2s;
+  }
+
+
+
+
+  &.danger{
+    &[type='radio']{
+      accent-color: #ff0000b0;
+    }
+    /* Ripple effect */
+    &.ripple:checked::after {
+     content: "";
+     position: absolute;
+     width: 23px;
+     height: 23px;
+     background: rgb(255 0 0 / 22%)  !important;
+     top: -5px;
+     right: 0;
+     left: -5px;
+     border-radius: 50%;
+     -webkit-animation: bling 0.2s;
+             animation: bling 0.2s;
+   }
+
+   &.ripple:hover::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: rgb(255 0 0 / 22%);
+    top: -5px;
+    right: 0;
+    left: -5px;
+    border-radius: 50%;
+  }
+
+ }
+
+}
+
+
+
+@-webkit-keyframes bling {
+  0%{
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100%{
+
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+
+@keyframes bling {
+  0%{
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100%{
+
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

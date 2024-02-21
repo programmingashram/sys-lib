@@ -1,24 +1,107 @@
-# SysLib
+<a href="https://programmingashram.github.io/sys-lib/?path=/docs/example-introduction--docs">
+  <img width="60px" height="60px" src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci85ZTczNzEwN2YxMmNjOTgwNWQ4ZmYzNTIwMjNhMTQ0Nz9zaXplPTQ5NiZkZWZhdWx0PXJldHJvIn0.ny7boq-PD5nvRT68fo3aEoNlsUIhOUWtm8__9YQhghk" align="right" />
+</a>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+# Sys Design 2023
 
-## Code scaffolding
+SysDesign2023 is a front-end library that provides a set of reusable components and utility functions for building modern web applications. It is built on top of popular front-end frameworks  Angular.
 
-Run `ng generate component component-name --project sys-lib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project sys-lib`.
-> Note: Don't forget to add `--project sys-lib` or else it will be added to the default project in your `angular.json` file. 
+- ⚡ Built for speed
+- ⬇️ No need to import modules for components
+- ⚖️ Light-weight while implementing all sys features from the supported scss/css custimization
+- 🌐 Works in a browser, on a server, or from a command line interface (CLI)
 
-## Build
 
-Run `ng build sys-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+## Demo
 
-After building your library with `ng build sys-lib`, go to the dist folder `cd dist/sys-lib` and run `npm publish`.
+Checkout the [demo page](https://programmingashram.github.io/sysDesign-Sample/) to see sysDesign in action ⛹️
 
-## Running unit tests
+## Docs
 
-Run `ng test sys-lib` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Our [documentation pages](https://programmingashram.github.io/sys-lib/) are also rendered using SysDesign2023 💯
 
-## Further help
+### Component Status [ ✅ - Complete, 🚧 - Working ]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Material      | Dev Status | Documatation Status |
+| ----------- | ----------- | ----------- |
+| Header      | ✅          | 🚧 |
+| Sidebar      | ✅          | 🚧 |
+| Buttons      | ✅          | 🚧 |
+| Tabs      | ✅          | 🚧 |
+| cards      | ✅          | 🚧 |
+| Tree      | ✅          | 🚧 |
+| Slide Toggle      | ✅          | 🚧 |
+| Dialog      | ✅          | 🚧 |
+| Alerts      | ✅          | 🚧 |
+| Inputs      | ✅          | 🚧 |
+| Radios      | ✅          | 🚧 |
+| Expension Panel      | ✅          | 🚧 |
+
+________________________
+
+
+### Design Assets Status [ ✅ - Complete, 🚧 - Working ]
+
+| Material      | Design Status | Documatation Status |
+| ----------- | ----------- | ----------- |
+| Design Theme (Figma)      | 🚧          | 🚧 |
+| Icons     | 🚧          | 🚧 |
+
+
+
+## Compatibility
+
+**Node.js:** Only [current and LTS](https://nodejs.org/en/about/releases/) Node.js versions are supported. End of life Node.js versions may become incompatible with Marked at any point in time.
+
+**Browser:** All Browser supported :)
+
+## Installation
+
+**Add in your project:** 
+
+```sh 
+npm i sysdesign2023
+```
+
+**After Install sysdesign2023 you also need to install material for icons:** 
+
+```sh
+ng add @angular/maetrial
+```
+
+**Now import sysDesignModule from sysdesign2023 in your app.module.ts** 
+
+```sh
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { sysDesignModule } from 'sysdesign2023';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+  >>>  sysDesignModule,
+    MatIconModule,
+    BrowserAnimationsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+
+
+## Get Started
+
+Now You can start the building your application in angular with sysdesign2023 go to the documentation part from here [documentation pages](https://programmingashram.github.io/sys-lib/) are also rendered using SysDesign2023 💯

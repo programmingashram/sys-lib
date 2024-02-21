@@ -1,0 +1,44 @@
+<form [formGroup]="myForm" (ngSubmit)="onFormSubmit(myForm.value)">
+  <table>
+      <tbody>
+        <tr>
+          <td>
+            <sys-card title="Control center" [divider]="true" subTitle="by sys slide toggle">
+              <sys-card-content>
+                <sys-slide type="checkbox" [divider]="true" label="Enable Wifi" [switchCard]="true" formControlName="enableWifi" [selected]="true"></sys-slide>
+                <sys-slide type="checkbox" [accent]="true" [divider]="true" label="Enable Notification"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
+                <sys-slide type="checkbox" [accent]="true"  label="Enable Dark Mode"  [switchCard]="true" formControlName="acceptTerms" [selected]="true"></sys-slide>
+              </sys-card-content>
+            </sys-card>
+
+          </td>
+          <td>
+            <div class="custom-card">
+              <sys-card title="Slide Toggle" [divider]="true" subTitle="Normal Behaviour">
+                <sys-card-content>
+                  <sys-slide type="checkbox"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [accent]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [success]="true" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [danger]="true"   [selected]="true"></sys-slide>
+                </sys-card-content>
+              </sys-card>
+            </div>
+          </td>
+          <td>
+            <div class="custom-card">
+              <sys-card title="Slide Toggle" [divider]="true" subTitle="Disabled">
+                <sys-card-content>
+                  <sys-slide type="checkbox" [disable]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [accent]="true"  formControlName="acceptTerms" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [disable]="true" [success]="true" [selected]="true"></sys-slide>
+                  <sys-slide type="checkbox" [disable]="true" [danger]="true"  [selected]="true"></sys-slide>
+                </sys-card-content>
+              </sys-card>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</form>
+
+

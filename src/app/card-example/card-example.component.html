@@ -1,69 +1,68 @@
-<div class="d-flex">
+<div class="p-10">
+  <div class="d-flex">
+    <sys-card title="Card Title" [divider]="true" subTitle="Sub Title">
+      <sys-card-content>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
+          </p>
+      </sys-card-content>
+    </sys-card>
 
-
-  <sys-card title="Card Title"  subTitle="Sub Title">
-    <sys-card-content>
+    <sys-card title="Card Title" subTitle="Sub Title" icon="settings">
+      <sys-card-content>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
         </p>
-    </sys-card-content>
+      </sys-card-content>
 
-  </sys-card>
+      <sys-card-action>
+        <sys-button icon="cancel" class="textBtn" color="error">
+          Cancel
+        </sys-button>
 
-  <sys-card title="Card Title" subTitle="Sub Title" icon="settings">
-    <sys-card-content>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
-      </p>
-    </sys-card-content>
+        <sys-button icon="check" class="textBtn" color="olive">
+          Accept
+        </sys-button>
+      </sys-card-action>
+    </sys-card>
 
-    <sys-card-action>
-      <sys-button icon="cancel" class="textBtn" color="error">
-        Cancel
-      </sys-button>
+    <sys-card title="Card Title" subTitle="Sub Title"  cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+      <sys-CardHeader-action>
+        <sys-button icon="favorite"  [iconBtn]="true" > </sys-button>
+      </sys-CardHeader-action>
+      <sys-card-content>
+        <p>
 
-      <sys-button icon="check" class="textBtn" color="olive">
-        Accept
-      </sys-button>
-    </sys-card-action>
-  </sys-card>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
+        </p>
+      </sys-card-content>
 
-  <sys-card title="Card Title" subTitle="Sub Title"  cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
-    <sys-CardHeader-action>
-      <sys-button icon="favorite"  [iconBtn]="true" > </sys-button>
-    </sys-CardHeader-action>
-    <sys-card-content>
-      <p>
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
-      </p>
-  </sys-card-content>
-
-  </sys-card>
+    </sys-card>
 
 
-  <sys-card title="Card Title" preIcon="account_circle" [flatImage]="true" subTitle="Sub Title" icon="favorite_border" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
+    <sys-card title="Card Title" preIcon="account_circle" [flatImage]="true" subTitle="Sub Title" icon="favorite_border" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
 
-    <sys-card-content>
-      <p>
+      <sys-card-content>
+        <p>
 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,
-      </p>
-    </sys-card-content>
-    <sys-card-action>
-      <sys-button icon="cancel" class="textBtn" color="error">
-        Cancel
-      </sys-button>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,
+        </p>
+      </sys-card-content>
+      <sys-card-action>
+        <sys-button icon="cancel" class="textBtn" color="error">
+          Cancel
+        </sys-button>
 
-      <sys-button icon="check" class="textBtn" color="olive">
-        Accept
-      </sys-button>
-    </sys-card-action>
-  </sys-card>
-
-
+        <sys-button icon="check" class="textBtn" color="olive">
+          Accept
+        </sys-button>
+      </sys-card-action>
+    </sys-card>
 </div>
 <!-- -------------------------------------- -->
+
+
+
 
 <sys-card title="Card Title" subTitle="Sub Title" [horigentalCard]="true" >
   <sys-card-content>
@@ -71,7 +70,6 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias
       </p>
   </sys-card-content>
-
 </sys-card>
 <br>
 <sys-card preIcon="account_circle"  [horigentalCard]="true" >
@@ -98,17 +96,8 @@
   </sys-card-action>
 </sys-card>
 <br>
-<sys-card cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg"  [horigentalCard]="true" >
-  <sys-card-content>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias
-      </p>
-  </sys-card-content>
-  <sys-card-action>
-    <sys-button icon="check" class="textBtn" color="olive">
-      Accept
-    </sys-button>
-</sys-card-action>
+
+
 
   <!-- <sys-card  cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg" [flatImage]="true" [horigentalCard]="true" >
     <sys-card-content>
