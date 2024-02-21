@@ -1282,7 +1282,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysButtonComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"test-class ${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
             },
             {
                 "name": "DefaultAccordion",
@@ -1654,7 +1654,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysButtonComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <sys-button icon=\"home\" class=\"test-class ${args.type} ${args[\"class\"]}\"  color=\"${args.color}\">\r\n      ${args[\"content\"]}\r\n    </sys-button>\r\n   `,\r\n})"
                 },
                 {
                     "name": "IconButton",

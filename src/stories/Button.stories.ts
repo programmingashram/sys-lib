@@ -32,7 +32,7 @@ export default {
 export const Default: Story<SysButtonComponent> = (args) => ({
   props: args,
   template: `
-    <sys-button icon="home" class="${args.type} ${args["class"]}"  color="${args.color}">
+    <sys-button icon="home" class="test-class ${args.type} ${args["class"]}"  color="${args.color}">
       ${args["content"]}
     </sys-button>
    `,
