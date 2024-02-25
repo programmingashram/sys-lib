@@ -35,6 +35,7 @@ import { SysInputComponent } from './sys-input/sys-input.component';
 import { SysRadioComponent } from './sys-radio/sys-radio.component';
 import { SysRadioGroupComponent } from './sys-radio/sys-radio-group/sys-radio-group.component';
 import { SysSlideComponent } from './sys-slide/sys-slide.component';
+import { SysTableComponent } from './sys-table/sys-table.component';
 
 
 
@@ -71,6 +72,7 @@ import { SysSlideComponent } from './sys-slide/sys-slide.component';
     SysRadioComponent,
     SysRadioGroupComponent,
     SysSlideComponent,
+    SysTableComponent,
 
   ],
   imports: [
@@ -111,7 +113,8 @@ import { SysSlideComponent } from './sys-slide/sys-slide.component';
     SysInputComponent,
     SysRadioComponent,
     SysRadioGroupComponent,
-    SysSlideComponent
+    SysSlideComponent,
+    SysTableComponent
   ]
 })
 export class sysDesignModule { }

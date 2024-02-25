@@ -20,6 +20,8 @@ import { TreeExampleComponent } from './tree-example/tree-example.component';
 import { FormExampleComponent } from './form-example/form-example.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlideExampleComponent } from './slide-example/slide-example.component';
+import { TableExampleComponent } from './table-example/table-example.component';
+import { FilterPipe } from './table-example/table.pipe';
 //  ng run sys-design:storybook
 //  ng run sys-design:build-storybook
 
@@ -39,6 +41,8 @@ import { SlideExampleComponent } from './slide-example/slide-example.component';
     TreeExampleComponent,
     FormExampleComponent,
     SlideExampleComponent,
+    TableExampleComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

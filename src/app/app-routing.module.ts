@@ -10,6 +10,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
 import { TreeExampleComponent } from './tree-example/tree-example.component';
 import { FormExampleComponent } from './form-example/form-example.component';
 import { SlideExampleComponent } from './slide-example/slide-example.component';
+import { TableExampleComponent } from './table-example/table-example.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
   ,
   {
     path: "togglebuttons", component: SlideExampleComponent,
+  }
+  ,
+  {
+    path: "table", component: TableExampleComponent,
   }
 ];
 

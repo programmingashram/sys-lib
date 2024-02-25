@@ -37,6 +37,7 @@ Our [documentation pages](https://programmingashram.github.io/sys-lib/) are also
 | Inputs      | ✅          | 🚧 |
 | Radios      | ✅          | 🚧 |
 | Expension Panel      | ✅          | 🚧 |
+| Table      | ✅          | 🚧 |
 
 ________________________
 

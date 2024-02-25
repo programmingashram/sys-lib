@@ -1,0 +1,109 @@
+
+<div class="search">
+    <!-- Delete all Functianlity -->
+    <!-- <button class="btn btn-danger"  (click)="deleteCheckedRows()"> Delete All</button> -->
+
+    <sys-button icon="delete" color="error" (click)="deleteCheckedRows()">
+        Delete All
+    </sys-button>
+  
+    <!-- Search bar -->
+    <!-- <input type="text" [formControl]="searchControl" placeholder="Search..."> -->
+    <sys-input  type="text"  [formControl]="searchControl" value="" [modern]="true" placeholder="Placeholder values" icon="search"></sys-input>
+
+  </div>
+    <sys-table>
+      <thead sys-header> 
+        <tr>
+          <th>
+            <input type="checkbox" (change)="selectAll($event)">
+          </th>
+          <th (click)="sortBy('name')">Name  <mat-icon>swap_vert</mat-icon> </th>
+          <th (click)="sortBy('age')">Age <mat-icon>swap_vert</mat-icon></th>
+          <th (click)="sortBy('city')">City <mat-icon>swap_vert</mat-icon></th>
+          <th>Control</th>
+          <th></th>
+        </tr>
+    </thead>
+    <ng-container *ngIf="tableData.length > 0; else noDataFound" sys-table-data>
+      <ng-container *ngFor="let x of displayedTableData | filter: searchControl.value; let i=index" >
+        <tr [class.checked]="x.checked" >
+          <td>
+            <input type="checkbox"  [checked]="x.checked" (change)="toggleCheckbox(i)">
+          </td>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <img src="{{x.img}}" alt="" class="profile">
+             <strong> {{x.name}}</strong>
+            </div>
+          </td>
+          <td>{{x.age}}</td>
+          <td>{{x.city}}</td>
+          <td>
+            <mat-icon class="text-danger" (click)="deleteRow(i)">delete</mat-icon>
+          </td>
+          <td>
+            <div (click)="toggleAccordion(i)">
+              <mat-icon *ngIf="!tableData[i].accordionOpen">expand_more</mat-icon>
+              <mat-icon *ngIf="tableData[i].accordionOpen">expand_less</mat-icon>
+            </div>
+          </td>
+        </tr>
+  
+        <!-- Accordion Table -->
+        <tr *ngIf="isAccordionOpen(i)" class="accordion-table" >
+          <td colspan="6">
+            <sys-table>
+              <thead sys-header> 
+                <tr>
+                  <th>Sub Name</th>
+                  <th>Sub Age </th>
+                  <th>Sub City</th>
+                </tr>
+              </thead>
+                <tr sys-table-data>
+                  <td>John Doe</td>
+                  <td>30</td>
+                  <td>john@example.com</td>
+                </tr>
+                <tr sys-table-data>
+                    <td>Jane Smith</td>
+                    <td>25</td>
+                    <td>jane@example.com</td>
+                </tr>
+                <tr sys-table-data>
+                    <td>Bob Johnson</td>
+                    <td>35</td>
+                    <td>bob@example.com</td>
+                </tr>
+            </sys-table>
+          </td>
+        </tr>
+      </ng-container>
+    </ng-container>
+  </sys-table>
+  
+  
+  <!-- Custom Message -->
+  <ng-template #noDataFound>
+    <p class="nofound">No data found...😓</p>
+  </ng-template>
+  
+  
+  <!-- Pagination -->
+  <div class="paginator-table">
+    <div class="paginator">
+      <button (click)="prevPage()">Previous</button>
+      <button (click)="nextPage()">Next</button>
+    </div>
+    
+    <div class="se">
+      <label for="pageSize">Rows per page:</label>
+      <select name="" id="pageSize" name="pageSize" [formControl]="pageSize" (change)="changePageSize()">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="1">1</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+  </div>

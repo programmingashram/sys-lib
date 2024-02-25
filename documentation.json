@@ -1,6 +1,143 @@
 {
-    "pipes": [],
-    "interfaces": [],
+    "pipes": [
+        {
+            "name": "FilterPipe",
+            "id": "pipe-FilterPipe-4f90b7bcb3d5b75d258b706e20332760ea55b06534363a96d9a2cf1165d4c445ac73957dc5ac14312ce808825924f2973c3a8e3cb090002217173244fce43588",
+            "file": "src/app/table-example/table.pipe.ts",
+            "type": "pipe",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "transform",
+                    "args": [
+                        {
+                            "name": "items",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "searchText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "items",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "searchText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ngname": "filter",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\r\n\r\n@Pipe({\r\n  name: 'filter'\r\n})\r\nexport class FilterPipe implements PipeTransform {\r\n  transform(items: any[], searchText: string): any[] {\r\n    if (!items) {\r\n      return [];\r\n    }\r\n    if (!searchText) {\r\n      return items;\r\n    }\r\n    searchText = searchText.toLowerCase();\r\n    return items.filter(item => {\r\n      return (\r\n        item.name.toLowerCase().includes(searchText) ||\r\n        item.city.toLowerCase().includes(searchText) ||\r\n        item.age.toString().includes(searchText)\r\n      );\r\n    });\r\n  }\r\n}\r\n"
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "TableData",
+            "id": "interface-TableData-07d8c40876a172144d3d96bb34ccb27bf7025cd637222ba896676a7e423b45a4894f1aed8362e5967f8d506fb5eed91693e687789d75cad0f16f444d72f35123",
+            "file": "src/app/table-example/table-example.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { FormControl } from '@angular/forms';\n\ninterface TableData {\n  img:string;\n  name: string;\n  age: number;\n  city: string;\n  ctrl: string;\n  accordionOpen: boolean;\n  checked: boolean;\n}\n\n@Component({\n  selector: 'app-table-example',\n  templateUrl: './table-example.component.html',\n  styleUrls: ['./table-example.component.scss']\n})\nexport class TableExampleComponent {\n\n  tableData: TableData[] = [\n    {\n      img:'https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg',\n      name: \"Ayushman\",\n      age: 20,\n      city: \"Bilaspur\",\n      ctrl: \"Delete\",\n      accordionOpen: true,\n      checked: false\n    },\n    {\n      img: 'https://www.shutterstock.com/image-photo/happy-mid-aged-business-man-600nw-2307212331.jpg',\n      name: \"Ansh\",\n      age: 22,\n      city: \"Raipur\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp',\n      name: \"Fhalak\",\n      age: 21,\n      city: \"Waraseoni\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',\n      name: \"Ashutosh\",\n      age: 32,\n      city: \"Raigar\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    }\n  ]\n\n\n  // Searchbar\n  searchControl = new FormControl<any>('');\n\n\n  // Sorting Table\n  sortBy(column: string) {\n    this.tableData.sort((a: any, b:any) => a[column].localeCompare(b[column]));\n  }\n\n  // Paginator Code\n  pageSize = new FormControl<any>(5); \n  currentPage = 0;\n  get displayedTableData() {\n    const start = this.currentPage * this.pageSize.value;\n    return this.tableData.slice(start, start + this.pageSize.value);\n  }\n  nextPage() {\n    if (this.currentPage < this.tableData.length / this.pageSize.value - 1) {\n      this.currentPage++;\n    }\n  }\n  prevPage() {\n    if (this.currentPage > 0) {\n      this.currentPage--;\n    }\n  }\n  changePageSize() {\n    this.currentPage = 0;\n  }\n  \n\n  // Accordion\n  toggleAccordion(index: number) {\n    this.tableData[index].accordionOpen = !this.tableData[index].accordionOpen;\n  }\n\n  isAccordionOpen(index: number): boolean {\n    return this.tableData[index].accordionOpen;\n  }\n\n  // Checkboxes\n  toggleCheckbox(index: number) {\n    this.tableData[index].checked = !this.tableData[index].checked;\n  }\n\n  // Select All \n  selectAll(event: any) {\n    const isChecked = event.target.checked;\n    this.tableData.forEach(row => row.checked = isChecked);\n  }\n  \n  // Delete Selected row\n  deleteCheckedRows() {\n    this.tableData = this.tableData.filter(x => !x.checked);\n  }\n\n  // Manual Delete\n  deleteRow(index: number) {\n    this.tableData.splice(index, 1);\n  }\n\n}\n",
+            "properties": [
+                {
+                    "name": "accordionOpen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "age",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "checked",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "city",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "ctrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "img",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
@@ -1025,6 +1162,307 @@
             "templateData": "\r\n<div class=\"d-flex\">\r\n  <div>\r\n    <sys-tabs [bottomHeader]=\"true\">\r\n      <sys-tab tabTitle=\"Tab 1\"  [active]=\"true\" icon=\"person_add\">\r\n          <h4>Tab 1</h4>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n      <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n          <h4>Tab 2</h4>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n      <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n          <h4>Tab 3</h4>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n      <sys-tab tabTitle=\"Tab 4\" icon=\"favorite\">\r\n        <h4>Tab 4</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n    </sys-tab>\r\n    </sys-tabs>\r\n  </div>\r\n  <div>\r\n    <sys-tabs [vertical]=\"true\">\r\n      <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n        <h4>Tab 1</h4>\r\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n      <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n          <h4>Tab 2</h4>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n      <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n          <h4>Tab 3</h4>\r\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n      </sys-tab>\r\n    </sys-tabs>\r\n  </div>\r\n\r\n</div>\r\n<br>\r\n<div class=\"d-flex\">\r\n  <div>\r\n    <sys-card title=\"Card Title\" [divider]=\"true\"  subTitle=\"Sub Title\" >\r\n      <sys-CardHeader-action>\r\n        <sys-button icon=\"favorite\"  [iconBtn]=\"true\" > </sys-button>\r\n      </sys-CardHeader-action>\r\n      <sys-card-content>\r\n        <sys-tabs [noBorder]=true>\r\n          <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <h4>Tab 1</h4>\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n          <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n              <h4>Tab 2</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n          <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n              <h4>Tab 3</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n        </sys-tabs>\r\n      </sys-card-content>\r\n    </sys-card>\r\n  </div>\r\n\r\n  <div>\r\n    <sys-card title=\"Card Title\"  [divider]=\"true\" subTitle=\"Sub Title\" >\r\n      <sys-CardHeader-action>\r\n        <sys-button icon=\"group_add\"  class=\"\" [iconBtn]=\"true\" > </sys-button>\r\n      </sys-CardHeader-action>\r\n      <sys-card-content>\r\n        <sys-tabs  [vertical]=\"true\">\r\n          <sys-tab tabTitle=\"Tab 1\" [active]=\"true\" icon=\"tab\">\r\n            <h4>Tab 1</h4>\r\n            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n          <sys-tab tabTitle=\"Disable Tab\" icon=\"edit\" [disable]=\"true\" >\r\n              <h4>Tab 2</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n          <sys-tab tabTitle=\"Tab 3\" icon=\"delete\">\r\n              <h4>Tab 3</h4>\r\n              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum illo in quaerat qui eos eius, dolores illum vita</p>\r\n          </sys-tab>\r\n        </sys-tabs>\r\n      </sys-card-content>\r\n    </sys-card>\r\n  </div>\r\n\r\n\r\n</div>\r\n"
         },
         {
+            "name": "TableExampleComponent",
+            "id": "component-TableExampleComponent-07d8c40876a172144d3d96bb34ccb27bf7025cd637222ba896676a7e423b45a4894f1aed8362e5967f8d506fb5eed91693e687789d75cad0f16f444d72f35123",
+            "file": "src/app/table-example/table-example.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-table-example",
+            "styleUrls": [
+                "./table-example.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./table-example.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentPage",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 72
+                },
+                {
+                    "name": "pageSize",
+                    "defaultValue": "new FormControl<any>(5)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 71
+                },
+                {
+                    "name": "searchControl",
+                    "defaultValue": "new FormControl<any>('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 62
+                },
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\n    {\n      img:'https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg',\n      name: \"Ayushman\",\n      age: 20,\n      city: \"Bilaspur\",\n      ctrl: \"Delete\",\n      accordionOpen: true,\n      checked: false\n    },\n    {\n      img: 'https://www.shutterstock.com/image-photo/happy-mid-aged-business-man-600nw-2307212331.jpg',\n      name: \"Ansh\",\n      age: 22,\n      city: \"Raipur\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp',\n      name: \"Fhalak\",\n      age: 21,\n      city: \"Waraseoni\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',\n      name: \"Ashutosh\",\n      age: 32,\n      city: \"Raigar\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TableData[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changePageSize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 87,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteCheckedRows",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 113,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteRow",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 118,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isAccordionOpen",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 97,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nextPage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 77,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "prevPage",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 82,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectAll",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 107,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sortBy",
+                    "args": [
+                        {
+                            "name": "column",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "column",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleAccordion",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 93,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleCheckbox",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { FormControl } from '@angular/forms';\n\ninterface TableData {\n  img:string;\n  name: string;\n  age: number;\n  city: string;\n  ctrl: string;\n  accordionOpen: boolean;\n  checked: boolean;\n}\n\n@Component({\n  selector: 'app-table-example',\n  templateUrl: './table-example.component.html',\n  styleUrls: ['./table-example.component.scss']\n})\nexport class TableExampleComponent {\n\n  tableData: TableData[] = [\n    {\n      img:'https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg',\n      name: \"Ayushman\",\n      age: 20,\n      city: \"Bilaspur\",\n      ctrl: \"Delete\",\n      accordionOpen: true,\n      checked: false\n    },\n    {\n      img: 'https://www.shutterstock.com/image-photo/happy-mid-aged-business-man-600nw-2307212331.jpg',\n      name: \"Ansh\",\n      age: 22,\n      city: \"Raipur\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://a.storyblok.com/f/191576/1200x800/faa88c639f/round_profil_picture_before_.webp',\n      name: \"Fhalak\",\n      age: 21,\n      city: \"Waraseoni\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    },\n    {\n      img: 'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',\n      name: \"Ashutosh\",\n      age: 32,\n      city: \"Raigar\",\n      ctrl: \"Delete\",\n      accordionOpen: false,\n      checked: false\n    }\n  ]\n\n\n  // Searchbar\n  searchControl = new FormControl<any>('');\n\n\n  // Sorting Table\n  sortBy(column: string) {\n    this.tableData.sort((a: any, b:any) => a[column].localeCompare(b[column]));\n  }\n\n  // Paginator Code\n  pageSize = new FormControl<any>(5); \n  currentPage = 0;\n  get displayedTableData() {\n    const start = this.currentPage * this.pageSize.value;\n    return this.tableData.slice(start, start + this.pageSize.value);\n  }\n  nextPage() {\n    if (this.currentPage < this.tableData.length / this.pageSize.value - 1) {\n      this.currentPage++;\n    }\n  }\n  prevPage() {\n    if (this.currentPage > 0) {\n      this.currentPage--;\n    }\n  }\n  changePageSize() {\n    this.currentPage = 0;\n  }\n  \n\n  // Accordion\n  toggleAccordion(index: number) {\n    this.tableData[index].accordionOpen = !this.tableData[index].accordionOpen;\n  }\n\n  isAccordionOpen(index: number): boolean {\n    return this.tableData[index].accordionOpen;\n  }\n\n  // Checkboxes\n  toggleCheckbox(index: number) {\n    this.tableData[index].checked = !this.tableData[index].checked;\n  }\n\n  // Select All \n  selectAll(event: any) {\n    const isChecked = event.target.checked;\n    this.tableData.forEach(row => row.checked = isChecked);\n  }\n  \n  // Delete Selected row\n  deleteCheckedRows() {\n    this.tableData = this.tableData.filter(x => !x.checked);\n  }\n\n  // Manual Delete\n  deleteRow(index: number) {\n    this.tableData.splice(index, 1);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./table-example.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "displayedTableData": {
+                    "name": "displayedTableData",
+                    "getSignature": {
+                        "name": "displayedTableData",
+                        "type": "",
+                        "returnType": "",
+                        "line": 73
+                    }
+                }
+            },
+            "templateData": "\n<div class=\"search\">\n    <!-- Delete all Functianlity -->\n    <!-- <button class=\"btn btn-danger\"  (click)=\"deleteCheckedRows()\"> Delete All</button> -->\n\n    <sys-button icon=\"delete\" color=\"error\" (click)=\"deleteCheckedRows()\">\n        Delete All\n    </sys-button>\n  \n    <!-- Search bar -->\n    <!-- <input type=\"text\" [formControl]=\"searchControl\" placeholder=\"Search...\"> -->\n    <sys-input  type=\"text\"  [formControl]=\"searchControl\" value=\"\" [modern]=\"true\" placeholder=\"Placeholder values\" icon=\"search\"></sys-input>\n\n  </div>\n    <sys-table>\n      <thead sys-header> \n        <tr>\n          <th>\n            <input type=\"checkbox\" (change)=\"selectAll($event)\">\n          </th>\n          <th (click)=\"sortBy('name')\">Name  <mat-icon>swap_vert</mat-icon> </th>\n          <th (click)=\"sortBy('age')\">Age <mat-icon>swap_vert</mat-icon></th>\n          <th (click)=\"sortBy('city')\">City <mat-icon>swap_vert</mat-icon></th>\n          <th>Control</th>\n          <th></th>\n        </tr>\n    </thead>\n    <ng-container *ngIf=\"tableData.length > 0; else noDataFound\" sys-table-data>\n      <ng-container *ngFor=\"let x of displayedTableData | filter: searchControl.value; let i=index\" >\n        <tr [class.checked]=\"x.checked\" >\n          <td>\n            <input type=\"checkbox\"  [checked]=\"x.checked\" (change)=\"toggleCheckbox(i)\">\n          </td>\n          <td>\n            <div class=\"d-flex align-items-center gap-2\">\n              <img src=\"{{x.img}}\" alt=\"\" class=\"profile\">\n             <strong> {{x.name}}</strong>\n            </div>\n          </td>\n          <td>{{x.age}}</td>\n          <td>{{x.city}}</td>\n          <td>\n            <mat-icon class=\"text-danger\" (click)=\"deleteRow(i)\">delete</mat-icon>\n          </td>\n          <td>\n            <div (click)=\"toggleAccordion(i)\">\n              <mat-icon *ngIf=\"!tableData[i].accordionOpen\">expand_more</mat-icon>\n              <mat-icon *ngIf=\"tableData[i].accordionOpen\">expand_less</mat-icon>\n            </div>\n          </td>\n        </tr>\n  \n        <!-- Accordion Table -->\n        <tr *ngIf=\"isAccordionOpen(i)\" class=\"accordion-table\" >\n          <td colspan=\"6\">\n            <sys-table>\n              <thead sys-header> \n                <tr>\n                  <th>Sub Name</th>\n                  <th>Sub Age </th>\n                  <th>Sub City</th>\n                </tr>\n              </thead>\n                <tr sys-table-data>\n                  <td>John Doe</td>\n                  <td>30</td>\n                  <td>john@example.com</td>\n                </tr>\n                <tr sys-table-data>\n                    <td>Jane Smith</td>\n                    <td>25</td>\n                    <td>jane@example.com</td>\n                </tr>\n                <tr sys-table-data>\n                    <td>Bob Johnson</td>\n                    <td>35</td>\n                    <td>bob@example.com</td>\n                </tr>\n            </sys-table>\n          </td>\n        </tr>\n      </ng-container>\n    </ng-container>\n  </sys-table>\n  \n  \n  <!-- Custom Message -->\n  <ng-template #noDataFound>\n    <p class=\"nofound\">No data found...😓</p>\n  </ng-template>\n  \n  \n  <!-- Pagination -->\n  <div class=\"paginator-table\">\n    <div class=\"paginator\">\n      <button (click)=\"prevPage()\">Previous</button>\n      <button (click)=\"nextPage()\">Next</button>\n    </div>\n    \n    <div class=\"se\">\n      <label for=\"pageSize\">Rows per page:</label>\n      <select name=\"\" id=\"pageSize\" name=\"pageSize\" [formControl]=\"pageSize\" (change)=\"changePageSize()\">\n        <option value=\"2\">2</option>\n        <option value=\"3\">3</option>\n        <option value=\"1\">1</option>\n        <option value=\"10\">10</option>\n      </select>\n    </div>\n  </div>"
+        },
+        {
             "name": "TreeExampleComponent",
             "id": "component-TreeExampleComponent-8b508773eaf3206c8375a6757636e81d486f8acd1d4d529dc7d0a9afc59182cf56e4e38c62eaa854c4c0205efe8ce7bfeca8d406bcea153d781e4ff7828292db",
             "file": "src/app/tree-example/tree-example.component.ts",
@@ -1100,13 +1538,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-72521804ec61fc345bfa65b84006e54f304248b10f85a6818cdf5f220348336208a207fb0883af2e91e4c71bb30c60f9425fab7b053b02694f6fa84c50b533bb",
+            "id": "module-AppModule-c22daab3b5822f11410773e4095504afa67dbcf05975ba96edf67521064a938a61cb4af73ced5ded4c46d838f0cb125f101e383e6f3af71af877f59acdb79121",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\r\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\r\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\nimport { TreeExampleComponent } from './tree-example/tree-example.component';\r\nimport { FormExampleComponent } from './form-example/form-example.component';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { SlideExampleComponent } from './slide-example/slide-example.component';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n    TabExampleComponent,\r\n    AccordionExampleComponent,\r\n    SidebarExampleComponent,\r\n    BadgeExampleComponent,\r\n    AlertExampleComponent,\r\n    DialogExampleComponent,\r\n    TreeExampleComponent,\r\n    FormExampleComponent,\r\n    SlideExampleComponent,\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { sysDesignModule } from 'projects/sys-lib/src/public-api';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { HeaderExampleComponent } from './header-example/header-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { BadgeExampleComponent } from './badge-example/badge-example.component';\r\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\r\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\nimport { TreeExampleComponent } from './tree-example/tree-example.component';\r\nimport { FormExampleComponent } from './form-example/form-example.component';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { SlideExampleComponent } from './slide-example/slide-example.component';\r\nimport { TableExampleComponent } from './table-example/table-example.component';\r\nimport { FilterPipe } from './table-example/table.pipe';\r\n//  ng run sys-design:storybook\r\n//  ng run sys-design:build-storybook\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    ButtonExampleComponent,\r\n    HeaderExampleComponent,\r\n    CardExampleComponent,\r\n    HomeComponent,\r\n    TabExampleComponent,\r\n    AccordionExampleComponent,\r\n    SidebarExampleComponent,\r\n    BadgeExampleComponent,\r\n    AlertExampleComponent,\r\n    DialogExampleComponent,\r\n    TreeExampleComponent,\r\n    FormExampleComponent,\r\n    SlideExampleComponent,\r\n    TableExampleComponent,\r\n    FilterPipe\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    sysDesignModule,\r\n    MatIconModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    BrowserAnimationsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1137,6 +1575,9 @@
                             "name": "DialogExampleComponent"
                         },
                         {
+                            "name": "FilterPipe"
+                        },
+                        {
                             "name": "FormExampleComponent"
                         },
                         {
@@ -1153,6 +1594,9 @@
                         },
                         {
                             "name": "TabExampleComponent"
+                        },
+                        {
+                            "name": "TableExampleComponent"
                         },
                         {
                             "name": "TreeExampleComponent"
@@ -1187,13 +1631,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-6fde6df3aeb72d2b3d2542d3e339ab597a46507fd9ee6af56c7745314cabd5b3ffb1ba8d9a555f6eff7def57ced63a595c3b01a95591b9bb085a83827c88c0d8",
+            "id": "module-AppRoutingModule-6247566d88391e6fb4c0a416fea9933f21c498e5087f02c02e1e7adace56ecd403a4945b5c940dc5ed69a58bb7e136f8176416a0165695d36cce34c6b914d99a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\r\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\nimport { TreeExampleComponent } from './tree-example/tree-example.component';\r\nimport { FormExampleComponent } from './form-example/form-example.component';\r\nimport { SlideExampleComponent } from './slide-example/slide-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"tab\", component: TabExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"accordion\", component: AccordionExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"sidebar\", component: SidebarExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"dialog\", component: DialogExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"alert\", component: AlertExampleComponent,\r\n  }\r\n   ,\r\n  {\r\n    path: \"tree\", component: TreeExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"forms\", component: FormExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"togglebuttons\", component: SlideExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { ButtonExampleComponent } from './button-example/button-example.component';\r\nimport { CardExampleComponent } from './card-example/card-example.component';\r\nimport { TabExampleComponent } from './tab-example/tab-example.component';\r\nimport { AccordionExampleComponent } from './accordion-example/accordion-example.component';\r\nimport { SidebarExampleComponent } from './sidebar-example/sidebar-example.component';\r\nimport { AlertExampleComponent } from './alert-example/alert-example.component';\r\nimport { DialogExampleComponent } from './dialog-example/dialog-example.component';\r\nimport { TreeExampleComponent } from './tree-example/tree-example.component';\r\nimport { FormExampleComponent } from './form-example/form-example.component';\r\nimport { SlideExampleComponent } from './slide-example/slide-example.component';\r\nimport { TableExampleComponent } from './table-example/table-example.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: \"button\", component: ButtonExampleComponent,\r\n  },\r\n  {\r\n    path: \"card\", component: CardExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"tab\", component: TabExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"accordion\", component: AccordionExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"sidebar\", component: SidebarExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"dialog\", component: DialogExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"alert\", component: AlertExampleComponent,\r\n  }\r\n   ,\r\n  {\r\n    path: \"tree\", component: TreeExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"forms\", component: FormExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"togglebuttons\", component: SlideExampleComponent,\r\n  }\r\n  ,\r\n  {\r\n    path: \"table\", component: TableExampleComponent,\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1232,7 +1676,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 100%;\">\r\n    <sys-card title=\"Card Title\"  preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 100%;\">\r\n    <sys-card title=\"Card Title\"  preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p style=\"padding: 10px;\">\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
             },
             {
                 "name": "CardWithCTA",
@@ -1242,7 +1686,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\" icon=\"settings\">\r\n    <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n    </sys-card-content>\r\n\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>`,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\" icon=\"settings\">\r\n    <sys-card-content>\r\n      <p style=\"padding: 10px;\">\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n    </sys-card-content>\r\n\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>`,\r\n})"
             },
             {
                 "name": "CardWithTab",
@@ -1302,7 +1746,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\">\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n   `,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\">\r\n      <sys-card-content>\r\n          <p style=\"padding: 10px;\">\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n          </p>\r\n      </sys-card-content>\r\n    </sys-card>\r\n\r\n   `,\r\n})"
             },
             {
                 "name": "DefaultDialog",
@@ -1382,7 +1826,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SysCardComponent>",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>`,\r\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p style=\"padding: 10px;\">\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>`,\r\n})"
             },
             {
                 "name": "IconButton",
@@ -1548,7 +1992,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 100%;\">\r\n    <sys-card title=\"Card Title\"  preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p>\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n    <div style=\"width: 100%;\">\r\n    <sys-card title=\"Card Title\"  preIcon=\"account_circle\" [flatImage]=\"true\" subTitle=\"Sub Title\" icon=\"favorite_border\" cardImg=\"https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg\">\r\n        <sys-card-content>\r\n          <p style=\"padding: 10px;\">\r\n\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,\r\n          </p>\r\n        </sys-card-content>\r\n        <sys-card-action>\r\n          <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n            Cancel\r\n          </sys-button>\r\n\r\n          <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n            Accept\r\n          </sys-button>\r\n        </sys-card-action>\r\n      </sys-card>\r\n    </div>\r\n  `,\r\n})"
                 },
                 {
                     "name": "CardWithCTA",
@@ -1558,7 +2002,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\" icon=\"settings\">\r\n    <sys-card-content>\r\n      <p>\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n    </sys-card-content>\r\n\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>`,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\" icon=\"settings\">\r\n    <sys-card-content>\r\n      <p style=\"padding: 10px;\">\r\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n      </p>\r\n    </sys-card-content>\r\n\r\n    <sys-card-action>\r\n      <sys-button icon=\"cancel\" class=\"textBtn\" color=\"error\">\r\n        Cancel\r\n      </sys-button>\r\n\r\n      <sys-button icon=\"check\" class=\"textBtn\" color=\"olive\">\r\n        Accept\r\n      </sys-button>\r\n    </sys-card-action>\r\n  </sys-card>`,\r\n})"
                 },
                 {
                     "name": "DefaultCard",
@@ -1568,7 +2012,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\">\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>\r\n\r\n   `,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" [divider]=\"true\" subTitle=\"Sub Title\">\r\n      <sys-card-content>\r\n          <p style=\"padding: 10px;\">\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.\r\n          </p>\r\n      </sys-card-content>\r\n    </sys-card>\r\n\r\n   `,\r\n})"
                 },
                 {
                     "name": "HorizentalCard",
@@ -1578,7 +2022,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SysCardComponent>",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p>\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>`,\r\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <sys-card title=\"Card Title\" subTitle=\"Sub Title\" [horigentalCard]=\"true\" >\r\n    <sys-card-content>\r\n        <p style=\"padding: 10px;\">\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias\r\n        </p>\r\n    </sys-card-content>\r\n\r\n  </sys-card>`,\r\n})"
                 }
             ],
             "src/stories/Tab.stories.ts": [
@@ -1927,6 +2371,10 @@
                     {
                         "path": "togglebuttons",
                         "component": "SlideExampleComponent"
+                    },
+                    {
+                        "path": "table",
+                        "component": "TableExampleComponent"
                     }
                 ],
                 "kind": "module"
@@ -2060,6 +2508,33 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TabExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table-example/table-example.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableExampleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table-example/table-example.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TableData",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/table-example/table.pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "FilterPipe",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

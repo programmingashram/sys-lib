@@ -56,3 +56,6 @@ export * from "./lib/sys-radio/sys-radio-group/sys-radio-group.component";
 
 
 export * from "./lib/sys-slide/sys-slide.component";
+
+
+export * from "./lib/sys-table/sys-table.component";

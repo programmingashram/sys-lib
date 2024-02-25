@@ -30,13 +30,12 @@ export const DefaultCard: Story<SysCardComponent> = (args) => ({
   props: args,
   template: `
   <sys-card title="Card Title" [divider]="true" subTitle="Sub Title">
-    <sys-card-content>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
-        </p>
-    </sys-card-content>
-
-  </sys-card>
+      <sys-card-content>
+          <p style="padding: 10px;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
+          </p>
+      </sys-card-content>
+    </sys-card>
 
    `,
 });
@@ -45,7 +44,7 @@ export const CardWithCTA: Story<SysCardComponent> = (args) => ({
   template: `
   <sys-card title="Card Title" [divider]="true" subTitle="Sub Title" icon="settings">
     <sys-card-content>
-      <p>
+      <p style="padding: 10px;">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias voluptatem a incidunt consectetur tenetur sequi soluta blanditiis esse eius, obcaecati quod aspernatur, praesentium magnam cumque sit.
       </p>
     </sys-card-content>
@@ -68,7 +67,7 @@ export const CardWithActions : Story<SysCardComponent> = (args) => ({
     <div style="width: 100%;">
     <sys-card title="Card Title"  preIcon="account_circle" [flatImage]="true" subTitle="Sub Title" icon="favorite_border" cardImg="https://clicxy.com/wp-content/uploads/2016/04/dummy-post-horisontal.jpg">
         <sys-card-content>
-          <p>
+          <p style="padding: 10px;">
 
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt,
           </p>
@@ -92,7 +91,7 @@ export const HorizentalCard : Story<SysCardComponent> = (args) => ({
   template: `
   <sys-card title="Card Title" subTitle="Sub Title" [horigentalCard]="true" >
     <sys-card-content>
-        <p>
+        <p style="padding: 10px;">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus facere deserunt, similique alias
         </p>
     </sys-card-content>
